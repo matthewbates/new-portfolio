@@ -10,19 +10,15 @@ import Burger from "../Burger";
 import Links from "../Links";
 import Sidebar from "../Sidebar";
 
-import { useScrollDirection } from "../../utils/helpers";
+import {
+  useScrollDirection,
+  toggleSidebar,
+  closeDrawer,
+} from "../../utils/helpers";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeDrawer = () => {
-    setIsOpen(false);
-  };
 
   // useEffect(() => {
   //   let prevScrollPos = window.pageYOffset;
@@ -40,7 +36,10 @@ export default function Navbar() {
   return (
     <NavbarContainer visible={visible}>
       <BurgerWrapper>
-        <Burger toggle={toggleSidebar} isOpen={isOpen} />
+        <Burger
+          toggle={() => toggleSidebar(isOpen, setIsOpen)}
+          isOpen={isOpen}
+        />
       </BurgerWrapper>
       <LinksWrapper>
         <Links title="Home" header={true} />

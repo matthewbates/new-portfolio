@@ -19,8 +19,16 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
   return (
     <SidebarContainer isOpen={isOpen} ref={rightNavRef}>
       <SidebarItems>
-        <Links title="Home" sidebar="true" closeDrawer={closeDrawer} />
-        <Links title="About" sidebar="true" closeDrawer={closeDrawer} />
+        <Links
+          title="Home"
+          sidebar="true"
+          closeDrawer={() => closeDrawer(setIsOpen)}
+        />
+        <Links
+          title="About"
+          sidebar="true"
+          closeDrawer={() => closeDrawer(setIsOpen)}
+        />
       </SidebarItems>
     </SidebarContainer>
   );
