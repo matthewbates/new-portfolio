@@ -29,7 +29,7 @@ export const NavbarLinkContainer = styled(Link)`
     transform: translate(0px);
   }
 
-  /* &::after {
+  &::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -48,7 +48,7 @@ export const NavbarLinkContainer = styled(Link)`
 
   &:hover::after {
     transform: scaleX(1);
-  } */
+  }
 
   text-decoration: ${({ active }) => (active ? "underline" : "none")};
 `;

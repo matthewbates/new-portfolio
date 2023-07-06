@@ -21,7 +21,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
   return (
     <SidebarContainer isOpen={isOpen} ref={rightNavRef}>
       <SidebarItems>
-        <Img src={require("../../assets/avatar.png")} alt="avatar" />
+        {/* <Img src={require("../../assets/avatar.png")} alt="avatar" /> */}
         {links.map(({ id, name }) => (
           <Links
             key={id}

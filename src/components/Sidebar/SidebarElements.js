@@ -39,6 +39,8 @@ export const Img = styled.img`
 
 export const SidebarItems = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 90%;
   gap: 1em;
