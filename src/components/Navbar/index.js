@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+
 import {
   NavbarContainer,
-  BurgerWrapper,
   LinksWrapper,
   SidebarWrapper,
 } from "./NavbarElements";
@@ -10,40 +10,37 @@ import Burger from "../Burger";
 import Links from "../Links";
 import Sidebar from "../Sidebar";
 
-import {
-  useScrollDirection,
-  toggleSidebar,
-  closeDrawer,
-} from "../../utils/helpers";
+import { links } from "../../utils/data";
+import { toggleSidebar } from "../../utils/helpers";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
-  // useEffect(() => {
-  //   let prevScrollPos = window.pageYOffset;
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
 
-  //   const handleScroll = () => {
-  //     const currentScrollPos = window.pageYOffset;
-  //     currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
-  //     prevScrollPos = currentScrollPos;
-  //   };
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
+      prevScrollPos = currentScrollPos;
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const closeDrawer = () => {
+    setTimeout(() => setIsOpen(false), 800);
+  };
 
   return (
-    <NavbarContainer visible={visible}>
-      <BurgerWrapper>
-        <Burger
-          toggle={() => toggleSidebar(isOpen, setIsOpen)}
-          isOpen={isOpen}
-        />
-      </BurgerWrapper>
+    <NavbarContainer visible={visible} isOpen={isOpen}>
+      <Burger toggle={() => toggleSidebar(isOpen, setIsOpen)} isOpen={isOpen} />
       <LinksWrapper>
-        <Links title="Home" header={true} />
-        <Links title="About" header={true} />
+        {links.map(({ id, name }, index) => (
+          <Links key={id} sidebar="false" title={name} id={name} />
+        ))}
       </LinksWrapper>
       <SidebarWrapper>
         <Sidebar

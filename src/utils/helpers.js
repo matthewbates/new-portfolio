@@ -7,7 +7,7 @@ export const toggleSidebar = (isOpen, setIsOpen) => {
 
 // closes <Sidebar /> when a <Link /> is clicked
 export const closeDrawer = (setIsOpen) => {
-  setTimeout(() => setIsOpen(false), 500);
+  setTimeout(() => setIsOpen(false), 750);
 };
 
 // closes <Sidebar /> when the viewport > 820
@@ -26,39 +26,19 @@ export const useResize = (ref, callback) => {
   }, [ref, callback]);
 };
 
+// closes <Sidebar /> when the user clicks outside
 export const useClickOutside = (ref, callback) => {
   const handleClickOutside = (e) => {
     if (ref.current && !ref.current.contains(e.target)) {
-      if (!ref.current.parentNode.contains(e.target)) {
+      if (!ref.current.contains(e.target)) {
         callback();
       }
     }
   };
-
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mouseup", handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref, callback]);
-};
-
-export const useScrollResize = (ref, callback, visible, setVisible) => {
-  const prevYScroll = window.pageYOffset;
-  const handleScrollResize = () => {
-    const currentYScroll = window.pageYOffset;
-    if (currentYScroll >= prevYScroll || prevYScroll < 10) {
-      setVisible(currentYScroll);
-      prevYScroll = currentYScroll;
-    }
-    useEffect(() => {
-      window.addEventListener("mousedown", handleScrollResize);
-      return () => window.removeEventListener("mousedown", handleScrollResize);
-    }, [visible]);
-  };
-
-  useEffect(() => {
-    document.addEventListener("", handleScrollResize);
-    return () => document.removeEventListener("", handleScrollResize);
   }, [ref, callback]);
 };

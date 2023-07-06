@@ -1,4 +1,4 @@
-import { Cross as Hamburger } from "hamburger-react";
+import { Squash as Hamburger } from "hamburger-react";
 
 import { BurgerContainer } from "./BurgerElements";
 

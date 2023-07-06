@@ -9,10 +9,10 @@ export const NavbarContainer = styled.div`
   align-items: center;
   border-bottom: ${({ visible }) =>
     visible ? `1px solid ${CONSTANTS.colors.offBlack}` : "none"};
-  z-index: 999;
   position: sticky;
   transition: 0.5s;
   top: ${({ visible }) => (visible ? "0" : "-60px")};
+  font-size: 14px;
 `;
 
 export const BurgerWrapper = styled.div`

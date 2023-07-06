@@ -1,9 +1,11 @@
 import { useRef } from "react";
 
-import { SidebarContainer, SidebarItems } from "./SidebarElements";
+import { SidebarContainer, Img, SidebarItems } from "./SidebarElements";
+
+import Links from "../Links";
 
 import { useResize, useClickOutside } from "../../utils/helpers";
-import Links from "../Links";
+import { links } from "../../utils/data";
 
 export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
   const rightNavRef = useRef(null);
@@ -19,16 +21,16 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
   return (
     <SidebarContainer isOpen={isOpen} ref={rightNavRef}>
       <SidebarItems>
-        <Links
-          title="Home"
-          sidebar="true"
-          closeDrawer={() => closeDrawer(setIsOpen)}
-        />
-        <Links
-          title="About"
-          sidebar="true"
-          closeDrawer={() => closeDrawer(setIsOpen)}
-        />
+        <Img src={require("../../assets/avatar.png")} alt="avatar" />
+        {links.map(({ id, name }) => (
+          <Links
+            key={id}
+            sidebar="true"
+            title={name}
+            id={name}
+            closeDrawer={closeDrawer}
+          />
+        ))}
       </SidebarItems>
     </SidebarContainer>
   );
