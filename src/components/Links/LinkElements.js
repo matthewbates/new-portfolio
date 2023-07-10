@@ -13,7 +13,7 @@ export const NavbarLinkContainer = styled(Link)`
     sidebar === "true"
       ? `${CONSTANTS.colors.offWhite}`
       : `${CONSTANTS.colors.offBlack}`};
-  padding: ${({ sidebar }) => (sidebar === "true" ? "0.5em" : "0.2em")};
+  padding: 0.2em;
   transition: 0.3s;
   font-size: ${({ sidebar }) => (sidebar == "true" ? "1.5em" : null)};
 
@@ -37,9 +37,9 @@ export const NavbarLinkContainer = styled(Link)`
     bottom: 0;
     left: 0;
     background-color: ${({ sidebar }) =>
-    sidebar === "true"
-      ? `${CONSTANTS.colors.offWhite}`
-      : `${CONSTANTS.colors.offBlack}`};
+      sidebar === "true"
+        ? `${CONSTANTS.colors.offWhite}`
+        : `${CONSTANTS.colors.offBlack}`};
     transform-origin: bottom right;
     transition: transform 0.3s;
     transform: scaleX(0);

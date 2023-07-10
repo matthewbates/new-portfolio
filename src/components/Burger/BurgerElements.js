@@ -2,10 +2,9 @@ import styled from "styled-components";
 import CONSTANTS from "../../utils/constants";
 
 export const BurgerContainer = styled.div`
-  display: ${({ isOpen }) => (isOpen ? "none" : "flex")};
-  z-index: ${({ isOpen }) => (isOpen ? 999 : 999)};
+  z-index: 996;
   color: ${CONSTANTS.colors.offBlack};
-  transition: 0.3s;
+  -webkit-transition: 0.3s ease-in-out;
 
   @media screen and (min-width: 820px) {
     display: none;

@@ -11,24 +11,38 @@ import Links from "../Links";
 import Sidebar from "../Sidebar";
 
 import { links } from "../../utils/data";
-import { toggleSidebar } from "../../utils/helpers";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
 
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleResize = (e) => {
+    if (e.target.innerWidth > 820) {
+      setIsOpen(false);
+    }
+  };
+
   useEffect(() => {
-    let prevScrollPos = window.pageYOffset;
-
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
-      prevScrollPos = currentScrollPos;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // useEffect(() => {
+  //   let prevScrollPos = window.pageYOffset;
+
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.pageYOffset;
+  //     currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
+  //     prevScrollPos = currentScrollPos;
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const closeDrawer = () => {
     setTimeout(() => setIsOpen(false), 800);
@@ -36,19 +50,17 @@ export default function Navbar() {
 
   return (
     <NavbarContainer visible={visible} isOpen={isOpen}>
-      <Burger toggle={() => toggleSidebar(isOpen, setIsOpen)} isOpen={isOpen} />
+      <Burger toggle={toggleSidebar} isOpen={isOpen} />
       <LinksWrapper>
         {links.map(({ id, name }, index) => (
           <Links key={id} sidebar="false" title={name} id={name} />
         ))}
       </LinksWrapper>
-      <SidebarWrapper>
-        <Sidebar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          closeDrawer={closeDrawer}
-        />
-      </SidebarWrapper>
+      <Sidebar
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        closeDrawer={closeDrawer}
+      />
     </NavbarContainer>
   );
 }

@@ -1,4 +1,6 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+
+import gsap from "gsap";
 
 import { SidebarContainer, Img, SidebarItems } from "./SidebarElements";
 
@@ -8,20 +10,54 @@ import { useResize, useClickOutside } from "../../utils/helpers";
 import { links } from "../../utils/data";
 
 export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
-  const rightNavRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const linkRef = useRef(null);
 
-  useResize(rightNavRef, () => {
+  useClickOutside(sidebarRef, () => {
     setIsOpen(false);
   });
 
-  useClickOutside(rightNavRef, () => {
-    setIsOpen(false);
-  });
+  useEffect(() => {
+    if (isOpen) {
+      gsap.timeline().from(".nav-text", {
+        opacity: 0,
+        x: -100,
+        delay: 0.25,
+        duration: 0.5,
+      });
+      gsap.timeline().from(".nav-links", {
+        opacity: 0,
+        x: -100,
+        duration: 0.5,
+        delay: 0.5,
+      });
+    }
+  }, [isOpen]);
 
   return (
-    <SidebarContainer isOpen={isOpen} ref={rightNavRef}>
-      <SidebarItems>
-        {/* <Img src={require("../../assets/avatar.png")} alt="avatar" /> */}
+    <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
+      <div
+        className="nav-text"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Img src={require("../../assets/avatar.png")} alt="avatar" />
+        <h3
+          style={{
+            fontFamily: "Arial",
+            marginTop: "1em",
+            color: "#ffffff",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+          }}
+        >
+          Matthew Bates
+        </h3>
+      </div>
+      <SidebarItems className="nav-links">
         {links.map(({ id, name }) => (
           <Links
             key={id}

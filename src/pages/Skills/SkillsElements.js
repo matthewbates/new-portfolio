@@ -6,24 +6,20 @@ export const SkillsContainer = styled.div`
 
 export const SkillsWrapper = styled.div`
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
+  text-align: center;
+  justify-content: space-evenly;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  max-width: 100%;
+  margin: 0 auto;
 `;
 
 export const SkillsItems = styled.div`
-  display: flex;
-  flex-direction: column;
   text-align: center;
   gap: 1em;
   justify-content: center;
   height: 75px;
   width: 75px;
   transition: 0.3s;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 `;
