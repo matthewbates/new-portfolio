@@ -83,15 +83,16 @@ export const ResumeBtn = styled.button`
   color: ${CONSTANTS.colors.offBlack};
   font-weight: bold;
   cursor: pointer;
+  text-transform: uppercase;
 
   &:hover {
     transform: translate(2px, -2px);
     transition: 0.3s ease-in-out;
     box-shadow: ${CONSTANTS.styles.boxShadow};
-    z-index: 1;
   }
 
   @media screen and (min-width: 820px) {
     height: 60px;
+    font-size: 1em;
   }
 `;

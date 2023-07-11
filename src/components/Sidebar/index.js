@@ -19,16 +19,9 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
 
   useEffect(() => {
     if (isOpen) {
-      gsap.timeline().from(".nav-text", {
-        opacity: 0,
-        x: 25,
-        delay: 0.25,
-        duration: 0.25,
-      });
-      gsap.timeline().from(".nav-links", {
+      gsap.timeline().from(linkRef.current, {
         opacity: 0,
         x: -25,
-        duration: 0.25,
         delay: 0.5,
       });
     }
@@ -36,29 +29,8 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
 
   return (
     <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
-      <div
-        className="nav-text"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Img src={require("../../assets/avatar.png")} alt="avatar" />
-        {/* <h3
-          style={{
-            fontFamily: "Arial",
-            marginTop: "1em",
-            color: "#ffffff",
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-          }}
-        >
-          Matthew Bates
-        </h3> */}
-      </div>
-      <SidebarItems className="nav-links">
-        {links.map(({ id, name }) => (
+      <SidebarItems ref={linkRef}>
+        {links.map(({ id, name }, index) => (
           <Links
             key={id}
             sidebar="true"

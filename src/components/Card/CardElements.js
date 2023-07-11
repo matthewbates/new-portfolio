@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import CONSTANTS from "../../utils/constants";
 
 export const CardContainer = styled.div`
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 5px; */
+  display: flex;
   border-radius: 8px;
-  -webkit-transition: 0.3s ease-in-out;
-  padding: 1em;
+  padding: 0.5em;
+  cursor: pointer;
+  background: ${CONSTANTS.colors.offWhite};
 
   &:hover {
-    transform: scale(1.1);
+    transform: translate(2px, -2px);
+    transition: 0.3s ease-in-out;
+    box-shadow: ${CONSTANTS.styles.boxShadow};
   }
 `;

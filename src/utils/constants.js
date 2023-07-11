@@ -8,7 +8,8 @@ const CONSTANTS = {
   styles: {
     border: "none",
     borderRadius: "8px",
-    boxShadow: "-8px 8px #363636",
+    // boxShadow: "-8px 8px #363636",
+    boxShadow: "-8px 8px #000000",
   },
 };
 

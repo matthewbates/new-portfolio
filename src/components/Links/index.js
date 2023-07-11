@@ -1,6 +1,12 @@
 import { NavbarLinkContainer } from "./LinkElements";
 
-export default function Links({ title, sidebar, closeDrawer, className }) {
+export default function Links({
+  title,
+  sidebar,
+  closeDrawer,
+  className,
+  index,
+}) {
   return (
     <NavbarLinkContainer
       to={title}
@@ -11,6 +17,7 @@ export default function Links({ title, sidebar, closeDrawer, className }) {
       sidebar={sidebar}
       onClick={closeDrawer}
       className={className}
+      index={index}
     >
       {title}
     </NavbarLinkContainer>

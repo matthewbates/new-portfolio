@@ -193,3 +193,19 @@ export const homeText = [
     text: "I build things for the web.",
   },
 ];
+
+export const aboutText = [
+  {
+    id: 1,
+    text: "Hello! My name is Matthew and I'm an application developer living in Denver, CO. My interest in technology started back in 2017 with a previous employer where I assisted the IT department develop custom SQL queries for a system migration.",
+  },
+  {
+    id: 2,
+    text: "Fast forward to today, I'm an application developer at the University of Denver. I also do freelance software development on the side, where I design, develop, test, and deploy mobile-optimized sites.",
+    url: "https://www.du.edu/",
+  },
+  {
+    id: 3,
+    text: "Some of the technologies that I utilize include:",
+  },
+];

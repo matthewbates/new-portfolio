@@ -24,17 +24,20 @@ export default function Home() {
 
     tl.from(textRef.current, {
       opacity: 0,
-      x: -20,
+      y: -20,
+      delay: 1.25,
       stagger: 0.25,
     });
     tl.from(".icon", {
       opacity: 0,
       x: 20,
       stagger: 0.25,
+      delay: 0.25,
     });
     tl.from(".button", {
       opacity: 0,
       y: 20,
+      delay: 0.25,
     });
   }, []);
 
@@ -60,7 +63,7 @@ export default function Home() {
           ))}
         </IconWrapper>
         <ResumeBtn className="button" onClick={downloadResume}>
-          Download Resume
+          Resume
         </ResumeBtn>
       </HomeItems>
     </HomeContainer>

@@ -9,14 +9,12 @@ export const NavbarLinkContainer = styled(Link)`
   text-transform: ${({ sidebar }) =>
     sidebar === "true" ? "none" : "uppercase"};
   display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")};
-  color: ${({ sidebar }) =>
-    sidebar === "true"
-      ? `${CONSTANTS.colors.offWhite}`
-      : `${CONSTANTS.colors.offBlack}`};
+  color: ${CONSTANTS.colors.offWhite};
   padding: 0.2em;
   transition: 0.3s;
   font-size: ${({ sidebar }) => (sidebar == "true" ? "1.5em" : null)};
-
+  font-weight: bold;
+  
   @media screen and (min-width: 820px) {
     display: flex;
 
@@ -36,10 +34,7 @@ export const NavbarLinkContainer = styled(Link)`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: ${({ sidebar }) =>
-      sidebar === "true"
-        ? `${CONSTANTS.colors.offWhite}`
-        : `${CONSTANTS.colors.offBlack}`};
+    background-color: ${CONSTANTS.colors.offWhite};
     transform-origin: bottom right;
     transition: transform 0.3s;
     transform: scaleX(0);
