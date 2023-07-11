@@ -143,6 +143,8 @@ export const icons = [
     id: 1,
     name: "Codewars",
     image: CODEWARS,
+    url: "https://www.codewars.com/users/matthewhcbates",
+    className: "icons",
     style: {
       background: "#A8332A",
       borderRadius: "8px",
@@ -152,24 +154,42 @@ export const icons = [
     id: 2,
     name: "Github",
     image: GITHUB,
+    url: "https://www.github.com/matthewbates",
+    className: "icons",
     style: {
-      height: "42px",
+      transform: "scale(1.2)",
     },
   },
   {
     id: 3,
     name: "LinkedIn",
     image: LINKEDIN,
-    style: {
-      height: "38px",
-    },
+    url: "https://www.linkedin.com/in/matthew-bates-71b7bb79/",
+    className: "icons",
   },
   {
     id: 4,
     name: "Medium",
     image: MEDIUM,
+    url: "https://www.medium.com/@matthewhcbates",
+    className: "icons",
     style: {
-      height: "38px",
+      transform: "scale(1.05)",
     },
+  },
+];
+
+export const homeText = [
+  {
+    id: 1,
+    text: "Hi, my name is",
+  },
+  {
+    id: 2,
+    text: "Matthew Bates",
+  },
+  {
+    id: 3,
+    text: "I build things for the web.",
   },
 ];

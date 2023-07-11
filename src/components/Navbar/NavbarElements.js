@@ -14,6 +14,7 @@ export const NavbarContainer = styled.div`
   font-size: 14px;
   top: 0;
   position: sticky;
+  z-index: 999;
 `;
 
 export const BurgerWrapper = styled.div`

@@ -1,54 +1,67 @@
-import { useState, useEffect } from "react";
-import { HomeContainer, HomeItems } from "./HomeElements";
-import { icons } from "../../utils/data";
+import { useRef, useEffect } from "react";
+
+import gsap from "gsap";
+
+import {
+  HomeContainer,
+  HomeItems,
+  HomeText,
+  IconWrapper,
+  ResumeBtn,
+} from "./HomeElements";
+
 import HomeIcon from "../../components/HomeIcon";
 
+import { homeText } from "../../utils/data";
+import { downloadResume, useIconStyles } from "../../utils/helpers";
+
 export default function Home() {
-  const [iconStyles, setIconStyles] = useState([]);
+  const iconStyles = useIconStyles();
+  const textRef = useRef([]);
 
   useEffect(() => {
-    const handleResize = () => {
-      const updatedStyles = icons.map((icon) => {
-        let height = window.innerWidth > 820 ? "52px" : "42px";
-        if (icon.name === "Github" && window.innerWidth > 820) {
-          height = "60px";
-        }
-        return {
-          ...icon,
-          style: {
-            ...icon.style,
-            height,
-          },
-        };
-      });
-      setIconStyles(updatedStyles);
-    };
-    // initial call to set the styles based on the current window size
-    handleResize();
+    const tl = gsap.timeline();
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    tl.from(textRef.current, {
+      opacity: 0,
+      x: -20,
+      stagger: 0.25,
+    });
+    tl.from(".icon", {
+      opacity: 0,
+      x: 20,
+      stagger: 0.25,
+    });
+    tl.from(".button", {
+      opacity: 0,
+      y: 20,
+    });
   }, []);
 
   return (
     <HomeContainer id="Home">
       <HomeItems>
-        <div>Hi, my name is</div>
-        <div>Matthew Bates.</div>
-        <div>I build things for the web.</div>
-        <div>
-          {iconStyles.map(({ id, name, image, style }) => (
+        <HomeText>
+          {homeText.map(({ id, text }, index) => (
+            <div key={id} ref={(element) => (textRef.current[index] = element)}>
+              {text}
+            </div>
+          ))}
+        </HomeText>
+        <IconWrapper className="icon">
+          {iconStyles.map(({ id, name, image, url, style }) => (
             <HomeIcon
               key={id}
               name={name}
               image={image}
+              url={url}
               style={style}
-              className="icon"
             />
           ))}
-        </div>
+        </IconWrapper>
+        <ResumeBtn className="button" onClick={downloadResume}>
+          Download Resume
+        </ResumeBtn>
       </HomeItems>
     </HomeContainer>
   );

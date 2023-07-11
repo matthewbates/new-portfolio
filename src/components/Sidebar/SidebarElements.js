@@ -3,7 +3,6 @@ import CONSTANTS from "../../utils/constants";
 
 export const SidebarContainer = styled.div`
   //! <Sidebar /> === LEFT
-
   position: fixed;
   background: rgba(0, 0, 0, 0.75);
   top: 60px;
@@ -12,6 +11,7 @@ export const SidebarContainer = styled.div`
   width: 50vw;
   transition: 0.3s ease-in-out;
   border-right: 1px solid ${CONSTANTS.colors.offBlack};
+
   //! <Sidebar /> === TOP
   /* position: fixed;
   width: 100%;

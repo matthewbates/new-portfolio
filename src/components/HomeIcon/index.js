@@ -1,9 +1,9 @@
 const TARGET = "_blank";
 const REL = "noopener noreferrer";
 
-export default function HomeIcon({ name, image, style, className }) {
+export default function HomeIcon({ name, image, url, style, className }) {
   return (
-    <a href="https://www.google.com" target={TARGET} rel={REL}>
+    <a href={url} target={TARGET} rel={REL}>
       <img src={image} style={style} alt={name} className={className} />
     </a>
   );
