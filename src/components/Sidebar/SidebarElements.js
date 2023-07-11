@@ -7,7 +7,7 @@ export const SidebarContainer = styled.div`
   position: fixed;
   background: rgba(0, 0, 0, 0.75);
   top: 60px;
-  left: ${({ isOpen }) => (isOpen ? 0 : "-100%")};
+  right: ${({ isOpen }) => (isOpen ? 0 : "-100%")};
   height: 100vh;
   width: 50vw;
   transition: 0.3s ease-in-out;

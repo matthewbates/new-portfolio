@@ -18,6 +18,7 @@ export const NavbarContainer = styled.div`
 
 export const BurgerWrapper = styled.div`
   display: flex;
+  margin-left: auto;
 
   @media screen and (min-width: 820px) {
     display: none;
@@ -26,8 +27,11 @@ export const BurgerWrapper = styled.div`
 
 export const LinksWrapper = styled.div`
   display: flex;
-  margin-left: auto;
   gap: 1em;
+
+  @media screen and (min-width: 820px) {
+    margin-left: auto;
+  }
 `;
 
 export const SidebarWrapper = styled.div``;

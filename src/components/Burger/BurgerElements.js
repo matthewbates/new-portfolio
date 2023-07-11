@@ -7,6 +7,6 @@ export const BurgerContainer = styled.div`
   -webkit-transition: 0.3s ease-in-out;
 
   @media screen and (min-width: 820px) {
-    display: none;
+    /* display: none; */
   }
 `;

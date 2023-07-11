@@ -2,6 +2,11 @@ import SQL from "../assets/sql.png";
 import GREENSOCK from "../assets/greensock.svg";
 import MONGODB from "../assets/mongodb.svg";
 
+import CODEWARS from "../assets/codewars.png";
+import GITHUB from "../assets/github.png";
+import LINKEDIN from "../assets/linkedin.png";
+import MEDIUM from "../assets/medium.png";
+
 export const links = [
   {
     id: 1,
@@ -25,7 +30,7 @@ export const links = [
   },
 ];
 
-export const icons = [
+export const skills = [
   {
     id: 1,
     name: "Javascript",
@@ -130,5 +135,41 @@ export const icons = [
     label: "Greensock",
     alt: "greensock-icon",
     group: "Frontend Development",
+  },
+];
+
+export const icons = [
+  {
+    id: 1,
+    name: "Codewars",
+    image: CODEWARS,
+    style: {
+      background: "#A8332A",
+      borderRadius: "8px",
+    },
+  },
+  {
+    id: 2,
+    name: "Github",
+    image: GITHUB,
+    style: {
+      height: "42px",
+    },
+  },
+  {
+    id: 3,
+    name: "LinkedIn",
+    image: LINKEDIN,
+    style: {
+      height: "38px",
+    },
+  },
+  {
+    id: 4,
+    name: "Medium",
+    image: MEDIUM,
+    style: {
+      height: "38px",
+    },
   },
 ];

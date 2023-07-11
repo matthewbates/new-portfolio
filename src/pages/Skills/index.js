@@ -2,12 +2,12 @@ import { useState } from "react";
 
 import { SkillsContainer, SkillsWrapper, SkillsItems } from "./SkillsElements";
 
-import { icons } from "../../utils/data";
+import { skills } from "../../utils/data";
 import Card from "../../components/Card";
 
 export default function Skills() {
   const [group, setGroup] = useState("Languages & Frameworks");
-  const uniqueGroups = Array.from(new Set(icons.map((icon) => icon.group)));
+  const uniqueGroups = Array.from(new Set(skills.map((skill) => skill.group)));
 
   return (
     <SkillsContainer id="Skills">
@@ -31,7 +31,7 @@ export default function Skills() {
           </div>
         ))} */}
         <h2>Skills</h2>
-        {icons.map((icon) => (
+        {skills.map((icon) => (
           <Card>
             <h5 style={{ fontFamily: "Arial", width: "100%" }}>{icon.name}</h5>
             <img src={icon.img} style={{ height: "75px", width: "75px" }} />

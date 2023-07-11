@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import {
   NavbarContainer,
+  BurgerWrapper,
   LinksWrapper,
   SidebarWrapper,
 } from "./NavbarElements";
@@ -50,7 +51,9 @@ export default function Navbar() {
 
   return (
     <NavbarContainer visible={visible} isOpen={isOpen}>
-      <Burger toggle={toggleSidebar} isOpen={isOpen} />
+      <BurgerWrapper>
+        <Burger toggle={toggleSidebar} isOpen={isOpen} />
+      </BurgerWrapper>
       <LinksWrapper>
         {links.map(({ id, name }, index) => (
           <Links key={id} sidebar="false" title={name} id={name} />

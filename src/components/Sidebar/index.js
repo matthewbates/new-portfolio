@@ -21,14 +21,14 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
     if (isOpen) {
       gsap.timeline().from(".nav-text", {
         opacity: 0,
-        x: -100,
+        x: 25,
         delay: 0.25,
-        duration: 0.5,
+        duration: 0.25,
       });
       gsap.timeline().from(".nav-links", {
         opacity: 0,
-        x: -100,
-        duration: 0.5,
+        x: -25,
+        duration: 0.25,
         delay: 0.5,
       });
     }
@@ -45,7 +45,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
         }}
       >
         <Img src={require("../../assets/avatar.png")} alt="avatar" />
-        <h3
+        {/* <h3
           style={{
             fontFamily: "Arial",
             marginTop: "1em",
@@ -55,7 +55,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
           }}
         >
           Matthew Bates
-        </h3>
+        </h3> */}
       </div>
       <SidebarItems className="nav-links">
         {links.map(({ id, name }) => (
