@@ -14,7 +14,7 @@ export const NavbarLinkContainer = styled(Link)`
   transition: 0.3s;
   font-size: ${({ sidebar }) => (sidebar == "true" ? "1.5em" : null)};
   font-weight: bold;
-  
+
   @media screen and (min-width: 820px) {
     display: flex;
 

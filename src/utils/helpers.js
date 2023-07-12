@@ -39,7 +39,7 @@ export const useIconStyles = () => {
   useEffect(() => {
     const handleResize = () => {
       const updatedStyles = icons.map((icon) => {
-        let height = window.innerWidth > 820 ? "60px" : "42px";
+        let height = window.innerWidth > 820 ? "48px" : "42px";
         return {
           ...icon,
           style: {

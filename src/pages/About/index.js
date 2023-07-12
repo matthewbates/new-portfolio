@@ -1,59 +1,60 @@
 import { useRef, useEffect } from "react";
 
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-import { AboutContainer, AboutText, AboutSkills } from "./AboutElements";
+import {
+  AboutContainer,
+  H2,
+  AboutText,
+  AboutSkills,
+  Img,
+} from "./AboutElements";
 
-import Card from "../../components/Card";
+import CareerText from "../../components/CareerText";
 
 import { aboutText, skills } from "../../utils/data";
 
 export default function About() {
   const iconRef = useRef([]);
+  const skillsRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline();
-
-    tl.from(iconRef.current, {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(iconRef.current, {
+      scrollTrigger: {
+        trigger: iconRef.current,
+        start: "top center",
+        toggleActions: "restart none none none",
+        scrub: 1,
+      },
       opacity: 0,
       y: -20,
-      delay: 1.25,
       stagger: 0.25,
     });
   }, []);
 
   return (
     <AboutContainer id="About">
-      <h2
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          fontFamily: "Arial",
-          color: "#f1f2f2",
-          textTransform: "uppercase",
-          padding: "1em",
-          textDecoration: "underline",
-        }}
-      >
-        About
-      </h2>
+      <H2>About</H2>
       <AboutText>
-        {aboutText.map((item, index) => (
-          <div key={index}>{item.text}</div>
-        ))}
+        {aboutText.map((item, index) =>
+          item.id === 1 ? (
+            item.text
+          ) : item.id === 2 ? (
+            <CareerText key={index} item={item} />
+          ) : (
+            item.text
+          )
+        )}
+
         <AboutSkills>
-          {skills.map((skill, index) => (
-            <img
-              ref={(el) => (iconRef.current[index] = el)}
-              src={skill.img}
-              style={{
-                height: "75px",
-                width: "75px",
-                background: "white",
-                padding: "0.5em",
-                borderRadius: "8px",
-                cursor: "pointer",
-              }}
+          {skills.map(({ id, name, img, label, alt }) => (
+            <Img
+              key={id}
+              ref={(el) => (iconRef.current[id] = el)}
+              src={img}
+              alt={alt}
             />
           ))}
         </AboutSkills>

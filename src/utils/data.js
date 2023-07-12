@@ -7,6 +7,14 @@ import GITHUB from "../assets/github.png";
 import LINKEDIN from "../assets/linkedin.png";
 import MEDIUM from "../assets/medium.png";
 
+export const TARGET = "_blank";
+export const REL = "noopener noreferrer";
+
+export const avatar = {
+  img: require("../assets/avatar.png"),
+  alt: "avatar",
+};
+
 export const links = [
   {
     id: 1,
@@ -37,7 +45,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
     label: "JavaScript",
     alt: "javascript-icon",
-    group: "Languages & Frameworks",
   },
   {
     id: 2,
@@ -45,7 +52,6 @@ export const skills = [
     img: SQL,
     label: "SQL",
     alt: "sql-icon",
-    group: "Languages & Frameworks",
   },
   {
     id: 3,
@@ -53,7 +59,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg",
     label: "Ruby",
     alt: "ruby-icon",
-    group: "Languages & Frameworks",
   },
   {
     id: 4,
@@ -61,7 +66,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg",
     label: "Rails",
     alt: "rails-icon",
-    group: "Languages & Frameworks",
   },
 
   {
@@ -70,7 +74,6 @@ export const skills = [
     img: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
     label: "Git",
     alt: "git-icon",
-    group: "Libraries",
   },
   {
     id: 6,
@@ -78,7 +81,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
     label: "React",
     alt: "react-icon",
-    group: "Libraries",
   },
   {
     id: 7,
@@ -86,7 +88,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
     label: "Node.js",
     alt: "nodejs-icon",
-    group: "Libraries",
   },
   {
     id: 8,
@@ -94,7 +95,6 @@ export const skills = [
     img: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg",
     label: "Jest",
     alt: "jest-icon",
-    group: "Libraries",
   },
   {
     id: 9,
@@ -102,7 +102,6 @@ export const skills = [
     img: MONGODB,
     label: "MongoDB",
     alt: "mongodb-icon",
-    group: "Libraries",
   },
   {
     id: 10,
@@ -110,7 +109,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
     label: "HTML",
     alt: "html-icon",
-    group: "Frontend Development",
   },
   {
     id: 11,
@@ -118,7 +116,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
     label: "CSS",
     alt: "css-icon",
-    group: "Frontend Development",
   },
   {
     id: 12,
@@ -126,7 +123,6 @@ export const skills = [
     img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
     label: "Bootstrap",
     alt: "bootstrap-icon",
-    group: "Frontend Development",
   },
   {
     id: 13,
@@ -134,7 +130,6 @@ export const skills = [
     img: GREENSOCK,
     label: "Greensock",
     alt: "greensock-icon",
-    group: "Frontend Development",
   },
 ];
 
@@ -201,8 +196,15 @@ export const aboutText = [
   },
   {
     id: 2,
-    text: "Fast forward to today, I'm an application developer at the University of Denver. I also do freelance software development on the side, where I design, develop, test, and deploy mobile-optimized sites.",
-    url: "https://www.du.edu/",
+    textOne: "Fast forward to today, I work at the  ",
+    hyperlinkTextOne: "University of Denver",
+    urlOne: "https://www.du.edu/",
+    textTwo: " as an application developer. ",
+    textThree: "I also do ",
+    hyperlinkTextTwo: "freelance software development",
+    urlTwo: "https://soft-lebkuchen-2188b1.netlify.app/",
+    textFour:
+      " on the side where I design, develop, test, and deploy mobile-optimized sites.",
   },
   {
     id: 3,

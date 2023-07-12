@@ -7,20 +7,21 @@ export const NavbarContainer = styled.div`
   background: ${CONSTANTS.colors.royalBlue};
   height: 80px;
   align-items: center;
-  border-bottom: ${({ visible }) =>
-    visible ? `1px solid ${CONSTANTS.colors.offWhite}` : "none"};
+  box-shadow: 0 18px 30px -10px rgba(2, 12, 27, 0.5);
+  /* border-bottom: ${({ visible }) =>
+    visible ? `1px solid ${CONSTANTS.colors.offWhite}` : "none"}; */
   transition: 0.5s;
   /* top: ${({ visible }) => (visible ? "0" : "-60px")}; */
   font-size: 14px;
   top: 0;
   position: sticky;
-  z-index: 998;
+  z-index: 999;
 `;
 
 export const Logo = styled.img`
   margin-left: 1em;
-  height: 60px;
-  width: 60px;
+  height: 55px;
+  width: 55px;
   border-radius: 50%;
   cursor: pointer;
   filter: brightness(150%);

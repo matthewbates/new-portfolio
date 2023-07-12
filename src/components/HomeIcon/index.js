@@ -1,5 +1,4 @@
-const TARGET = "_blank";
-const REL = "noopener noreferrer";
+import { TARGET, REL } from "../../utils/data";
 
 export default function HomeIcon({ name, image, url, style, className }) {
   return (

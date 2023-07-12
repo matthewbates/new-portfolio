@@ -13,11 +13,12 @@ import Burger from "../Burger";
 import Links from "../Links";
 import Sidebar from "../Sidebar";
 
-import { links } from "../../utils/data";
-import logo from "../../assets/avatar.png";
+import { avatar, links } from "../../utils/data";
 
 export default function Navbar() {
+  //! used for <Sidebar /> component
   const [isOpen, setIsOpen] = useState(false);
+  //! used for <Navbar /> component
   const [visible, setVisible] = useState(true);
   const textRef = useRef([]);
 
@@ -31,6 +32,7 @@ export default function Navbar() {
     }
   };
 
+  //! refactor to gsap.js
   useEffect(() => {
     const tl = gsap.timeline();
 
@@ -50,6 +52,7 @@ export default function Navbar() {
         });
   }, []);
 
+  //! refactor to helpers.js file
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -69,17 +72,18 @@ export default function Navbar() {
   // }, []);
 
   const closeDrawer = () => {
-    setTimeout(() => setIsOpen(false), 800);
+    // setTimeout(() => setIsOpen(false), 800);
+    setIsOpen(false);
   };
 
   return (
     <NavbarContainer visible={visible} isOpen={isOpen}>
-      <Logo className="logo" src={logo} alt="logo" />
+      <Logo className="logo" src={avatar.img} alt={avatar.alt} />
       <BurgerWrapper className="burger">
         <Burger toggle={toggleSidebar} isOpen={isOpen} />
       </BurgerWrapper>
       <LinksWrapper ref={textRef}>
-        {links.map(({ id, name }, index) => (
+        {links.map(({ id, name }) => (
           <Links key={id} sidebar="false" title={name} id={name} />
         ))}
       </LinksWrapper>

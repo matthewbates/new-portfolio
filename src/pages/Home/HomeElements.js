@@ -87,7 +87,7 @@ export const ResumeBtn = styled.button`
 
   &:hover {
     transform: translate(2px, -2px);
-    transition: 0.3s ease-in-out;
+    transition: ${CONSTANTS.styles.hover};
     box-shadow: ${CONSTANTS.styles.boxShadow};
   }
 
