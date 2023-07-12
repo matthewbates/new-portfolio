@@ -22,10 +22,7 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true);
   const textRef = useRef([]);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
+  //! refactor to helpers.js
   const handleResize = (e) => {
     if (e.target.innerWidth > 820) {
       setIsOpen(false);
@@ -80,7 +77,7 @@ export default function Navbar() {
     <NavbarContainer visible={visible} isOpen={isOpen}>
       <Logo className="logo" src={avatar.img} alt={avatar.alt} />
       <BurgerWrapper className="burger">
-        <Burger toggle={toggleSidebar} isOpen={isOpen} />
+        <Burger isOpen={isOpen} setIsOpe={setIsOpen} />
       </BurgerWrapper>
       <LinksWrapper ref={textRef}>
         {links.map(({ id, name }) => (

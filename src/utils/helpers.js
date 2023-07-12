@@ -10,6 +10,11 @@ export const closeDrawer = (setIsOpen) => {
   setTimeout(() => setIsOpen(false), 750);
 };
 
+// opens/closes <Sidebar /> when <Burger /> is clicked
+export const toggleSidebar = (isOpen, setIsOpen) => {
+  setIsOpen(!isOpen);
+};
+
 // downloads resume
 export const downloadResume = () => {
   FileSaver.saveAs(resume, "Resume");
@@ -59,4 +64,18 @@ export const useIconStyles = () => {
     };
   }, []);
   return iconStyles;
+};
+
+export const handleClickOutside = (ref, callback) => {
+  const useClickOutside = (e) => {
+    if (ref.current && !ref.current.contains(e.target.value)) {
+      callback();
+    }
+    useEffect(() => {
+      if (e === "mouseup" || "mousedown") {
+        window.addEventListener("resize", useClickOutside);
+      }
+      return () => window.removeEventListener("mousedown", useClickOutside);
+    }, [ref]);
+  };
 };

@@ -13,7 +13,7 @@ export default function Links({
       spy={true}
       offset={0}
       smooth={true}
-      duration={700}
+      duration={750}
       sidebar={sidebar}
       onClick={closeDrawer}
       className={className}

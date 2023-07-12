@@ -2,10 +2,16 @@ import { Squash as Hamburger } from "hamburger-react";
 
 import { BurgerContainer } from "./BurgerElements";
 
-export default function Burger({ toggle, isOpen }) {
+import { toggleSidebar } from "../../utils/helpers";
+
+export default function Burger({ isOpen, setIsOpen }) {
   return (
     <BurgerContainer>
-      <Hamburger toggled={isOpen} toggle={toggle} size={24} />
+      <Hamburger
+        toggled={isOpen}
+        toggle={() => toggleSidebar(isOpen, setIsOpen)}
+        size={24}
+      />
     </BurgerContainer>
   );
 }

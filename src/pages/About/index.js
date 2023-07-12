@@ -24,8 +24,11 @@ export default function About() {
     gsap.from(iconRef.current, {
       scrollTrigger: {
         trigger: iconRef.current,
+        // trigger when the viewport/scroller scrolls by exactly X pixels
+        // start: 200
         start: "top center",
-        toggleActions: "restart none none none",
+        // toggleActions: "restart none none none",
+        toggleAction: "play none none none",
         scrub: 1,
       },
       opacity: 0,

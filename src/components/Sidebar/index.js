@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 
 import gsap from "gsap";
 
-import { SidebarContainer, Img, SidebarItems } from "./SidebarElements";
+import { SidebarContainer, SidebarItems } from "./SidebarElements";
 
 import Links from "../Links";
 
@@ -17,6 +17,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
     setIsOpen(false);
   });
 
+  //! refactor to gsap.js
   useEffect(() => {
     if (isOpen) {
       gsap.timeline().from(linkRef.current, {
@@ -30,7 +31,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
   return (
     <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
       <SidebarItems ref={linkRef}>
-        {links.map(({ id, name }, index) => (
+        {links.map(({ id, name }) => (
           <Links
             key={id}
             sidebar="true"

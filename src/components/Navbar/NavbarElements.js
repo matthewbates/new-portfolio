@@ -7,10 +7,9 @@ export const NavbarContainer = styled.div`
   background: ${CONSTANTS.colors.royalBlue};
   height: 80px;
   align-items: center;
-  box-shadow: 0 18px 30px -10px rgba(2, 12, 27, 0.5);
-  /* border-bottom: ${({ visible }) =>
-    visible ? `1px solid ${CONSTANTS.colors.offWhite}` : "none"}; */
+  box-shadow: ${CONSTANTS.styles.navbarBoxShadow};
   transition: 0.5s;
+  //! for show/hide <Navbar /> custom hook
   /* top: ${({ visible }) => (visible ? "0" : "-60px")}; */
   font-size: 14px;
   top: 0;

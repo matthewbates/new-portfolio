@@ -6,7 +6,7 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: ${CONSTANTS.styles.height};
   background: ${CONSTANTS.colors.royalBlue};
 `;
 
@@ -22,14 +22,14 @@ export const HomeText = styled.div`
 
   div {
     &:first-child {
-      font-family: "Space Mono";
+      font-family: ${CONSTANTS.styles.spaceMono};
 
       @media screen and (min-width: 820px) {
         font-size: 18px;
       }
     }
     &:nth-child(2) {
-      font-family: "Arial";
+      font-family: ${CONSTANTS.styles.arial};
       font-size: 2em;
       font-weight: bold;
       color: ${CONSTANTS.colors.spaceGreen};
@@ -43,7 +43,7 @@ export const HomeText = styled.div`
       }
     }
     &:nth-child(3) {
-      font-family: "Space Mono";
+      font-family: ${CONSTANTS.styles.spaceMono};
 
       @media screen and (min-width: 820px) {
         font-size: 18px;
@@ -54,8 +54,8 @@ export const HomeText = styled.div`
 
 export const IconWrapper = styled.div`
   display: grid;
-  text-align: center;
   grid-template-columns: repeat(2, 1fr);
+  text-align: center;
   margin: auto;
   margin-top: 1em;
   gap: 0.75em;
