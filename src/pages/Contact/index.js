@@ -1,38 +1,19 @@
 import { useState } from "react";
+import { contact } from "../../utils/data";
 
-import {
-  ContactContainer,
-  H2,
-  Form,
-  Input,
-  Value,
-  SubmitBtn,
-} from "./ContactElements";
+import { ContactContainer, Form, H2, Label, Input } from "./ContactElements";
 
 export default function Contact() {
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <ContactContainer id="Contact">
       <H2>Contact</H2>
-      <Form onSubmit={handleSubmit}>
-        <Value />
-        <Input type="text" />
-        <Value />
-        <Input tyle="email" />
-        <Value />
-        <Input type="text" />
-        <Value />
-        <Input type="message" rows="6" />
+      <Form>
+        {contact.map(({ id, name, type, row }, index) => (
+          <>
+            <Label>{name[0].toLocaleUpperCase() + name.slice(1)}</Label>
+            <Input type={type} />
+          </>
+        ))}
       </Form>
     </ContactContainer>
   );

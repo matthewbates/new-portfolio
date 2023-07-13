@@ -56,6 +56,7 @@ export const IconWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
+  align-items: center;
   margin: auto;
   margin-top: 1em;
   gap: 0.75em;
@@ -64,6 +65,7 @@ export const IconWrapper = styled.div`
   background: ${CONSTANTS.colors.offWhite};
   border-radius: ${CONSTANTS.styles.borderRadius};
   border: ${CONSTANTS.styles.border};
+  mixed-blend-mode: color-burn;
 
   @media screen and (min-width: 820px) {
     display: flex;
@@ -77,10 +79,9 @@ export const ResumeBtn = styled.button`
   height: 42px;
   width: 144px;
   font-family: "Arial";
-  border: ${CONSTANTS.styles.border};
-  border-radius: ${CONSTANTS.styles.borderRadius};
-  background: ${CONSTANTS.colors.offWhite};
-  color: ${CONSTANTS.colors.offBlack};
+  border: 1px solid ${CONSTANTS.colors.spaceGreen};
+  background: transparent;
+  color: ${CONSTANTS.colors.offWhite};
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;

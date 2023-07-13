@@ -4,6 +4,8 @@ import styled from "styled-components";
 import CONSTANTS from "../../utils/constants";
 
 export const NavbarLinkContainer = styled(Link)`
+  display: flex;
+  align-items: center;
   font-family: "Arial";
   cursor: pointer;
   text-transform: ${({ sidebar }) =>
@@ -44,6 +46,4 @@ export const NavbarLinkContainer = styled(Link)`
   &:hover::after {
     transform: scaleX(1);
   }
-
-  text-decoration: ${({ active }) => (active ? "underline" : "none")};
 `;

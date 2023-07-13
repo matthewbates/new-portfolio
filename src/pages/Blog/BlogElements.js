@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import CONSTANTS from "../../utils/constants";
 
-export const ProjectContainer = styled.div`
+export const BlogContainer = styled.div`
   height: 100vh;
   background: ${CONSTANTS.colors.royalBlue};
   border-top: 1px solid ${CONSTANTS.colors.offWhite};

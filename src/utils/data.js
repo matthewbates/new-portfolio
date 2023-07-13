@@ -26,11 +26,11 @@ export const links = [
   },
   {
     id: 3,
-    name: "Skills",
+    name: "Projects",
   },
   {
     id: 4,
-    name: "Projects",
+    name: "Blog",
   },
   {
     id: 5,
@@ -143,6 +143,7 @@ export const icons = [
     style: {
       background: "#A8332A",
       borderRadius: "8px",
+      padding: "0.2em",
     },
   },
   {
@@ -153,6 +154,8 @@ export const icons = [
     className: "icons",
     style: {
       transform: "scale(1.2)",
+      background: "#ffffff",
+      mixedBlendMode: "color-burn",
     },
   },
   {
@@ -170,6 +173,7 @@ export const icons = [
     className: "icons",
     style: {
       transform: "scale(1.05)",
+      background: "#ffffff",
     },
   },
 ];
@@ -209,5 +213,33 @@ export const aboutText = [
   {
     id: 3,
     text: "Some of the technologies that I utilize include:",
+  },
+  // {
+  //   id: 4,
+  //   text: "When I'm not sitting in front of a computer",
+  // },
+];
+
+export const contact = [
+  {
+    id: 1,
+    name: "name",
+    type: "text",
+  },
+  {
+    id: 2,
+    name: "email",
+    type: "email",
+  },
+  {
+    id: 3,
+    name: "number",
+    type: "text",
+  },
+  {
+    id: 4,
+    name: "message",
+    type: "message",
+    row: 6,
   },
 ];

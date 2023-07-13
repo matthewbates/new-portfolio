@@ -5,7 +5,7 @@ import CONSTANTS from "../../utils/constants";
 export const AboutContainer = styled.div`
   height: 100%;
   background: ${CONSTANTS.colors.royalBlue};
-  border-top: 1px solid white;
+  border-top: 1px solid ${CONSTANTS.colors.offWhite};
 `;
 
 export const H2 = styled.h2`
@@ -14,7 +14,7 @@ export const H2 = styled.h2`
   font-family: "Arial";
   color: ${CONSTANTS.colors.offWhite};
   text-transform: uppercase;
-  margin: 5% 0 5% 0;
+  margin: 2em 0 2em 0;
   text-decoration: underline;
 `;
 

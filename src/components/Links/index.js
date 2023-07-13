@@ -1,11 +1,13 @@
+import { closeDrawer } from "../../utils/helpers";
+
 import { NavbarLinkContainer } from "./LinkElements";
 
 export default function Links({
   title,
   sidebar,
-  closeDrawer,
   className,
   index,
+  closeDrawer,
 }) {
   return (
     <NavbarLinkContainer

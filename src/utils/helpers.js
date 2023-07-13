@@ -20,6 +20,11 @@ export const downloadResume = () => {
   FileSaver.saveAs(resume, "Resume");
 };
 
+// scrolls to the top of the page when <Logo /> is clicked in <Navbar />
+export const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+};
+
 // closes <Sidebar /> when the user clicks outside
 export const useClickOutside = (ref, callback) => {
   const handleClickOutside = (e) => {
@@ -64,18 +69,4 @@ export const useIconStyles = () => {
     };
   }, []);
   return iconStyles;
-};
-
-export const handleClickOutside = (ref, callback) => {
-  const useClickOutside = (e) => {
-    if (ref.current && !ref.current.contains(e.target.value)) {
-      callback();
-    }
-    useEffect(() => {
-      if (e === "mouseup" || "mousedown") {
-        window.addEventListener("resize", useClickOutside);
-      }
-      return () => window.removeEventListener("mousedown", useClickOutside);
-    }, [ref]);
-  };
 };

@@ -25,11 +25,9 @@ export default function About() {
       scrollTrigger: {
         trigger: iconRef.current,
         // trigger when the viewport/scroller scrolls by exactly X pixels
-        // start: 200
+        // start: 500,
         start: "top center",
-        // toggleActions: "restart none none none",
-        toggleAction: "play none none none",
-        scrub: 1,
+        toggleActions: "play none none none",
       },
       opacity: 0,
       y: -20,
@@ -50,7 +48,6 @@ export default function About() {
             item.text
           )
         )}
-
         <AboutSkills>
           {skills.map(({ id, name, img, label, alt }) => (
             <Img

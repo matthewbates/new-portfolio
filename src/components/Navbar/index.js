@@ -14,6 +14,7 @@ import Links from "../Links";
 import Sidebar from "../Sidebar";
 
 import { avatar, links } from "../../utils/data";
+import { scrollToTop } from "../../utils/helpers";
 
 export default function Navbar() {
   //! used for <Sidebar /> component
@@ -69,15 +70,19 @@ export default function Navbar() {
   // }, []);
 
   const closeDrawer = () => {
-    // setTimeout(() => setIsOpen(false), 800);
-    setIsOpen(false);
+    setTimeout(() => setIsOpen(false), 800);
   };
 
   return (
     <NavbarContainer visible={visible} isOpen={isOpen}>
-      <Logo className="logo" src={avatar.img} alt={avatar.alt} />
+      <Logo
+        className="logo"
+        onClick={scrollToTop}
+        src={avatar.img}
+        alt={avatar.alt}
+      />
       <BurgerWrapper className="burger">
-        <Burger isOpen={isOpen} setIsOpe={setIsOpen} />
+        <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
       </BurgerWrapper>
       <LinksWrapper ref={textRef}>
         {links.map(({ id, name }) => (

@@ -37,6 +37,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
             sidebar="true"
             title={name}
             id={name}
+            setIsOpen={setIsOpen}
             closeDrawer={closeDrawer}
           />
         ))}
