@@ -8,6 +8,7 @@ import Links from "../Links";
 
 import { useResize, useClickOutside } from "../../utils/helpers";
 import { links } from "../../utils/data";
+import Resume from "../Resume";
 
 export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
   const sidebarRef = useRef(null);
@@ -28,6 +29,22 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      if (
+        currentScrollPos >= prevScrollPos ||
+        currentScrollPos <= prevScrollPos
+      )
+        setIsOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
       <SidebarItems ref={linkRef}>
@@ -41,6 +58,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
             closeDrawer={closeDrawer}
           />
         ))}
+        <Resume sidebar="true" />
       </SidebarItems>
     </SidebarContainer>
   );

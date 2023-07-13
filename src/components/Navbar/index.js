@@ -15,6 +15,7 @@ import Sidebar from "../Sidebar";
 
 import { avatar, links } from "../../utils/data";
 import { scrollToTop } from "../../utils/helpers";
+import Resume from "../Resume";
 
 export default function Navbar() {
   //! used for <Sidebar /> component
@@ -56,18 +57,18 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // useEffect(() => {
-  //   let prevScrollPos = window.pageYOffset;
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
 
-  //   const handleScroll = () => {
-  //     const currentScrollPos = window.pageYOffset;
-  //     currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
-  //     prevScrollPos = currentScrollPos;
-  //   };
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
+      prevScrollPos = currentScrollPos;
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const closeDrawer = () => {
     setTimeout(() => setIsOpen(false), 800);
@@ -88,6 +89,7 @@ export default function Navbar() {
         {links.map(({ id, name }) => (
           <Links key={id} sidebar="false" title={name} id={name} />
         ))}
+        <Resume sidebar="false" />
       </LinksWrapper>
       <Sidebar
         isOpen={isOpen}

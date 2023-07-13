@@ -43,12 +43,6 @@ export const AboutSkills = styled.div`
   flex-wrap: wrap;
   gap: 1em;
   margin-bottom: 10%;
-
-  &.about-skills {
-    :hover {
-      transform: translate(-4px, 4px);
-    }
-  }
 `;
 
 export const Img = styled.img`

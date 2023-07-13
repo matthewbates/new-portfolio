@@ -10,7 +10,7 @@ export const NavbarContainer = styled.div`
   box-shadow: ${CONSTANTS.styles.navbarBoxShadow};
   transition: 0.5s;
   //! for show/hide <Navbar /> custom hook
-  /* top: ${({ visible }) => (visible ? "0" : "-60px")}; */
+  /* top: ${({ visible }) => (visible ? "0" : "-80px")}; */
   font-size: 14px;
   top: 0;
   position: sticky;
@@ -44,5 +44,3 @@ export const LinksWrapper = styled.div`
     margin-left: auto;
   }
 `;
-
-export const SidebarWrapper = styled.div``;

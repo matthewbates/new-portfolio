@@ -30,15 +30,15 @@ export default function Home() {
     });
     tl.from(".icon", {
       opacity: 0,
-      x: 20,
+      y: 20,
       stagger: 0.25,
       delay: 0.25,
     });
-    tl.from(".button", {
-      opacity: 0,
-      y: 20,
-      delay: 0.25,
-    });
+    // tl.from(".button", {
+    //   opacity: 0,
+    //   y: 20,
+    //   delay: 0.25,
+    // });
   }, []);
 
   return (
@@ -62,9 +62,9 @@ export default function Home() {
             />
           ))}
         </IconWrapper>
-        <ResumeBtn className="button" onClick={downloadResume}>
+        {/* <ResumeBtn className="button" onClick={downloadResume}>
           Resume
-        </ResumeBtn>
+        </ResumeBtn> */}
       </HomeItems>
     </HomeContainer>
   );

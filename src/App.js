@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Blog />
       <Projects />
       <Contact />
+      {/* <ScrollToTop /> */}
+      <Footer />
     </div>
   );
 }

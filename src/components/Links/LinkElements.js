@@ -38,7 +38,7 @@ export const NavbarLinkContainer = styled(Link)`
     left: 0;
     background-color: ${CONSTANTS.colors.offWhite};
     transform-origin: bottom right;
-    transition: transform 0.3s;
+    -webkit-transition: transform 0.3s ease-in-out;
     transform: scaleX(0);
     transform-origin: bottom left;
   }
