@@ -17,10 +17,8 @@ import { avatar, links } from "../../utils/data";
 import { scrollToTop } from "../../utils/helpers";
 import Resume from "../Resume";
 
-export default function Navbar() {
-  //! used for <Sidebar /> component
-  const [isOpen, setIsOpen] = useState(false);
-  //! used for <Navbar /> component
+export default function Navbar({ isOpen, setIsOpen }) {
+  // const [isOpen, setIsOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const textRef = useRef([]);
 

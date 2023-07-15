@@ -32,17 +32,24 @@ export const AboutText = styled.div`
 
   @media screen and (min-width: 820px) {
     max-width: 50%;
-    font-size: 1.5em;
+    font-sikze: 1.5em;
   }
 `;
 
 export const AboutSkills = styled.div`
   display: flex;
-  margin: auto;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
   margin-bottom: 10%;
+
+  div {
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
 `;
 
 export const Img = styled.img`
@@ -54,6 +61,6 @@ export const Img = styled.img`
   cursor: pointer;
 
   &:hover {
-    transform: translate(-4px, 4px);
+    transform: translate(4px);
   }
 `;

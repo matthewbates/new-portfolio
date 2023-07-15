@@ -26,20 +26,20 @@ export const scrollToTop = () => {
 };
 
 // closes <Sidebar /> when the user clicks outside
-export const useClickOutside = (ref, callback) => {
-  const handleClickOutside = (e) => {
+export const useClickOutside = (ref, handler) => {
+  const listener = (e) => {
     if (ref.current && !ref.current.contains(e.target)) {
       if (!ref.current.parentNode.contains(e.target)) {
-        callback();
+        handler();
       }
     }
   };
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", listener);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", listener);
     };
-  }, [ref, callback]);
+  }, [ref, handler]);
 };
 
 // handles the resizing of <HomeIcon /> depending on window.innerWidth

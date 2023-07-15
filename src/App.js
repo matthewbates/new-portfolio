@@ -1,5 +1,7 @@
 import "./App.css";
 
+import { useState } from "react";
+
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -10,10 +12,12 @@ import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div className="App">
-      <Navbar />
-      <Home />
+      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Home isOpen={isOpen} />
       <About />
       <Blog />
       <Projects />

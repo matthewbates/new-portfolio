@@ -2,18 +2,9 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 
-import {
-  BlogContainer,
-  H2,
-  BlogItems,
-  LI,
-  BlogTitle,
-  BlogImg,
-} from "./BlogElements";
+import { BlogContainer, H2, BlogItems, Img } from "./BlogElements";
 
-const USERNAME = "matthewhcbates";
-const RSSURL = `https://medium.com/feed/@${USERNAME}`;
-const RSSCONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSSURL}`;
+import { RSSCONVERTER } from "../../utils/data";
 
 export default function Blog() {
   const [blogs, setBlogs] = useState([]);
@@ -36,16 +27,15 @@ export default function Blog() {
   console.log(blogs);
 
   return (
-    <BlogContainer id="Blog">
-      <H2>Blogs</H2>
-      <BlogItems>
-        {blogs.map((blog) => (
-          <LI>
-            <BlogTitle>{blog.title}</BlogTitle>
-            <BlogImg src={blog.thumbnail} />
-          </LI>
-        ))}
-      </BlogItems>
-    </BlogContainer>
+    <section id="Blog">
+      <BlogContainer>
+        <H2>Blogs</H2>
+        <BlogItems>
+          {blogs.map((blog) => (
+            <Img src={blog.thumbnail} alt="img" />
+          ))}
+        </BlogItems>
+      </BlogContainer>
+    </section>
   );
 }

@@ -15,7 +15,7 @@ import HomeIcon from "../../components/HomeIcon";
 import { homeText } from "../../utils/data";
 import { downloadResume, useIconStyles } from "../../utils/helpers";
 
-export default function Home() {
+export default function Home({ isOpen }) {
   const iconStyles = useIconStyles();
   const textRef = useRef([]);
 
@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <HomeContainer id="Home">
+    <HomeContainer id="Home" isOpen={isOpen}>
       <HomeItems>
         <HomeText>
           {homeText.map(({ id, text }, index) => (

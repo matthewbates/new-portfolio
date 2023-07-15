@@ -50,12 +50,14 @@ export default function About() {
         )}
         <AboutSkills>
           {skills.map(({ id, name, img, label, alt }) => (
-            <Img
-              key={id}
-              ref={(el) => (iconRef.current[id] = el)}
-              src={img}
-              alt={alt}
-            />
+            <div>
+              <Img
+                key={id}
+                ref={(el) => (iconRef.current[id] = el)}
+                src={img}
+                alt={alt}
+              />
+            </div>
           ))}
         </AboutSkills>
       </AboutText>

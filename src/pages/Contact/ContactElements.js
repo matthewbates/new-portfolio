@@ -21,9 +21,13 @@ export const H2 = styled.h2`
 
 export const Form = styled.form`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   width: 90%;
-  max-width: 500px;
+  border-radius: 8px;
+  background: white;
+  border: none;
+  background: ${CONSTANTS.colors.royalBlue};
 `;
 
 export const Label = styled.label`
@@ -35,7 +39,12 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   padding: 0.75em;
+  width: 75%;
   border-radius: 8px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const SubmitBtn = styled.button`
