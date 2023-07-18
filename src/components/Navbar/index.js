@@ -34,17 +34,17 @@ export default function Navbar({ isOpen, setIsOpen }) {
     const tl = gsap.timeline();
 
     tl.from(".logo", {
-      x: -200,
+      y: -100,
       opacity: 0,
       duration: 0.5,
     });
     window.innerWidth > 820
       ? tl.from(textRef.current, {
-          x: 200,
+          y: -100,
           opacity: 0,
         })
       : tl.from(".burger", {
-          x: 200,
+          y: -100,
           opacity: 0,
         });
   }, []);

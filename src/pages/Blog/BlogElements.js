@@ -23,20 +23,22 @@ export const BlogItems = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
-  /* padding: 1em; */
 `;
 
 export const Img = styled.img`
   display: flex;
-  max-width: 100%;
-  width: 325px;
+  width: 90%;
   height: 250px;
   cursor: pointer;
   filter: brightness(50%);
   transition: 0.3s ease-in-out;
+  border-radius: 8px;
 
   &:hover {
     filter: brightness(100%);
-    backdrop-filter: blur(8px);
+  }
+
+  @media screen and (min-width: 820px) {
+    width: 450px;
   }
 `;

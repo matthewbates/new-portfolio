@@ -13,7 +13,7 @@ import {
 import HomeIcon from "../../components/HomeIcon";
 
 import { homeText } from "../../utils/data";
-import { downloadResume, useIconStyles } from "../../utils/helpers";
+import { downloadResume, useIconStyles } from "../../utils/hooks";
 
 export default function Home({ isOpen }) {
   const iconStyles = useIconStyles();

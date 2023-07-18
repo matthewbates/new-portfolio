@@ -6,7 +6,7 @@ import { SidebarContainer, SidebarItems } from "./SidebarElements";
 
 import Links from "../Links";
 
-import { useResize, useClickOutside } from "../../utils/helpers";
+import { useResize, useClickOutside } from "../../utils/hooks";
 import { links } from "../../utils/data";
 import Resume from "../Resume";
 

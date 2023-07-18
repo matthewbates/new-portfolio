@@ -62,7 +62,7 @@ export const IconWrapper = styled.div`
   gap: 0.75em;
   border: 1px solid white;
   padding: 1em;
-  background: ${CONSTANTS.colors.offWhite};
+  background: white;
   border-radius: ${CONSTANTS.styles.borderRadius};
   border: ${CONSTANTS.styles.border};
   mixed-blend-mode: color-burn;

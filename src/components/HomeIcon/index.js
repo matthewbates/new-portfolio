@@ -1,3 +1,5 @@
+import { Img } from "./HomeIconElements";
+
 import { TARGET, REL } from "../../utils/data";
 
 export default function HomeIcon({ name, image, url, style, className }) {

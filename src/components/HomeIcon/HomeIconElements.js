@@ -8,3 +8,7 @@ export const HomeIconContainer = styled.div`
     transform: scale(1.1);
   }
 `;
+
+export const Img = styled.img`
+  mixed-blend-mode: multiply;
+`;

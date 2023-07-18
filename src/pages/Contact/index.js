@@ -1,20 +1,42 @@
-import { Fragment, useState } from "react";
-import { contact } from "../../utils/data";
+// import "./contact.css";
 
-import { ContactContainer, Form, H2, Label, Input } from "./ContactElements";
+import { useState } from "react";
+
+import { FaUser } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { RiMessage2Fill } from "react-icons/ri";
+
+import { ContractContainer, Form, H2, ContactItems } from "./ContactElements";
 
 export default function Contact() {
+  const [error, setError] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <ContactContainer id="Contact">
-      <H2>Contact</H2>
-      <Form>
-        {contact.map(({ id, name, type, row }, index) => (
-          <Fragment key={id}>
-            <Label>{name[0].toLocaleUpperCase() + name.slice(1)}</Label>
-            <Input type={type} />
-          </Fragment>
-        ))}
+    <ContractContainer id="Contact">
+      <Form onSubmit={handleSubmit}>
+        <H2>Contact</H2>
+        <ContactItems className="user-box">
+          <input type="text" />
+          <label>Username</label>
+        </ContactItems>
+        <ContactItems className="user-box">
+          <input type="email" />
+          <label>Password</label>
+        </ContactItems>
+        <ContactItems>
+          <input type="message" />
+          <label>Message</label>
+        </ContactItems>
+        <button>Submit</button>
       </Form>
-    </ContactContainer>
+    </ContractContainer>
   );
 }

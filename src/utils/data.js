@@ -147,7 +147,6 @@ export const icons = [
     style: {
       background: "#A8332A",
       borderRadius: "8px",
-      padding: "0.2em",
     },
   },
   {
@@ -159,7 +158,6 @@ export const icons = [
     style: {
       transform: "scale(1.2)",
       background: "#ffffff",
-      mixedBlendMode: "color-burn",
     },
   },
   {
