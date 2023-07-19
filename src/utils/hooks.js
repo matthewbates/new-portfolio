@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 
-import { RSSCONVERTER, icons } from "./data";
+import { RSS_CONVERTER, icons } from "./data";
 
 // closes <Sidebar /> when the user clicks outside
 export const useClickOutside = (ref, handler) => {
@@ -55,7 +55,7 @@ export const useFetchBlogs = (setBlogs) => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get(RSSCONVERTER);
+        const response = await axios.get(RSS_CONVERTER);
         if (response.status === 200) {
           console.log(response);
           setBlogs(response.data.items);

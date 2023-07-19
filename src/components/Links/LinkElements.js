@@ -16,6 +16,8 @@ export const NavbarLinkContainer = styled(Link)`
   transition: 0.3s;
   font-size: ${({ sidebar }) => (sidebar == "true" ? "1.5em" : null)};
   font-weight: bold;
+  color: ${({ activeIndex, index }) =>
+    activeIndex === index && `${CONSTANTS.colors.spaceGreen}`};
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -25,7 +27,7 @@ export const NavbarLinkContainer = styled(Link)`
     }
   }
 
-  &:hover {
+  /* &:hover {
     transform: translate(0px);
   }
 
@@ -45,5 +47,5 @@ export const NavbarLinkContainer = styled(Link)`
 
   &:hover::after {
     transform: scaleX(1);
-  }
+  } */
 `;

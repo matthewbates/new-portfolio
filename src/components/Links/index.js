@@ -1,5 +1,3 @@
-import { closeDrawer } from "../../utils/helpers";
-
 import { NavbarLinkContainer } from "./LinkElements";
 
 export default function Links({
@@ -7,8 +5,19 @@ export default function Links({
   sidebar,
   className,
   index,
+  activeIndex,
+  toggle,
   closeDrawer,
 }) {
+  const handleClick = () => {
+    if (sidebar === "false") {
+      toggle(index);
+    } else {
+      toggle(index);
+      closeDrawer();
+    }
+  };
+
   return (
     <NavbarLinkContainer
       to={title}
@@ -17,9 +26,11 @@ export default function Links({
       smooth={true}
       duration={750}
       sidebar={sidebar}
-      onClick={closeDrawer}
       className={className}
       index={index}
+      activeIndex={activeIndex}
+      toggle={toggle}
+      onClick={handleClick}
     >
       {title}
     </NavbarLinkContainer>

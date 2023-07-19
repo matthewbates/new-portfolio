@@ -10,7 +10,13 @@ import { useResize, useClickOutside } from "../../utils/hooks";
 import { links } from "../../utils/data";
 import Resume from "../Resume";
 
-export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
+export default function Sidebar({
+  isOpen,
+  setIsOpen,
+  closeDrawer,
+  toggle,
+  activeIndex,
+}) {
   const sidebarRef = useRef(null);
   const linkRef = useRef(null);
 
@@ -48,7 +54,7 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
   return (
     <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
       <SidebarItems ref={linkRef}>
-        {links.map(({ id, name }) => (
+        {links.map(({ id, name }, index) => (
           <Links
             key={id}
             sidebar="true"
@@ -56,6 +62,9 @@ export default function Sidebar({ isOpen, setIsOpen, closeDrawer }) {
             id={name}
             setIsOpen={setIsOpen}
             closeDrawer={closeDrawer}
+            toggle={toggle}
+            index={index}
+            activeIndex={activeIndex}
           />
         ))}
         <Resume sidebar="true" />

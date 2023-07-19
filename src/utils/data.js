@@ -12,7 +12,7 @@ export const REL = "noopener noreferrer";
 
 const USERNAME = "matthewhcbates";
 const RSSURL = `https://medium.com/feed/@${USERNAME}`;
-export const RSSCONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSSURL}`;
+export const RSS_CONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSSURL}`;
 
 export const avatar = {
   img: require("../assets/avatar.png"),

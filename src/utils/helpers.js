@@ -21,3 +21,37 @@ export const downloadResume = () => {
 export const scrollToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 };
+
+// reformats the date in <Blog />
+export const formatDate = (dateStr) => {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const date = new Date(dateStr);
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  const formattedDate = `${month} ${day}, ${year}`;
+
+  return formattedDate;
+};
+
+// formats the title in <BlogItem /> that relpaces the "&amp:" text with "&"
+export const formatBlogTitle = (title) => {
+  const decodedTitle = document.createElement("textarea");
+  decodedTitle.innerHTML = title;
+  return decodedTitle.value;
+};

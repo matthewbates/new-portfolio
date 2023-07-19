@@ -15,21 +15,25 @@ import Sidebar from "../Sidebar";
 
 import { avatar, links } from "../../utils/data";
 import { scrollToTop } from "../../utils/helpers";
-import Resume from "../Resume";
+
+const linkHighlightOnPageLoad = links.findIndex((link) => link.name === "Home");
 
 export default function Navbar({ isOpen, setIsOpen }) {
-  // const [isOpen, setIsOpen] = useState(false);
-  // const [visible, setVisible] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(
+    linkHighlightOnPageLoad !== -1 ? linkHighlightOnPageLoad : 0
+  );
   const textRef = useRef([]);
 
-  //! refactor to helpers.js
   const handleResize = (e) => {
     if (e.target.innerWidth > 820) {
       setIsOpen(false);
     }
   };
 
-  //! refactor to gsap.js
+  const toggleActiveIndex = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
+
   useEffect(() => {
     const tl = gsap.timeline();
 
@@ -49,24 +53,10 @@ export default function Navbar({ isOpen, setIsOpen }) {
         });
   }, []);
 
-  //! refactor to helpers.js file
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  // useEffect(() => {
-  //   let prevScrollPos = window.pageYOffset;
-
-  //   const handleScroll = () => {
-  //     const currentScrollPos = window.pageYOffset;
-  //     currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
-  //     prevScrollPos = currentScrollPos;
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
 
   const closeDrawer = () => {
     setTimeout(() => setIsOpen(false), 800);
@@ -84,15 +74,24 @@ export default function Navbar({ isOpen, setIsOpen }) {
         <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
       </BurgerWrapper>
       <LinksWrapper ref={textRef}>
-        {links.map(({ id, name }) => (
-          <Links key={id} sidebar="false" title={name} id={name} />
+        {links.map(({ id, name }, index) => (
+          <Links
+            key={id}
+            sidebar="false"
+            title={name}
+            id={name}
+            toggle={toggleActiveIndex}
+            index={index}
+            activeIndex={activeIndex}
+          />
         ))}
-        {/* <Resume sidebar="false" /> */}
       </LinksWrapper>
       <Sidebar
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         closeDrawer={closeDrawer}
+        toggle={toggleActiveIndex}
+        activeIndex={activeIndex}
       />
     </NavbarContainer>
   );

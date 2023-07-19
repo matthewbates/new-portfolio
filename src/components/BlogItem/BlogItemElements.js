@@ -1,24 +1,6 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
+
 import CONSTANTS from "../../utils/constants";
-
-export const BlogContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 0 10px;
-  background: ${CONSTANTS.colors.royalBlue};
-  border-top: 1px solid ${CONSTANTS.colors.offWhite};
-`;
-
-export const H2 = styled.h2`
-  display: flex;
-  justify-content: center;
-  font-family: "Arial";
-  color: ${CONSTANTS.colors.offWhite};
-  text-transform: uppercase;
-  margin: 2em 0 0 0;
-  text-decoration: underline;
-`;
 
 export const BlogItems = styled.div`
   display: flex;
@@ -28,6 +10,10 @@ export const BlogItems = styled.div`
   max-width: 1200px;
   margin: auto;
   cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 2em;
+  }
 `;
 
 export const Img = styled.img`
@@ -39,9 +25,10 @@ export const Title = styled.div`
   font-family: ${CONSTANTS.styles.arial};
   color: ${CONSTANTS.colors.offWhite};
   font-family: "Raleway";
-  font-size: 0.75em;
+  font-size: 1.2em;
   margin-top: 1em;
   -webkit-transition: 0.3s ease-in-out;
+  max-width: 350px;
 
   &:hover {
     color: ${CONSTANTS.colors.spaceGreen};
