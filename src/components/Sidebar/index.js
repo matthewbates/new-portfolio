@@ -6,6 +6,7 @@ import { SidebarContainer, SidebarItems } from "./SidebarElements";
 
 import Links from "../Links";
 
+import { closeDrawer } from "../../utils/helpers";
 import { useResize, useClickOutside } from "../../utils/hooks";
 import { links } from "../../utils/data";
 import Resume from "../Resume";
@@ -16,6 +17,7 @@ export default function Sidebar({
   closeDrawer,
   toggle,
   activeIndex,
+  activeStyle,
 }) {
   const sidebarRef = useRef(null);
   const linkRef = useRef(null);
@@ -35,21 +37,21 @@ export default function Sidebar({
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    let prevScrollPos = window.pageYOffset;
+  // useEffect(() => {
+  //   let prevScrollPos = window.pageYOffset;
 
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      if (
-        currentScrollPos >= prevScrollPos ||
-        currentScrollPos <= prevScrollPos
-      )
-        setIsOpen(false);
-    };
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.pageYOffset;
+  //     if (
+  //       currentScrollPos >= prevScrollPos ||
+  //       currentScrollPos <= prevScrollPos
+  //     )
+  //       setIsOpen(false);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   return (
     <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
@@ -61,10 +63,10 @@ export default function Sidebar({
             title={name}
             id={name}
             setIsOpen={setIsOpen}
-            closeDrawer={closeDrawer}
             toggle={toggle}
             index={index}
             activeIndex={activeIndex}
+            activeStyle={activeStyle}
           />
         ))}
         <Resume sidebar="true" />

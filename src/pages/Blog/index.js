@@ -22,6 +22,8 @@ export default function Blog() {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
+
+
   useFetchBlogs(setBlogs);
 
   return (

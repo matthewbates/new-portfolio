@@ -28,7 +28,7 @@ export const Title = styled.div`
   font-size: 1.2em;
   margin-top: 1em;
   -webkit-transition: 0.3s ease-in-out;
-  max-width: 350px;
+  max-width: 380px;
 
   &:hover {
     color: ${CONSTANTS.colors.spaceGreen};

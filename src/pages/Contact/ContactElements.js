@@ -93,7 +93,7 @@ export const ContactItems = styled.div`
     ${CONSTANTS.colors.offWhite};
     color: ${CONSTANTS.colors.offWhite};
     font-size: 16px;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 0.5em;
 
     &:focus {

@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 
-import gsap from "gsap";
-
 import {
   NavbarContainer,
   Logo,
@@ -13,8 +11,10 @@ import Burger from "../Burger";
 import Links from "../Links";
 import Sidebar from "../Sidebar";
 
+import CONSTANTS from "../../utils/constants";
 import { avatar, links } from "../../utils/data";
-import { scrollToTop } from "../../utils/helpers";
+import { animateNavbar } from "../../utils/gsap";
+import { useHandleResize, scrollToTop } from "../../utils/helpers";
 
 const linkHighlightOnPageLoad = links.findIndex((link) => link.name === "Home");
 
@@ -22,44 +22,44 @@ export default function Navbar({ isOpen, setIsOpen }) {
   const [activeIndex, setActiveIndex] = useState(
     linkHighlightOnPageLoad !== -1 ? linkHighlightOnPageLoad : 0
   );
+  const [activeSection, setActiveSection] = useState(null);
   const textRef = useRef([]);
-
-  const handleResize = (e) => {
-    if (e.target.innerWidth > 820) {
-      setIsOpen(false);
-    }
-  };
+  useHandleResize(setIsOpen);
 
   const toggleActiveIndex = (index) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
-  useEffect(() => {
-    const tl = gsap.timeline();
+  const handleScroll = () => {
+    const pageYOffset = window.pageYOffset;
+    let newActiveSection = null;
 
-    tl.from(".logo", {
-      y: -100,
-      opacity: 0,
-      duration: 0.5,
+    textRef.current.forEach((section) => {
+      const sectionOffsetTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        pageYOffset >= sectionOffsetTop &&
+        pageYOffset < sectionOffsetTop + sectionHeight
+      ) {
+        newActiveSection = section.id;
+      }
     });
-    window.innerWidth > 820
-      ? tl.from(textRef.current, {
-          y: -100,
-          opacity: 0,
-        })
-      : tl.from(".burger", {
-          y: -100,
-          opacity: 0,
-        });
-  }, []);
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    setActiveSection(newActiveSection);
+  };
 
-  const closeDrawer = () => {
-    setTimeout(() => setIsOpen(false), 800);
+  // useEffect(() => {
+  //   textRef.current = document.querySelectorAll("[data-section]");
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+  const activeStyle = {
+    color: `${CONSTANTS.colors.spaceGreen}`,
   };
 
   return (
@@ -83,15 +83,16 @@ export default function Navbar({ isOpen, setIsOpen }) {
             toggle={toggleActiveIndex}
             index={index}
             activeIndex={activeIndex}
+            activeStyle={activeStyle}
           />
         ))}
       </LinksWrapper>
       <Sidebar
         isOpen={isOpen}
         setIsOpen={setIsOpen}
-        closeDrawer={closeDrawer}
         toggle={toggleActiveIndex}
         activeIndex={activeIndex}
+        activeStyle={activeStyle}
       />
     </NavbarContainer>
   );

@@ -7,16 +7,18 @@ export default function Links({
   index,
   activeIndex,
   toggle,
-  closeDrawer,
+  setIsOpen,
+  activeSection,
+  activeStyle,
 }) {
-  const handleClick = () => {
-    if (sidebar === "false") {
-      toggle(index);
-    } else {
-      toggle(index);
-      closeDrawer();
-    }
-  };
+  // const handleClick = () => {
+  //   if (sidebar === "false") {
+  //     toggle(index);
+  //   } else {
+  //     toggle(index);
+  //     setTimeout(() => setIsOpen(false), 750);
+  //   }
+  // };
 
   return (
     <NavbarLinkContainer
@@ -24,13 +26,15 @@ export default function Links({
       spy={true}
       offset={0}
       smooth={true}
-      duration={750}
+      duration={500}
       sidebar={sidebar}
       className={className}
       index={index}
       activeIndex={activeIndex}
       toggle={toggle}
-      onClick={handleClick}
+      activeSection={activeSection}
+      // onClick={handleClick}
+      activeStyle={activeStyle}
     >
       {title}
     </NavbarLinkContainer>

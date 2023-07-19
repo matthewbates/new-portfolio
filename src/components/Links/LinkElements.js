@@ -16,15 +16,21 @@ export const NavbarLinkContainer = styled(Link)`
   transition: 0.3s;
   font-size: ${({ sidebar }) => (sidebar == "true" ? "1.5em" : null)};
   font-weight: bold;
-  color: ${({ activeIndex, index }) =>
-    activeIndex === index && `${CONSTANTS.colors.spaceGreen}`};
+  color: ${({ activeSection, index }) =>
+    activeSection === index
+      ? CONSTANTS.colors.spaceGreen
+      : CONSTANTS.colors.offWhite};
 
   @media screen and (min-width: 768px) {
     display: flex;
 
     &:last-child {
-      margin-right: 1em;
+      margin-right: 1.5em;
     }
+  }
+
+  &:hover {
+    color: ${CONSTANTS.colors.spaceGreen};
   }
 
   /* &:hover {

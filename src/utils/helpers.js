@@ -1,4 +1,6 @@
+import { findAllByTestId } from "@testing-library/react";
 import FileSaver from "file-saver";
+import { useEffect } from "react";
 
 import resume from "../assets/resume.pdf";
 
@@ -15,6 +17,19 @@ export const toggleSidebar = (isOpen, setIsOpen) => {
 // downloads resume
 export const downloadResume = () => {
   FileSaver.saveAs(resume, "Resume");
+};
+
+// closes <Sidebar /> if the window exceeds 768px
+export const useHandleResize = (setIsOpen) => {
+  const handleResize = (e) => {
+    if (e.currentTarget.innerWidth > 820) {
+      setIsOpen(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 };
 
 // scrolls to the top of the page when <Logo /> is clicked in <Navbar />
