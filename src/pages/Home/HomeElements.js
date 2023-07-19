@@ -14,6 +14,11 @@ export const HomeItems = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
+  margin-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 
 export const HomeText = styled.div`
@@ -25,7 +30,7 @@ export const HomeText = styled.div`
       font-family: ${CONSTANTS.styles.spaceMono};
 
       @media screen and (min-width: 820px) {
-        font-size: 18px;
+        font-size: 22px;
       }
     }
     &:nth-child(2) {
@@ -39,14 +44,14 @@ export const HomeText = styled.div`
         color: ${CONSTANTS.colors.offWhite};
       }
       @media screen and (min-width: 820px) {
-        font-size: 2.5em;
+        font-size: 3em;
       }
     }
     &:nth-child(3) {
       font-family: ${CONSTANTS.styles.spaceMono};
 
       @media screen and (min-width: 820px) {
-        font-size: 18px;
+        font-size: 22px;
       }
     }
   }

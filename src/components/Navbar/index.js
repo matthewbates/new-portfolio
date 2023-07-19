@@ -19,7 +19,7 @@ import Resume from "../Resume";
 
 export default function Navbar({ isOpen, setIsOpen }) {
   // const [isOpen, setIsOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
+  // const [visible, setVisible] = useState(true);
   const textRef = useRef([]);
 
   //! refactor to helpers.js
@@ -55,25 +55,25 @@ export default function Navbar({ isOpen, setIsOpen }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    let prevScrollPos = window.pageYOffset;
+  // useEffect(() => {
+  //   let prevScrollPos = window.pageYOffset;
 
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
-      prevScrollPos = currentScrollPos;
-    };
+  //   const handleScroll = () => {
+  //     const currentScrollPos = window.pageYOffset;
+  //     currentScrollPos <= prevScrollPos ? setVisible(true) : setVisible(false);
+  //     prevScrollPos = currentScrollPos;
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const closeDrawer = () => {
     setTimeout(() => setIsOpen(false), 800);
   };
 
   return (
-    <NavbarContainer visible={visible} isOpen={isOpen}>
+    <NavbarContainer isOpen={isOpen}>
       <Logo
         className="logo"
         onClick={scrollToTop}
@@ -87,7 +87,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
         {links.map(({ id, name }) => (
           <Links key={id} sidebar="false" title={name} id={name} />
         ))}
-        <Resume sidebar="false" />
+        {/* <Resume sidebar="false" /> */}
       </LinksWrapper>
       <Sidebar
         isOpen={isOpen}

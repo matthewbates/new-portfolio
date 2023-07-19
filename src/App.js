@@ -19,8 +19,8 @@ function App() {
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Home isOpen={isOpen} />
       <About />
-      <Blog />
       <Projects />
+      <Blog />
       <Contact />
       {/* <ScrollToTop /> */}
       <Footer />

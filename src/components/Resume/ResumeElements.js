@@ -20,7 +20,7 @@ export const Btn = styled.button`
     box-shadow: ${CONSTANTS.styles.boxShadow};
   }
 
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 768px) {
     display: flex;
   }
 `;

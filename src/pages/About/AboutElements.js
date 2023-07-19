@@ -30,9 +30,9 @@ export const AboutText = styled.div`
   color: ${CONSTANTS.colors.offWhite};
   transition: 0.3s ease-in-out;
 
-  @media screen and (min-width: 820px) {
-    max-width: 50%;
-    font-sikze: 1.5em;
+  @media screen and (min-width: 768px) {
+    max-width: 60%;
+    font-size: 1.4em;
   }
 `;
 

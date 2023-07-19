@@ -222,26 +222,27 @@ export const aboutText = [
   // },
 ];
 
-export const contact = [
+export const contactData = [
   {
     id: 1,
     name: "name",
     type: "text",
+    label: "Name",
+    error: "Name is required",
   },
   {
     id: 2,
     name: "email",
     type: "email",
+    label: "Email",
+    error: "Invalid email address",
   },
   {
     id: 3,
-    name: "number",
-    type: "text",
-  },
-  {
-    id: 4,
     name: "message",
     type: "message",
-    row: 6,
+    label: "Message",
+    rows: 8,
+    error: "Message is too short",
   },
 ];

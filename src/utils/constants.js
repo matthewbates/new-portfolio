@@ -7,6 +7,7 @@ const CONSTANTS = {
     navy: "#0A192F",
     lightNavy: "#112240",
     lightestNavy: "#233554",
+    errorRed: "#FF0033",
   },
   styles: {
     border: "none",

@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-import { BlogContainer, H2, BlogItems, Img } from "./BlogElements";
+import {
+  BlogContainer,
+  H2,
+  BlogItems,
+  Img,
+  Title,
+  PubDate,
+  Line,
+} from "./BlogElements";
 
 import { useFetchBlogs } from "../../utils/hooks";
 
@@ -10,15 +18,18 @@ export default function Blog() {
   useFetchBlogs(setBlogs);
 
   return (
-    <section id="Blog">
-      <BlogContainer>
-        <H2>Blogs</H2>
-        <BlogItems>
-          {blogs.map((blog, index) => (
-            <Img key={index} src={blog.thumbnail} alt="img" />
-          ))}
-        </BlogItems>
-      </BlogContainer>
-    </section>
+    <BlogContainer id="Blog">
+      <H2>Blogs</H2>
+      <BlogItems>
+        {blogs.map((blog, index) => (
+          <div key={index} style={{ display: "flex", flexDirection: "column" }}>
+            <Img src={blog.thumbnail} />
+            <Title>{blog.title}</Title>
+            <PubDate>{blog.pubDate}</PubDate>
+            <Line />
+          </div>
+        ))}
+      </BlogItems>
+    </BlogContainer>
   );
 }

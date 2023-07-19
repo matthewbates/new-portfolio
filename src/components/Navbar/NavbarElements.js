@@ -9,8 +9,6 @@ export const NavbarContainer = styled.div`
   align-items: center;
   box-shadow: ${CONSTANTS.styles.navbarBoxShadow};
   transition: 0.5s;
-  //! for show/hide <Navbar /> custom hook
-  /* top: ${({ visible }) => (visible ? "0" : "-80px")}; */
   font-size: 14px;
   top: 0;
   position: sticky;
@@ -31,7 +29,7 @@ export const BurgerWrapper = styled.div`
   display: flex;
   margin-left: auto;
 
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `;
@@ -40,7 +38,7 @@ export const LinksWrapper = styled.div`
   display: flex;
   gap: 1em;
 
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 768px) {
     margin-left: auto;
   }
 `;

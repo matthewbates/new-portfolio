@@ -17,7 +17,7 @@ export const NavbarLinkContainer = styled(Link)`
   font-size: ${({ sidebar }) => (sidebar == "true" ? "1.5em" : null)};
   font-weight: bold;
 
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 768px) {
     display: flex;
 
     &:last-child {

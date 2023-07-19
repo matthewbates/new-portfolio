@@ -1,9 +1,11 @@
 import styled from "styled-components";
-
 import CONSTANTS from "../../utils/constants";
 
 export const BlogContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  padding: 0 10px;
   background: ${CONSTANTS.colors.royalBlue};
   border-top: 1px solid ${CONSTANTS.colors.offWhite};
 `;
@@ -22,23 +24,44 @@ export const BlogItems = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5em;
+  gap: 1em;
+  max-width: 1200px;
+  margin: auto;
+  cursor: pointer;
 `;
 
 export const Img = styled.img`
+  width: 400px;
+  height: 200px;
+`;
+
+export const Title = styled.div`
   display: flex;
-  width: 90%;
-  height: 250px;
-  cursor: pointer;
-  filter: brightness(50%);
-  transition: 0.3s ease-in-out;
-  border-radius: 8px;
+  justify-content: center;
+  font-family: ${CONSTANTS.styles.arial};
+  color: ${CONSTANTS.colors.offWhite};
+  font-family: "Raleway";
+  font-size: 0.75em;
+  margin: auto;
+  margin-top: 1em;
+  -webkit-transition: 0.3s ease-in-out;
 
   &:hover {
-    filter: brightness(100%);
+    color: ${CONSTANTS.colors.spaceGreen};
   }
+`;
 
-  @media screen and (min-width: 820px) {
-    width: 450px;
-  }
+export const PubDate = styled.div`
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  font-family: "Open Sans";
+  font-size: 10px;
+`;
+
+export const Line = styled.div`
+  width: 25%;
+  height: 3px;
+  background: ${CONSTANTS.colors.spaceGreen};
+  margin: 10px 0;
 `;

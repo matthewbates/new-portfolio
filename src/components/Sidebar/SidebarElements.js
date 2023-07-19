@@ -10,7 +10,8 @@ export const SidebarContainer = styled.div`
   height: ${CONSTANTS.styles.height};
   width: 50vw;
   transition: 0.3s ease-in-out;
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 `;
 
 export const SidebarItems = styled.div`
@@ -21,5 +22,5 @@ export const SidebarItems = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  gap: 2em;
+  gap: 1.5em;
 `;
