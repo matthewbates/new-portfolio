@@ -66,6 +66,7 @@ export const H2 = styled.h2`
     width: 70px;
     background: white;
     height: 4px;
+    margin-bottom: 1em;
   }
 `;
 

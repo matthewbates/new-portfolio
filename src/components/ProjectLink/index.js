@@ -14,28 +14,46 @@ export default function ProjectLink({
   disabledGithub,
   disabledLink,
 }) {
+  const theme = createTheme({
+    components: {
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            fontSize: "1em",
+            fontFamily: "Raleway",
+            padding: "0.5em",
+          },
+        },
+      },
+    },
+  });
+
   return (
-    <LinkWrapper github={github} link={link}>
-      <Tooltip title={disabledGithub}>
-        <a
-          href={github}
-          target={TARGET}
-          rel={REL}
-          disabled={github === "false" || link === "false"}
-        >
-          <Github />
-        </a>
-      </Tooltip>
-      <Tooltip title={disabledLink}>
-        <a
-          href={link}
-          target={TARGET}
-          rel={REL}
-          disabled={github === "false" || link === "false"}
-        >
-          <Site />
-        </a>
-      </Tooltip>
-    </LinkWrapper>
+    <ThemeProvider theme={theme}>
+      <LinkWrapper github={github} link={link}>
+        <Tooltip title={disabledGithub}>
+          {github === "false" ? (
+            <a>
+              <Github />
+            </a>
+          ) : (
+            <a href={github} target={TARGET} rel={REL}>
+              <Github />
+            </a>
+          )}
+        </Tooltip>
+        <Tooltip title={disabledLink}>
+          {link === "false" ? (
+            <a>
+              <Site />
+            </a>
+          ) : (
+            <a href={link} target={TARGET} rel={REL}>
+              <Site />
+            </a>
+          )}
+        </Tooltip>
+      </LinkWrapper>
+    </ThemeProvider>
   );
 }

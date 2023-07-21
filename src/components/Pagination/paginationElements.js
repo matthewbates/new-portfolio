@@ -5,8 +5,8 @@ import CONSTANTS from "../../utils/constants";
 export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 2em;
   gap: 2em;
+  margin-bottom: 1em;
 `;
 
 export const PaginationItem = styled.div`
