@@ -19,8 +19,8 @@ export default function Projects() {
             techStack,
             github,
             link,
-            disabledGithub,
-            disabledLink,
+            tooltipGithub,
+            tooltipLink,
           }) => (
             <ProjectItem
               key={id}
@@ -29,8 +29,8 @@ export default function Projects() {
               techStack={techStack}
               github={github}
               link={link}
-              disabledGithub={disabledGithub}
-              disabledLink={disabledLink}
+              tooltipGithub={tooltipGithub}
+              tooltipLink={tooltipLink}
             />
           )
         )}

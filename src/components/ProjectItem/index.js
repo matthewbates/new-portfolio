@@ -14,8 +14,8 @@ export default function ProjectItem({
   techStack,
   github,
   link,
-  disabledGithub,
-  disabledLink,
+  tooltipGithub,
+  tooltipLink,
 }) {
   return (
     <ProjectContainer>
@@ -27,8 +27,8 @@ export default function ProjectItem({
           <ProjectLink
             github={github}
             link={link}
-            disabledGithub={disabledGithub}
-            disabledLink={disabledLink}
+            tooltipGithub={tooltipGithub}
+            tooltipLink={tooltipLink}
           />
         </TextWrapper>
       </ProjectItems>

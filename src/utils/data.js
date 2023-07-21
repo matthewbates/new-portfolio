@@ -14,6 +14,7 @@ import YOUTUBE from "../assets/projects/youtube.png";
 import CAMPUS_MAPS from "../assets/projects/campusMaps.png";
 import MOUNTAIN_BUDDY from "../assets/projects/mountainBuddy.png";
 import MONSTERS_ROLODEX from "../assets/projects/monstersRolodex.png";
+import ALGORITHMS from "../assets/projects/algorithms.png";
 
 export const TARGET = "_blank";
 export const REL = "noopener noreferrer";
@@ -265,7 +266,8 @@ export const projectData = [
     techStack: "React JS · Google Maps/Business Profile API",
     github: "false",
     link: "https://www.persephonegraescafe.com",
-    disabledGithub: "Private Repository",
+    tooltipGithub: "Private Repository",
+    tooltipLink: "Website",
   },
   {
     id: 2,
@@ -274,6 +276,8 @@ export const projectData = [
     techStack: "React JS · EmailJS · GSAP",
     github: "https://github.com/matthewbates/mars-industries",
     link: "https://www.marsindustriesco.com",
+    tooltipGithub: "GitHub Repo",
+    tooltipLink: "Website",
   },
   {
     id: 3,
@@ -282,39 +286,58 @@ export const projectData = [
     techStack: "React JS · Google Maps/Distance Matrix API",
     github: "false",
     link: "false",
-    disabledGithub: "Private Repository",
-    disabledLink: "Private Website",
+    tooltipGithub: "Private Repository",
+    tooltipLink: "Private Website",
   },
   {
     id: 4,
+    image: ALGORITHMS,
+    techStack: "Vanilla JS · Python",
+    github: "https://github.com/matthewbates/algorithms",
+    link: "false",
+    tooltipGithub: "GitHub Repo",
+    tooltipLink: "Repo-Only ",
+  },
+  {
+    id: 5,
     name: "YouTube Clone",
     image: YOUTUBE,
     techStack: "React JS ·YouTube Data API",
     github: "https://github.com/matthewbates/youtube-clone",
     link: "https://aesthetic-alpaca-04fc9c.netlify.app/",
+    tooltipGithub: "GitHub Repo",
+    tooltipLink: "Website",
+    tooltipGithub: "GitHub Repo",
+    tooltipLink: "Website",
   },
   {
-    id: 5,
+    id: 6,
     name: "MB Web Designs",
     image: MB_WEB_DESIGNS,
     techStack: "React JS · Atlist Maps",
     github: "https://github.com/matthewbates/mb-web-innovations",
-    link: "https://soft-lebkuchen-2188b1.netlify.app/",
+    link: "false",
+    tooltipGithub: "GitHub Repo",
+    tooltipLink: "Under Construction",
   },
   {
-    id: 6,
+    id: 7,
     name: "Monsters Rolodex",
     image: MONSTERS_ROLODEX,
     techStack: "React JS Class Components · SCSS",
     github: "https://github.com/matthewbates/monsters",
     link: "https://gleeful-donut-637978.netlify.app/",
+    tooltipGithub: "GitHub Repo",
+    tooltipLink: "Website",
   },
   {
-    id: 7,
+    id: 8,
     name: "Mountain Buddy",
     image: MOUNTAIN_BUDDY,
     techStack: "React JS · Ruby on Rails · OpenWeatherMap API",
     github: "https://github.com/matthewbates/Mountain-Buddy",
     link: "https://vimeo.com/695889451/21156ef4dd?share=copy",
+    tooltipGithub: "GitHub Repo",
+    tooltipLink: "Website",
   },
 ];

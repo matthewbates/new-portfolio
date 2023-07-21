@@ -11,8 +11,8 @@ import { TARGET, REL } from "../../utils/data";
 export default function ProjectLink({
   github,
   link,
-  disabledGithub,
-  disabledLink,
+  tooltipGithub,
+  tooltipLink,
 }) {
   const theme = createTheme({
     components: {
@@ -31,7 +31,7 @@ export default function ProjectLink({
   return (
     <ThemeProvider theme={theme}>
       <LinkWrapper github={github} link={link}>
-        <Tooltip title={disabledGithub}>
+        <Tooltip title={tooltipGithub}>
           {github === "false" ? (
             <a>
               <Github />
@@ -42,7 +42,7 @@ export default function ProjectLink({
             </a>
           )}
         </Tooltip>
-        <Tooltip title={disabledLink}>
+        <Tooltip title={tooltipLink}>
           {link === "false" ? (
             <a>
               <Site />
