@@ -1,28 +1,40 @@
-import { BlogItems, Img, Title, PubDate, Line } from "./BlogItemElements";
+import { useState } from "react";
+
+import {
+  BlogContainer,
+  BlogItems,
+  Img,
+  Title,
+  PubDate,
+  Line,
+} from "./BlogItemElements";
 
 import { TARGET, REL } from "../../utils/data";
 import { formatDate, formatBlogTitle } from "../../utils/helpers";
 
 export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
+  const [isHovered, setIsHovered] = useState(null);
+
   return (
-    <BlogItems>
+    <BlogContainer>
       {blogs
         .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
         .map(({ thumbnail, title, pubDate, link }, index) => (
-          <div key={index} style={{ display: "flex", flexDirection: "column" }}>
-            <Img src={thumbnail} />
-            <a
-              href={link}
-              style={{ textDecoration: "none" }}
-              target={TARGET}
-              rel={REL}
-            >
-              <Title>{formatBlogTitle(title)}</Title>
+          <BlogItems
+            key={index}
+            onMouseEnter={() => setIsHovered(index)}
+            onMouseLeave={() => setIsHovered(null)}
+          >
+            <a href={link} target={TARGET} rel={REL}>
+              <Img src={thumbnail} />
             </a>
+            <Title hovered={isHovered === index}>
+              {formatBlogTitle(title)}
+            </Title>
             <PubDate>{formatDate(pubDate)}</PubDate>
             <Line />
-          </div>
+          </BlogItems>
         ))}
-    </BlogItems>
+    </BlogContainer>
   );
 }

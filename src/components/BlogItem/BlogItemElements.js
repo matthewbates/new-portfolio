@@ -2,33 +2,60 @@ import { styled } from "styled-components";
 
 import CONSTANTS from "../../utils/constants";
 
-export const BlogItems = styled.div`
+export const BlogContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
+  //! adjust this to change how many columns on larger
   max-width: 1200px;
   margin: auto;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+  margin-top: 2em;
 
   &:last-child {
     margin-bottom: 2em;
   }
+
+  > * {
+    pointer-events: auto;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover > * {
+    opacity: 35%;
+  }
+
+  &:hover > *:hover {
+    opacity: 1;
+  }
+`;
+
+export const BlogItems = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Img = styled.img`
+  max-width: 100%;
   width: 400px;
-  height: 200px;
+  height: 175px;
 `;
 
 export const Title = styled.div`
   font-family: ${CONSTANTS.styles.arial};
-  color: ${CONSTANTS.colors.offWhite};
+  color: ${({ hovered }) =>
+    hovered
+      ? `${CONSTANTS.colors.spaceGreen}`
+      : `${CONSTANTS.colors.offWhite}`};
   font-family: "Raleway";
-  font-size: 1.2em;
-  margin-top: 1em;
+  font-size: 1em;
+  margin-top: 0.5em;
   -webkit-transition: 0.3s ease-in-out;
-  max-width: 380px;
+  max-width: 400px;
+  text-decoration: none;
 
   &:hover {
     color: ${CONSTANTS.colors.spaceGreen};

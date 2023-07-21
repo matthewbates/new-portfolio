@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import emailjs from "emailjs-com";
+import swal from "sweetalert2";
 
 import { ContractContainer, Form, H2, ContactItems } from "./ContactElements";
 
@@ -18,19 +19,19 @@ export default function Contact() {
     return emailRegex.test(email);
   };
 
+  const SERVICE_ID = "service_7j2rpfd";
+  const TEMPLATE_ID = "template_bl3e1rq";
+  const USER_ID = "pxTQ3Ga0lBOJ4vGzM";
+
   const validateFormData = (formData) => {
-    const formErrors = {
-      name: !formData.name ? "Name is required" : "",
-      email: !formData.email
-        ? "Email is required"
-        : !isValidEmail(formData.email)
-        ? "Invalid email address"
-        : "",
-      message:
-        !formData.message || formData.message.length < 10
-          ? "Message is too short"
-          : "",
-    };
+    const formErrors = {};
+
+    if (!formData.name) formErrors.name = "Name is required";
+    if (!formData.email) formErrors.email = "Email is required";
+    if (!formData.message || formData.message.length < 10) {
+      formErrors.message = "Message is too short";
+    }
+
     return formErrors;
   };
 
@@ -42,10 +43,24 @@ export default function Contact() {
       email: e.target.email.value,
       message: e.target.message.value,
     };
-    const errors = validateFormData(formData);
-    setErrors(errors);
+
+    setErrors(validateFormData(formData));
 
     if (Object.keys(errors).length === 0) {
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
+        (r) => {
+          // swal.fire(
+          //   "Message Sent",
+          //   "Matthew will get back to you as soon as he can!",
+          //   "success"
+          // );
+          alert("Email sent! Matthew will get back to you shortly.");
+        },
+        (error) => {
+          alert("Oops, something went wrong");
+          // swal.fire("Oops, something went wrong", error.text, "error");
+        }
+      );
       e.target.reset();
     }
   }
@@ -53,7 +68,9 @@ export default function Contact() {
   return (
     <ContractContainer id="Contact">
       <Form onSubmit={handleSubmit}>
-        <H2>Contact</H2>
+        <H2>
+          Contact <div></div>
+        </H2>
         {contactData.map(({ id, name, type, label, rows }) => (
           <ContactItems key={id} showError={Boolean(errors[name])}>
             {id === 3 ? (
@@ -70,7 +87,7 @@ export default function Contact() {
             <label>{label}</label>
           </ContactItems>
         ))}
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </Form>
     </ContractContainer>
   );

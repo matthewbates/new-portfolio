@@ -1,28 +1,27 @@
-import { PaginationItem, PaginationContainer } from "./paginationElements";
+import { useState } from "react";
 
-export default function Pagination({
-  blogs,
-  toggle,
-  activeIndex,
-  handlePageChange,
-  itemsPerPage,
-}) {
+import PaginationItem from "../PaginationItem";
+
+import { PaginationContainer } from "./paginationElements";
+
+export default function Pagination({ blogs, handlePageChange, itemsPerPage }) {
+  const [activeindex, setActiveIndex] = useState(0);
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
+
+  const togglePage = (index) => {
+    setActiveIndex(index === activeindex ? null : index);
+  };
 
   return (
     <PaginationContainer>
       {Array.from({ length: totalPages }, (_, index) => (
         <PaginationItem
-          activeIndex={activeIndex}
-          index={index}
           key={index}
-          onClick={() => {
-            handlePageChange(index + 1);
-            toggle(index);
-          }}
-        >
-          {index + 1}
-        </PaginationItem>
+          index={index}
+          handlePageChange={handlePageChange}
+          toggle={togglePage}
+          activeindex={activeindex}
+        />
       ))}
     </PaginationContainer>
   );

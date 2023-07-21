@@ -3,18 +3,19 @@ import CONSTANTS from "../../utils/constants";
 
 export const ContractContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-top: 1px solid ${CONSTANTS.colors.offWhite};
-  height: 100vh;
   background: ${CONSTANTS.colors.royalBlue};
+  height: 100vh;
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 95%;
-  padding: 2.5em;
+  padding: 3em;
   background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -50,11 +51,22 @@ export const Form = styled.form`
 export const H2 = styled.h2`
   display: flex;
   justify-content: center;
-  font-family: "Arial";
+  flex-direction: column;
+  margin: auto;
   color: ${CONSTANTS.colors.offWhite};
   text-transform: uppercase;
-  margin: 1em 0 1em 0;
-  text-decoration: underline;
+  font-family: "Open Sans";
+  letter-spacing: 0.1em;
+
+  font-size: 40px;
+
+  div {
+    display: flex;
+    margin: 0.5em auto;
+    width: 70px;
+    background: white;
+    height: 4px;
+  }
 `;
 
 export const ContactItems = styled.div`
@@ -75,6 +87,9 @@ export const ContactItems = styled.div`
           : `${CONSTANTS.colors.offWhite}`};
     outline: none;
     background: transparent;
+    &:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px transparent inset;
+    }
   }
 
   textarea {
@@ -93,20 +108,13 @@ export const ContactItems = styled.div`
     ${CONSTANTS.colors.offWhite};
     color: ${CONSTANTS.colors.offWhite};
     font-size: 16px;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 0.5em;
 
     &:focus {
       outline: none;
     }
   }
-
-  /* input:focus ~ label {
-    top: -20px;
-    left: 0;
-    color: ${CONSTANTS.colors.spaceGreen};
-    font-size: 12px;
-  } */
 
   span {
     color: ${CONSTANTS.colors.errorRed};
@@ -116,14 +124,6 @@ export const ContactItems = styled.div`
   }
 
   label {
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    -webkit-transition: 0.3s ease-in-out; */
     position: absolute;
     top: -10px;
     left: 0;

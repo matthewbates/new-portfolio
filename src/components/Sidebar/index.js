@@ -6,19 +6,11 @@ import { SidebarContainer, SidebarItems } from "./SidebarElements";
 
 import Links from "../Links";
 
-import { closeDrawer } from "../../utils/helpers";
 import { useResize, useClickOutside } from "../../utils/hooks";
 import { links } from "../../utils/data";
 import Resume from "../Resume";
 
-export default function Sidebar({
-  isOpen,
-  setIsOpen,
-  closeDrawer,
-  toggle,
-  activeIndex,
-  activeStyle,
-}) {
+export default function Sidebar({ isOpen, setIsOpen, activeStyle }) {
   const sidebarRef = useRef(null);
   const linkRef = useRef(null);
 
@@ -26,7 +18,6 @@ export default function Sidebar({
     setIsOpen(false);
   });
 
-  //! refactor to gsap.js
   useEffect(() => {
     if (isOpen) {
       gsap.timeline().from(linkRef.current, {
@@ -63,9 +54,7 @@ export default function Sidebar({
             title={name}
             id={name}
             setIsOpen={setIsOpen}
-            toggle={toggle}
             index={index}
-            activeIndex={activeIndex}
             activeStyle={activeStyle}
           />
         ))}

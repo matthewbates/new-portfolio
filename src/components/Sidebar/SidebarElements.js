@@ -11,7 +11,6 @@ export const SidebarContainer = styled.div`
   width: 50vw;
   transition: 0.3s ease-in-out;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 `;
 
 export const SidebarItems = styled.div`

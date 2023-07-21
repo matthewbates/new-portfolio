@@ -7,12 +7,22 @@ import GITHUB from "../assets/github.png";
 import LINKEDIN from "../assets/linkedin.png";
 import MEDIUM from "../assets/medium.png";
 
+import PERSEPHONE_GRAES from "../assets/projects/persephoneGraes.png";
+import MARS_INDUSTRIES from "../assets/projects/marsIndustries.png";
+import MB_WEB_DESIGNS from "../assets/projects/mbWebDesigns.png";
+import YOUTUBE from "../assets/projects/youtube.png";
+import CAMPUS_MAPS from "../assets/projects/campusMaps.png";
+import MOUNTAIN_BUDDY from "../assets/projects/mountainBuddy.png";
+import MONSTERS_ROLODEX from "../assets/projects/monstersRolodex.png";
+
 export const TARGET = "_blank";
 export const REL = "noopener noreferrer";
 
 const USERNAME = "matthewhcbates";
 const RSSURL = `https://medium.com/feed/@${USERNAME}`;
 export const RSS_CONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSSURL}`;
+
+export const ITEMS_PER_PAGE = 4;
 
 export const avatar = {
   img: require("../assets/avatar.png"),
@@ -244,5 +254,67 @@ export const contactData = [
     label: "Message",
     rows: 8,
     error: "Message is too short",
+  },
+];
+
+export const projectData = [
+  {
+    id: 1,
+    name: "Persephone Graes Cafe",
+    image: PERSEPHONE_GRAES,
+    techStack: "React JS · Google Maps/Business Profile API",
+    github: "false",
+    link: "https://www.persephonegraescafe.com",
+    disabledGithub: "Private Repository",
+  },
+  {
+    id: 2,
+    name: "Mars Industries",
+    image: MARS_INDUSTRIES,
+    techStack: "React JS · EmailJS · GSAP",
+    github: "https://github.com/matthewbates/mars-industries",
+    link: "https://www.marsindustriesco.com",
+  },
+  {
+    id: 3,
+    name: "DU Campus Maps",
+    image: CAMPUS_MAPS,
+    techStack: "React JS · Google Maps/Distance Matrix API",
+    github: "false",
+    link: "false",
+    disabledGithub: "Private Repository",
+    disabledLink: "Private Website",
+  },
+  {
+    id: 4,
+    name: "YouTube Clone",
+    image: YOUTUBE,
+    techStack: "React JS ·YouTube Data API",
+    github: "https://github.com/matthewbates/youtube-clone",
+    link: "https://aesthetic-alpaca-04fc9c.netlify.app/",
+  },
+  {
+    id: 5,
+    name: "MB Web Designs",
+    image: MB_WEB_DESIGNS,
+    techStack: "React JS · Atlist Maps",
+    github: "https://github.com/matthewbates/mb-web-innovations",
+    link: "https://soft-lebkuchen-2188b1.netlify.app/",
+  },
+  {
+    id: 6,
+    name: "Monsters Rolodex",
+    image: MONSTERS_ROLODEX,
+    techStack: "React JS Class Components · SCSS",
+    github: "https://github.com/matthewbates/monsters",
+    link: "https://gleeful-donut-637978.netlify.app/",
+  },
+  {
+    id: 7,
+    name: "Mountain Buddy",
+    image: MOUNTAIN_BUDDY,
+    techStack: "React JS · Ruby on Rails · OpenWeatherMap API",
+    github: "https://github.com/matthewbates/Mountain-Buddy",
+    link: "https://vimeo.com/695889451/21156ef4dd?share=copy",
   },
 ];

@@ -11,7 +11,7 @@ export const FooterContainer = styled.div`
   background: #ffffff;
   font-family: ${CONSTANTS.styles.spaceMono};
   gap: 0.5em;
-  height: 100px;
+  height: 150px;
 `;
 
 export const FooterItems = styled.div`

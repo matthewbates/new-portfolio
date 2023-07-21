@@ -19,6 +19,11 @@ const CONSTANTS = {
     height: "100vh",
     spaceMono: "Space Mono",
     arial: "Arial",
+    raleway: "Raleway",
+  },
+  tooltipStyles: {
+    padding: "1em",
+    fontSize: "2em",
   },
 };
 

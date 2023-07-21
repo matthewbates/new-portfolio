@@ -57,7 +57,6 @@ export const useFetchBlogs = (setBlogs) => {
       try {
         const response = await axios.get(RSS_CONVERTER);
         if (response.status === 200) {
-          console.log(response);
           setBlogs(response.data.items);
         }
       } catch (error) {

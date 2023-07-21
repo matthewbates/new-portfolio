@@ -3,8 +3,10 @@ import { Btn } from "./ResumeElements";
 
 export default function Resume({ sidebar }) {
   return (
-    <Btn sidebar={sidebar} onClick={downloadResume}>
-      Resume
-    </Btn>
+    <div>
+      <Btn sidebar={sidebar} onClick={downloadResume}>
+        Resume
+      </Btn>
+    </div>
   );
 }

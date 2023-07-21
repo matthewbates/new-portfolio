@@ -5,17 +5,28 @@ import CONSTANTS from "../../utils/constants";
 export const AboutContainer = styled.div`
   height: 100%;
   background: ${CONSTANTS.colors.royalBlue};
-  border-top: 1px solid ${CONSTANTS.colors.offWhite};
+  border-bottom: 1px solid ${CONSTANTS.colors.offWhite};
 `;
 
 export const H2 = styled.h2`
   display: flex;
   justify-content: center;
-  font-family: "Arial";
+  flex-direction: column;
+  margin: auto;
   color: ${CONSTANTS.colors.offWhite};
   text-transform: uppercase;
-  margin: 2em 0 2em 0;
-  text-decoration: underline;
+  font-family: "Open Sans";
+  letter-spacing: 0.1em;
+  margin-top: 1em;
+  font-size: 40px;
+
+  div {
+    display: flex;
+    margin: 0.5em auto;
+    width: 70px;
+    background: white;
+    height: 4px;
+  }
 `;
 
 export const AboutText = styled.div`
@@ -29,6 +40,7 @@ export const AboutText = styled.div`
   max-width: 90%;
   color: ${CONSTANTS.colors.offWhite};
   transition: 0.3s ease-in-out;
+  user-select: none;
 
   @media screen and (min-width: 768px) {
     max-width: 60%;
