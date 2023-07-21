@@ -22,9 +22,10 @@ export default function CareerText({ item }) {
       </A>
       {textTwo}
       {textThree}
-      <A href={urlTwo} target={TARGET} rel={REL}>
+      <A>{hyperlinkTextTwo}</A>
+      {/* <A href={urlTwo} target={TARGET} rel={REL}>
         {hyperlinkTextTwo}
-      </A>
+      </A> */}
       {textFour}
     </p>
   );
