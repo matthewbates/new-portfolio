@@ -291,6 +291,7 @@ export const projectData = [
   },
   {
     id: 4,
+    name: "Algorithms",
     image: ALGORITHMS,
     techStack: "Vanilla JS · Python",
     github: "https://github.com/matthewbates/algorithms",
