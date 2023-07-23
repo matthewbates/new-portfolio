@@ -9,6 +9,7 @@ import Links from "../Links";
 import { useResize, useClickOutside } from "../../utils/hooks";
 import { links } from "../../utils/data";
 import Resume from "../Resume";
+import { flexbox } from "@mui/system";
 
 export default function Sidebar({ isOpen, setIsOpen, activeStyle }) {
   const sidebarRef = useRef(null);
@@ -46,7 +47,7 @@ export default function Sidebar({ isOpen, setIsOpen, activeStyle }) {
 
   return (
     <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
-      <SidebarItems ref={linkRef}>
+      <SidebarItems ref={linkRef} isOpen={isOpen}>
         {links.map(({ id, name }, index) => (
           <Links
             key={id}
@@ -58,7 +59,10 @@ export default function Sidebar({ isOpen, setIsOpen, activeStyle }) {
             activeStyle={activeStyle}
           />
         ))}
-        <Resume sidebar="true" />
+        {/* <Resume sidebar="true" /> */}
+        {/* <button style={{ display: "flex", padding: "1em", margin: "auto" }}>
+          Resume
+        </button> */}
       </SidebarItems>
     </SidebarContainer>
   );

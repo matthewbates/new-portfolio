@@ -13,12 +13,16 @@ export const NavbarLinkContainer = styled(Link)`
   display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")};
   padding: 0.2em;
   transition: 0.3s;
-  font-size: ${({ sidebar }) => (sidebar == "true" ? "1.5em" : null)};
+  font-size: ${({ sidebar }) => sidebar == "true" && "1.5em"};
   font-weight: bold;
   color: ${({ activeStyle, index }) =>
     activeStyle === index
       ? `${CONSTANTS.colors.spaceGreen}`
       : `${CONSTANTS.colors.offWhite}`};
+  font-family: "Raleway";
+  font-weight: 100;
+  text-transform: uppercase;
+  
 
   @media screen and (min-width: 768px) {
     display: flex;

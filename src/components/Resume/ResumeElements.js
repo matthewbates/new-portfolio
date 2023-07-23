@@ -6,14 +6,18 @@ export const Btn = styled.button`
   color: ${CONSTANTS.colors.offWhite};
   cursor: pointer;
   border: 2px solid ${CONSTANTS.colors.spaceGreen};
-  display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")};
+  /* display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")}; */
+  display: flex;
+  margin-left: 1em;
   justify-content: center;
   font-family: ${CONSTANTS.styles.arial};
   text-transform: uppercase;
   cursor: pointer;
   padding: ${({ sidebar }) => (sidebar === "true" ? "1em" : "1em")};
   margin: auto;
-  margin-right: ${({ sidebar }) => (sidebar === "false" ? "1em" : "none")};
+  /* margin-right: ${({ sidebar }) =>
+    sidebar === "false" ? "1em" : "none"}; */
+  margin-left: 1em;
 
   &:hover {
     transform: translate(2px, -2px);

@@ -6,7 +6,7 @@ import resume from "../assets/resume.pdf";
 
 // closes <Sidebar /> when a <Link /> is clicked
 export const closeDrawer = (setIsOpen) => {
-  setTimeout(() => setIsOpen(false), 750);
+  setTimeout(() => setIsOpen(false), 500);
 };
 
 // opens/closes <Sidebar /> when <Burger /> is clicked
@@ -22,7 +22,7 @@ export const downloadResume = () => {
 // closes <Sidebar /> if the window exceeds 768px
 export const useHandleResize = (setIsOpen) => {
   const handleResize = (e) => {
-    if (e.currentTarget.innerWidth > 820) {
+    if (e.currentTarget.innerWidth > 768) {
       setIsOpen(false);
     }
   };

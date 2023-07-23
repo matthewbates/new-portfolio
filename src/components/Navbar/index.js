@@ -7,6 +7,8 @@ import {
   LinksWrapper,
 } from "./NavbarElements";
 
+import gsap from "gsap";
+
 import Burger from "../Burger";
 import Links from "../Links";
 import Sidebar from "../Sidebar";
@@ -19,6 +21,7 @@ import Resume from "../Resume";
 export default function Navbar({ isOpen, setIsOpen }) {
   const [activeSection, setActiveSection] = useState(null);
   const textRef = useRef([]);
+  const resumeRef = useRef(null);
   useHandleResize(setIsOpen);
 
   useEffect(() => {
@@ -41,17 +44,27 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
   useEffect(() => {
     const isDesktop = window.innerWidth > 768;
-    animateNavbar(".logo", textRef, isDesktop);
+    animateNavbar("resume", textRef, isDesktop);
+  }, []);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.from(".resume", {
+      opacity: 0,
+      y: -100,
+    });
   }, []);
 
   return (
     <NavbarContainer isOpen={isOpen}>
-      <Logo
+      {/* <Logo
         className="logo"
         onClick={scrollToTop}
         src={avatar.img}
         alt={avatar.alt}
-      />
+      /> */}
+      <Resume ref={resumeRef} className={"resume"} sidebar="false" />
       <BurgerWrapper className="burger">
         <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
       </BurgerWrapper>
@@ -67,7 +80,6 @@ export default function Navbar({ isOpen, setIsOpen }) {
             setIsOpen={setIsOpen}
           />
         ))}
-        <Resume sidebar="false" />
       </LinksWrapper>
       <Sidebar
         isOpen={isOpen}
