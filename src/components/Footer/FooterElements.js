@@ -16,5 +16,5 @@ export const FooterContainer = styled.div`
 
 export const FooterItems = styled.div`
   display: flex;
-  gap: 1em;
+  gap: 0.75em;
 `;

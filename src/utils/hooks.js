@@ -22,33 +22,32 @@ export const useClickOutside = (ref, handler) => {
 };
 
 // handles the resizing of <HomeIcon /> depending on window.innerWidth
-export const useIconStyles = () => {
-  const [iconStyles, setIconStyles] = useState([]);
+// export const useIconStyles = () => {
+//   const [iconStyles, setIconStyles] = useState([]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      const updatedStyles = icons.map((icon) => {
-        let height = window.innerWidth > 820 ? "48px" : "42px";
-        return {
-          ...icon,
-          style: {
-            ...icon.style,
-            height,
-          },
-        };
-      });
-      setIconStyles(updatedStyles);
-    };
-    // icons will appear on page load and not on initial page resize
-    handleResize();
+//   useEffect(() => {
+//     const handleResize = () => {
+//       const updatedStyles = icons.map((icon) => {
+//         let height = window.innerWidth > 820 ? "48px" : "42px";
+//         return {
+//           ...icon,
+//           style: {
+//             ...icon.style,
+//             height,
+//           },
+//         };
+//       });
+//       setIconStyles(updatedStyles);
+//     };
+//     handleResize();
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  return iconStyles;
-};
+//     window.addEventListener("resize", handleResize);
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//     };
+//   }, []);
+//   return iconStyles;
+// };
 
 // fetches Medium blogs for <Blog />
 export const useFetchBlogs = (setBlogs) => {

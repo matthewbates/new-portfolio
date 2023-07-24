@@ -1,17 +1,17 @@
 import { FooterContainer, FooterItems } from "./FooterElements";
 
 import { icons } from "../../utils/data";
-import { useIconStyles } from "../../utils/hooks";
+// import { useIconStyles } from "../../utils/hooks";
 
 import FooterIcon from "../FooterIcon";
 
 export default function Footer() {
-  const iconStyles = useIconStyles();
+  // const iconStyles = useIconStyles();
 
   return (
     <FooterContainer>
       <FooterItems>
-        {iconStyles.map(({ id, name, image, url, style }) => (
+        {icons.map(({ id, name, image, url, style }) => (
           <FooterIcon
             key={id}
             name={name}

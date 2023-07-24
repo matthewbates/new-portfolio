@@ -24,7 +24,7 @@ export default function Sidebar({ isOpen, setIsOpen, activeStyle }) {
       gsap.timeline().from(linkRef.current, {
         opacity: 0,
         x: -25,
-        delay: 0.5,
+        delay: 0.25,
       });
     }
   }, [isOpen]);

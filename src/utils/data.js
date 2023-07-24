@@ -167,7 +167,7 @@ export const icons = [
     url: "https://www.github.com/matthewbates",
     className: "icons",
     style: {
-      transform: "scale(1.2)",
+      transform: "scale(1.19)",
       background: "#ffffff",
     },
   },
@@ -186,7 +186,6 @@ export const icons = [
     className: "icons",
     style: {
       transform: "scale(1.05)",
-      background: "#ffffff",
     },
   },
 ];
