@@ -11,10 +11,9 @@ export const NavbarLinkContainer = styled(Link)`
   text-transform: ${({ sidebar }) =>
     sidebar === "true" ? "none" : "uppercase"};
   display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")};
-  padding: 0.2em;
+  /* padding: 0.2em; */
   transition: 0.3s;
   font-size: ${({ sidebar }) => sidebar == "true" && "1.5em"};
-  font-weight: bold;
   color: ${({ activeStyle, index }) =>
     activeStyle === index
       ? `${CONSTANTS.colors.spaceGreen}`
@@ -22,7 +21,7 @@ export const NavbarLinkContainer = styled(Link)`
   font-family: "Raleway";
   font-weight: 100;
   text-transform: uppercase;
-  
+  /* border-bottom: ${({ sidebar }) => sidebar === "true" && "1px solid white"}; */
 
   @media screen and (min-width: 768px) {
     display: flex;
