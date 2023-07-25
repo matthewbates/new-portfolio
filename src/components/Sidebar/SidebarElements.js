@@ -14,13 +14,12 @@ export const SidebarContainer = styled.div`
   backdrop-filter: blur(10px); */
   position: fixed;
   top: 80px;
-  left: 0;
   width: 100%;
   background: ${CONSTANTS.styles.sidebar};
-  transition: top 0.3s ease-out, height 0.3s ease-out;
+  /* height: ${({ isOpen }) => (isOpen ? "25vh" : 0)}; */
+  transition: 0.3s ease-out;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  z-index: 998;
 `;
 
 export const SidebarItems = styled.div`
@@ -37,8 +36,8 @@ export const SidebarItems = styled.div`
   flex-direction: column;
   justify-content: center;
   font-family: "Raleway";
-  gap: 1em;
   font-size: 12px;
   text-align: right;
   padding: 1.5em;
+  gap: 0.5em;
 `;

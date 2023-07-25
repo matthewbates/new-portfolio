@@ -8,10 +8,14 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: #ffffff;
+  background: lightgray;
   font-family: ${CONSTANTS.styles.spaceMono};
   gap: 0.5em;
   height: 150px;
+
+  div {
+    user-select: none;
+  }
 `;
 
 export const FooterItems = styled.div`

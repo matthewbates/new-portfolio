@@ -59,7 +59,7 @@ export const AboutSkills = styled.div`
     transition: 0.3s ease-in-out;
 
     &:hover {
-      transform: translateY(-4px);
+      transform: translateY(-10px);
     }
   }
 `;
@@ -72,7 +72,7 @@ export const Img = styled.img`
   border-radius: 8px;
   cursor: pointer;
 
-  &:hover {
-    transform: translate(4px);
-  }
+  /* &:hover {
+    transform: translate(40px);
+  } */
 `;

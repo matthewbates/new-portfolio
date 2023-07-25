@@ -59,45 +59,23 @@ export const HomeText = styled.div`
   }
 `;
 
-export const BtnWrapper = styled.div`
-  margin: auto;
-  margin-top: 1em;
-  height: 42px;
-  width: 144px;
-  font-family: "Arial";
-  border: 1px solid ${CONSTANTS.colors.spaceGreen};
-  background: transparent;
-  color: ${CONSTANTS.colors.offWhite};
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-
-  &:hover {
-    transform: translate(2px, -2px);
-    transition: ${CONSTANTS.styles.hover};
-    box-shadow: ${CONSTANTS.styles.boxShadow};
-  }
-
-  @media screen and (min-width: 820px) {
-    height: 60px;
-    font-size: 1em;
-  }
-`;
-
 export const WorkBtn = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75em;
   font-family: "Raleway";
-  padding: 0.75em;
-  width: 50%;
+  padding: 0.6em;
   font-size: 1em;
   cursor: pointer;
   margin: auto;
   background: ${CONSTANTS.colors.royalBlue};
   border: 2px solid ${CONSTANTS.colors.spaceGreen};
   color: ${CONSTANTS.colors.offWhite};
+
+  @media screen and (min-width: 768px) {
+    padding: 0.75em;
+  }
 `;
 
 export const ArrowIcon = styled.span`

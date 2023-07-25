@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 import { ProjectContainer, H2, ProjectItems } from "./ProjectElements";
 
 import ProjectItem from "../../components/ProjectItem";
@@ -24,6 +26,7 @@ export default function Projects() {
           }) => (
             <ProjectItem
               key={id}
+              id={id}
               name={name}
               image={image}
               techStack={techStack}
