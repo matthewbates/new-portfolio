@@ -208,7 +208,7 @@ export const homeText = [
 export const aboutText = [
   {
     id: 1,
-    text: "Hello! My name is Matthew and I'm an application developer living in Denver, CO. My interest in technology started back in 2017 with a previous employer where I assisted the IT department develop custom SQL queries for a system migration.",
+    text: "Hello! My name is Matthew and I live in Denver,CO - nice to meet you! My interest in technology started back in 2017 with a previous employer where I assisted the IT department develop custom SQL queries for a system migration.",
   },
   {
     id: 2,
