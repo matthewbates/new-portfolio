@@ -15,8 +15,14 @@ export const SidebarContainer = styled.div`
   position: fixed;
   top: 80px;
   width: 100%;
-  background: ${CONSTANTS.styles.sidebar};
-  /* height: ${({ isOpen }) => (isOpen ? "25vh" : 0)}; */
+  /* background: ${CONSTANTS.styles.sidebar}; */
+  background: ${CONSTANTS.colors.offBlack};
+  height: ${({ isOpen }) => (isOpen ? "25vh" : 0)};
+
+  @media (min-width: 450px) and (max-width: 768px) {
+    height: ${({ isOpen }) => (isOpen ? "20vh" : 0)};
+  }
+
   transition: 0.3s ease-out;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -36,8 +42,7 @@ export const SidebarItems = styled.div`
   flex-direction: column;
   justify-content: center;
   font-family: "Raleway";
-  font-size: 12px;
-  text-align: right;
-  padding: 1.5em;
-  gap: 0.5em;
+  font-size: 1em;
+  margin-left: 1em;
+  gap: 1em;
 `;
