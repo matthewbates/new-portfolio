@@ -11,6 +11,7 @@ export const FooterContainer = styled.div`
   font-family: ${CONSTANTS.styles.spaceMono};
   gap: 0.5em;
   height: 150px;
+  background: lightgray;
 
   div {
     user-select: none;
