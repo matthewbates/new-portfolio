@@ -5,7 +5,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   background: ${CONSTANTS.colors.royalBlue};
-  height: 80px;
+  height: 100px;
   align-items: center;
   box-shadow: ${CONSTANTS.styles.navbarBoxShadow};
   transition: 0.5s;

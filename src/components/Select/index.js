@@ -1,47 +1,56 @@
 import { useState } from "react";
 
-import {
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
-  FormLabel,
-} from "@mui/material";
+import { MenuItem, Select, FormControl, InputLabel } from "@mui/material";
 
 import { downloadResume } from "../../utils/helpers";
 
+const TARGET = "_blank";
+
 export default function ResumeSelect() {
-  const [resume, setResume] = useState(null);
+  const [resume, setResume] = useState("");
+
   const handleChange = (e) => {
     const value = e.target.value;
-    value === "digital"
+
+    value === "Digital"
       ? window.open(
           "https://main--fabulous-figolla-1c21fb.netlify.app/",
-          "_blank"
+          `${TARGET}`
         )
       : downloadResume();
+    setResume(value);
   };
 
   return (
-    <FormControl sx={{ border: "1px solid white", marginLeft: "1em" }}>
-      <InputLabel sx={{ color: "white" }}>Resume</InputLabel>
-      <Select
-        label="Age"
+    <FormControl
+      sx={{
+        minWidth: 110,
+        marginLeft: "1em",
+        outline: "1px solid white",
+      }}
+    >
+      <InputLabel
+        focused={false}
         sx={{
-          minWidth: 120,
+          display: "flex",
+          color: "white",
+        }}
+      >
+        Resume
+      </InputLabel>
+      <Select
+        renderValue={(value) => (value ? value : "None")}
+        sx={{
           color: "white",
           "& svg": {
-            color: "white",
+            color: "#5CDB95",
           },
         }}
         value={resume}
-        onChange={(e) => {
-          handleChange(e);
-          setResume(e.target.value);
-        }}
+        onChange={handleChange}
       >
-        <MenuItem value={"digital"}>Digital</MenuItem>
-        <MenuItem value={"hardcopy"}>Hardcopy</MenuItem>
+        <MenuItem value={"Digital"}>Digital</MenuItem>
+        <MenuItem value={"Hardcopy"}>Hardcopy</MenuItem>
       </Select>
     </FormControl>
   );

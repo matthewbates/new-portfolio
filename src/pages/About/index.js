@@ -64,7 +64,7 @@ export default function About() {
           )
         )}
         <AboutSkills>
-          {skills.map(({ id, name, img, label, alt }, index) => (
+          {skills.map(({ id, name, img, alt }) => (
             <div key={id}>
               <ThemeProvider theme={theme}>
                 <Tooltip title={name} placement="bottom">

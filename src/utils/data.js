@@ -6,6 +6,7 @@ import CODEWARS from "../assets/codewars.png";
 import GITHUB from "../assets/github.png";
 import LINKEDIN from "../assets/linkedin.png";
 import MEDIUM from "../assets/medium.png";
+import CODEPEN from "../assets/codepen.svg";
 
 import PERSEPHONE_GRAES from "../assets/projects/persephoneGraes.png";
 import MARS_INDUSTRIES from "../assets/projects/marsIndustries.png";
@@ -187,6 +188,13 @@ export const icons = [
     style: {
       transform: "scale(1.05)",
     },
+  },
+  {
+    id: 5,
+    name: "Codepen",
+    image: CODEPEN,
+    url: "https://codepen.io/matthewbates",
+    className: "icons",
   },
 ];
 

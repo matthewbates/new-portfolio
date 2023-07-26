@@ -12,7 +12,7 @@ export default function Links({ title, sidebar, className, index, setIsOpen }) {
     <NavbarLinkContainer
       to={title}
       spy={true}
-      offset={-80}
+      offset={-100}
       smooth={true}
       duration={500}
       sidebar={sidebar}
