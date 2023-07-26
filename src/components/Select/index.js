@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { MenuItem, Select, FormControl, InputLabel } from "@mui/material";
 
@@ -6,7 +6,8 @@ import { downloadResume } from "../../utils/helpers";
 
 const TARGET = "_blank";
 
-export default function ResumeSelect() {
+const ResumeSelect = React.forwardRef((props, ref) => {
+  const { className } = props;
   const [resume, setResume] = useState("");
 
   const handleChange = (e) => {
@@ -23,6 +24,8 @@ export default function ResumeSelect() {
 
   return (
     <FormControl
+      ref={ref}
+      className={className}
       sx={{
         minWidth: 110,
         marginLeft: "1em",
@@ -54,4 +57,6 @@ export default function ResumeSelect() {
       </Select>
     </FormControl>
   );
-}
+});
+
+export default ResumeSelect;

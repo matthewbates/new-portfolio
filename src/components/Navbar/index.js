@@ -44,7 +44,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
   return (
     <NavbarContainer isOpen={isOpen}>
-      <Select />
+      <Select ref={resumeRef} className={"resume"} />
       {/* <Resume ref={resumeRef} className={"resume"} sidebar="false" /> */}
       <BurgerWrapper className="burger">
         <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
