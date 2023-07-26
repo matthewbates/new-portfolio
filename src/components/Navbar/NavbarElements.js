@@ -15,21 +15,6 @@ export const NavbarContainer = styled.div`
   z-index: 999;
 `;
 
-export const Logo = styled.img`
-  display: none;
-  margin-left: 1em;
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-  cursor: pointer;
-  filter: brightness(150%);
-  border: 2px solid ${CONSTANTS.colors.offWhite};
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-`;
-
 export const BurgerWrapper = styled.div`
   display: flex;
   margin-left: auto;
