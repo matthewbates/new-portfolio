@@ -47,7 +47,7 @@ export const Img = styled.img`
 export const Title = styled.div`
   font-family: ${CONSTANTS.styles.arial};
   color: ${({ hovered }) =>
-    hovered
+    hovered === "true"
       ? `${CONSTANTS.colors.spaceGreen}`
       : `${CONSTANTS.colors.offWhite}`};
   font-family: "Raleway";

@@ -8,7 +8,6 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: lightgray;
   font-family: ${CONSTANTS.styles.spaceMono};
   gap: 0.5em;
   height: 150px;

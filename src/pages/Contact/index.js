@@ -49,16 +49,10 @@ export default function Contact() {
     if (Object.keys(errors).length === 0) {
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
         (r) => {
-          // swal.fire(
-          //   "Message Sent",
-          //   "Matthew will get back to you as soon as he can!",
-          //   "success"
-          // );
           alert("Email sent! Matthew will get back to you shortly.");
         },
         (error) => {
-          alert("Oops, something went wrong");
-          // swal.fire("Oops, something went wrong", error.text, "error");
+          alert(error);
         }
       );
       e.target.reset();

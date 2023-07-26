@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import {
   NavbarContainer,
@@ -21,8 +21,9 @@ import Resume from "../Resume";
 export default function Navbar({ isOpen, setIsOpen }) {
   const [activeSection, setActiveSection] = useState(null);
   const textRef = useRef([]);
-  const resumeRef = useRef(null);
+  // const resumeRef = useRef(null);
   useHandleResize(setIsOpen);
+  const resumeRef = React.createRef();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,16 +45,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
   useEffect(() => {
     const isDesktop = window.innerWidth > 768;
-    animateNavbar("resume", textRef, isDesktop);
-  }, []);
-
-  useEffect(() => {
-    const tl = gsap.timeline();
-
-    tl.from(".resume", {
-      opacity: 0,
-      y: -100,
-    });
+    animateNavbar(".resume", textRef, isDesktop);
   }, []);
 
   return (

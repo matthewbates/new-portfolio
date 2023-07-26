@@ -13,7 +13,7 @@ import { TARGET, REL } from "../../utils/data";
 import { formatDate, formatBlogTitle } from "../../utils/helpers";
 
 export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
-  const [isHovered, setIsHovered] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <BlogContainer>
@@ -28,7 +28,7 @@ export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
             <a href={link} target={TARGET} rel={REL}>
               <Img src={thumbnail} />
             </a>
-            <Title hovered={isHovered === index}>
+            <Title hovered={isHovered === index ? "true" : "false"}>
               {formatBlogTitle(title)}
             </Title>
             <PubDate>{formatDate(pubDate)}</PubDate>
