@@ -13,7 +13,7 @@ export const SidebarContainer = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px); */
   position: fixed;
-  top: 80px;
+  top: 100px;
   width: 100%;
   /* background: ${CONSTANTS.styles.sidebar}; */
   background: ${CONSTANTS.colors.offBlack};
