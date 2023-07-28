@@ -7,12 +7,13 @@ export const FooterIconContainer = styled.div`
     mix-blend-mode: color-burn;
     transition: 0.3s ease-in-out;
     &:hover {
-      transform: scale(1.1);
+      /* transform: scale(1.1); */
+      transform: translateY(-4px);
     }
   }
 
   img {
     object-fit: contain;
-    height: 2em;
+    height: 2.2em;
   }
 `;
