@@ -27,7 +27,7 @@ const ResumeSelect = React.forwardRef((props, ref) => {
       ref={ref}
       className={className}
       sx={{
-        marginLeft: "1em",
+        marginLeft: "1.5em",
         outline: "1px solid white",
       }}
     >
