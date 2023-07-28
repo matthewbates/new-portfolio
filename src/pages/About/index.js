@@ -16,6 +16,7 @@ import {
 import CareerText from "../../components/CareerText";
 
 import { aboutText, skills } from "../../utils/data";
+import ToolTip from "../../components/Tooltip";
 
 export default function About() {
   const iconRef = useRef([]);
@@ -66,16 +67,14 @@ export default function About() {
         <AboutSkills>
           {skills.map(({ id, name, img, alt }) => (
             <div key={id}>
-              <ThemeProvider theme={theme}>
-                <Tooltip title={name} placement="bottom">
-                  <Img
-                    className="skills-icon"
-                    ref={(el) => (iconRef.current[id] = el)}
-                    src={img}
-                    alt={alt}
-                  />
-                </Tooltip>
-              </ThemeProvider>
+              <ToolTip title={name}>
+                <Img
+                  className="skills-icon"
+                  ref={(el) => (iconRef.current[id] = el)}
+                  src={img}
+                  alt={alt}
+                />
+              </ToolTip>
             </div>
           ))}
         </AboutSkills>

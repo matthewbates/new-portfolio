@@ -1,5 +1,26 @@
-import { Tooltip } from "react-tooltip";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Tooltip } from "@mui/material";
 
-export default function Tooltip({ props, children }) {
-  return <Tooltip {...props}>{children}</Tooltip>;
+export default function ToolTip({ children, title, placement }) {
+  const theme = createTheme({
+    components: {
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: {
+            fontSize: "1em",
+            fontFamily: "Raleway",
+            padding: "0.5em",
+          },
+        },
+      },
+    },
+  });
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Tooltip title={title} placement={placement}>
+        {children}
+      </Tooltip>
+    </ThemeProvider>
+  );
 }

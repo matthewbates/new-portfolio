@@ -27,7 +27,6 @@ const ResumeSelect = React.forwardRef((props, ref) => {
       ref={ref}
       className={className}
       sx={{
-        minWidth: 110,
         marginLeft: "1em",
         outline: "1px solid white",
       }}
@@ -44,6 +43,7 @@ const ResumeSelect = React.forwardRef((props, ref) => {
       <Select
         renderValue={(value) => (value ? value : "None")}
         sx={{
+          minWidth: 110,
           color: "white",
           "& svg": {
             color: "#5CDB95",
