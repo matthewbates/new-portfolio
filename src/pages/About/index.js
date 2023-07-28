@@ -1,7 +1,5 @@
 import { useRef, useEffect } from "react";
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Tooltip } from "@mui/material";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -34,20 +32,6 @@ export default function About() {
       stagger: 0.15,
     });
   }, []);
-
-  const theme = createTheme({
-    components: {
-      MuiTooltip: {
-        styleOverrides: {
-          tooltip: {
-            fontSize: "1em",
-            fontFamily: "Raleway",
-            padding: "0.5em",
-          },
-        },
-      },
-    },
-  });
 
   return (
     <AboutContainer id="About">

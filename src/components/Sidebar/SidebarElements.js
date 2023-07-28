@@ -42,7 +42,7 @@ export const SidebarItems = styled.div`
   flex-direction: column;
   justify-content: center;
   font-family: "Raleway";
-  font-size: 1em;
+  font-size: 0.9em;
   margin-left: 1em;
   gap: 1em;
 `;
