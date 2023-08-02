@@ -209,7 +209,7 @@ export const homeText = [
   },
   {
     id: 3,
-    text: "I build things for the web.",
+    text: "I'm a full-stack software developer.",
   },
 ];
 
