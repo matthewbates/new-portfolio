@@ -59,7 +59,7 @@ export const AboutSkills = styled.div`
     transition: 0.3s ease-in-out;
 
     &:hover {
-      transform: translateY(-10px);
+      transform: translateY(-4px);
     }
   }
 `;

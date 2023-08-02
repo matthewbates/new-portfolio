@@ -6,16 +6,13 @@ import gsap from "gsap";
 import {
   HomeContainer,
   HomeItems,
+  TextWrapper,
   HomeText,
-  BtnWrapper,
   WorkBtn,
   ArrowIcon,
 } from "./HomeElements";
 
 import { homeText } from "../../utils/data";
-import { useIconStyles } from "../../utils/hooks";
-import { downloadResume } from "../../utils/helpers";
-import Resume from "../../components/Resume";
 
 export default function Home({ isOpen }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -44,16 +41,18 @@ export default function Home({ isOpen }) {
     <HomeContainer id="Home" isOpen={isOpen}>
       <HomeItems>
         <HomeText>
-          {homeText.map(({ id, text }, index) => (
-            <div key={id} ref={(el) => (textRef.current[index] = el)}>
-              {text}
-            </div>
-          ))}
+          <TextWrapper>
+            {homeText.map(({ id, text }, index) => (
+              <div key={id} ref={(el) => (textRef.current[index] = el)}>
+                {text}
+              </div>
+            ))}
+          </TextWrapper>
         </HomeText>
         <WorkBtn
           className="button"
-          onMouseOver={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseOver={toggleHover}
+          onMouseLeave={toggleHover}
           to="Projects"
           spy={true}
           smooth={true}

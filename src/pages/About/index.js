@@ -15,9 +15,13 @@ import CareerText from "../../components/CareerText";
 
 import { aboutText, skills } from "../../utils/data";
 import ToolTip from "../../components/Tooltip";
+import Title from "../../components/Title";
+
+import { animateTitle } from "../../utils/gsap";
 
 export default function About() {
   const iconRef = useRef([]);
+  const titleRef = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -33,11 +37,15 @@ export default function About() {
     });
   }, []);
 
+  useEffect(() => {
+    animateTitle(titleRef, ".about-div");
+  }, []);
+
   return (
     <AboutContainer id="About">
       <AboutText>
-        <H2>
-          About <div></div>
+        <H2 ref={titleRef}>
+          About <div className="about-div"></div>
         </H2>
         {aboutText.map((item, index) =>
           item.id === 1 ? (
@@ -53,6 +61,7 @@ export default function About() {
             <div key={id}>
               <ToolTip title={name}>
                 <Img
+                  onClick={() => name}
                   className="skills-icon"
                   ref={(el) => (iconRef.current[id] = el)}
                   src={img}

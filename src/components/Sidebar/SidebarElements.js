@@ -18,14 +18,11 @@ export const SidebarContainer = styled.div`
   /* background: ${CONSTANTS.styles.sidebar}; */
   background: ${CONSTANTS.colors.offBlack};
   height: ${({ isOpen }) => (isOpen ? "25vh" : 0)};
+  transition: 0.3s ease-out;
 
   @media (min-width: 450px) and (max-width: 768px) {
     height: ${({ isOpen }) => (isOpen ? "20vh" : 0)};
   }
-
-  transition: 0.3s ease-out;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
 `;
 
 export const SidebarItems = styled.div`

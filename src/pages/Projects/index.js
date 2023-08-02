@@ -1,16 +1,25 @@
+import { useRef, useEffect } from "react";
+
 import gsap from "gsap";
 
 import { ProjectContainer, H2, ProjectItems } from "./ProjectElements";
 
 import ProjectItem from "../../components/ProjectItem";
 
+import { animateTitle } from "../../utils/gsap";
 import { projectData } from "../../utils/data";
 
 export default function Projects() {
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    animateTitle(titleRef, ".projects-div");
+  }, []);
+
   return (
     <ProjectContainer id="Projects">
-      <H2>
-        Projects <div></div>
+      <H2 ref={titleRef}>
+        Projects <div className="projects-div"></div>
       </H2>
       <ProjectItems>
         {projectData.map(

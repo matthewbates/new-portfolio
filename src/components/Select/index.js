@@ -35,6 +35,7 @@ const ResumeSelect = React.forwardRef((props, ref) => {
         focused={false}
         sx={{
           display: "flex",
+          justifyContent: "center",
           color: "white",
         }}
       >
@@ -43,7 +44,7 @@ const ResumeSelect = React.forwardRef((props, ref) => {
       <Select
         renderValue={(value) => (value ? value : "None")}
         sx={{
-          minWidth: 110,
+          minWidth: window.innerWidth > 768 ? 130 : 110,
           color: "white",
           "& svg": {
             color: "#5CDB95",

@@ -16,10 +16,12 @@ export const HomeItems = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
+  margin-bottom: 100px;
+  transition: 0.3s ease-in-out;
+`;
 
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
-  }
+export const TextWrapper = styled.div`
+  transition: 0.3s ease-in-out;
 `;
 
 export const HomeText = styled.div`
@@ -30,14 +32,14 @@ export const HomeText = styled.div`
     &:first-child {
       font-family: ${CONSTANTS.styles.spaceMono};
 
-      @media screen and (min-width: 820px) {
-        font-size: 22px;
+      @media screen and (min-width: 768px) {
+        font-size: 20px;
       }
     }
     &:nth-child(2) {
       font-family: ${CONSTANTS.styles.raleway};
-      font-size: 2em;
       font-weight: bold;
+      font-size: 2em;
       color: ${CONSTANTS.colors.spaceGreen};
 
       &::after {
@@ -45,15 +47,15 @@ export const HomeText = styled.div`
         color: white;
       }
 
-      @media screen and (min-width: 820px) {
-        font-size: 3em;
+      @media screen and (min-width: 768px) {
+        font-size: 2.5em;
       }
     }
     &:nth-child(3) {
       font-family: ${CONSTANTS.styles.spaceMono};
 
-      @media screen and (min-width: 820px) {
-        font-size: 22px;
+      @media screen and (min-width: 768px) {
+        font-size: 20px;
       }
     }
   }
@@ -65,8 +67,8 @@ export const WorkBtn = styled(Link)`
   justify-content: center;
   gap: 0.75em;
   font-family: "Raleway";
-  padding: 0.6em;
-  font-size: 1em;
+  padding: 0.75em;
+  font-size: 0.9em;
   cursor: pointer;
   margin: auto;
   background: ${CONSTANTS.colors.royalBlue};
@@ -74,7 +76,7 @@ export const WorkBtn = styled(Link)`
   color: ${CONSTANTS.colors.offWhite};
 
   @media screen and (min-width: 768px) {
-    padding: 0.75em;
+    padding: 1em;
   }
 `;
 

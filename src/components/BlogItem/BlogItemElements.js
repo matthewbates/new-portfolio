@@ -13,7 +13,6 @@ export const BlogContainer = styled.div`
   cursor: pointer;
   transition: 0.3s ease-in-out;
   pointer-events: none;
-  /* margin-top: 2em; */
 
   &:last-child {
     margin-bottom: 2em;
