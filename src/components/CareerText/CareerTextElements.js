@@ -13,7 +13,7 @@ export const A = styled.a`
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 90%;
-  transition: background-size 0.3s ease-in;
+  transition: background-size 0.2s ease-in-out;
 
   &:hover {
     background-size: 100% 88%;
