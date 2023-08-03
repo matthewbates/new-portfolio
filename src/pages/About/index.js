@@ -9,6 +9,7 @@ import {
   AboutText,
   AboutSkills,
   Img,
+  FreelanceWrapper,
 } from "./AboutElements";
 
 import CareerText from "../../components/CareerText";
@@ -18,6 +19,7 @@ import ToolTip from "../../components/Tooltip";
 import Title from "../../components/Title";
 
 import { animateTitle } from "../../utils/gsap";
+import Skills from "../../components/Freelance";
 
 export default function About() {
   const iconRef = useRef([]);
@@ -72,6 +74,20 @@ export default function About() {
           ))}
         </AboutSkills>
       </AboutText>
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          color: "#f1f2f2",
+          fontFamily: "Raleway",
+          marginBottom: "1em",
+        }}
+      >
+        Projects I build are...
+      </h1>
+      <FreelanceWrapper>
+        <Skills />
+      </FreelanceWrapper>
     </AboutContainer>
   );
 }

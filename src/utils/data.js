@@ -17,6 +17,13 @@ import MOUNTAIN_BUDDY from "../assets/projects/mountainBuddy.png";
 import MONSTERS_ROLODEX from "../assets/projects/monstersRolodex.png";
 import ALGORITHMS from "../assets/projects/algorithms.png";
 
+import {
+  mdiSpeedometer,
+  mdiLightbulbOn10,
+  mdiResponsive,
+  mdiRocketLaunchOutline,
+} from "@mdi/js";
+
 export const TARGET = "_blank";
 export const REL = "noopener noreferrer";
 
@@ -26,10 +33,36 @@ export const RSS_CONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSS
 
 export const ITEMS_PER_PAGE = 4;
 
-export const avatar = {
-  img: require("../assets/avatar.png"),
-  alt: "avatar",
-};
+export const freelance = [
+  {
+    id: 1,
+    path: mdiSpeedometer,
+    size: 4,
+    title: "Fast",
+    text: "Fast load times and lag-free interaction, my highest priority.",
+  },
+  {
+    id: 2,
+    path: mdiLightbulbOn10,
+    size: 4,
+    title: "Intuitive",
+    text: "Strong preference for easy to use, intuitive UI/UX",
+  },
+  {
+    id: 3,
+    path: mdiResponsive,
+    size: 4,
+    title: "Responsive",
+    text: "My layouts will work on any device, big or small",
+  },
+  {
+    id: 4,
+    path: mdiRocketLaunchOutline,
+    size: 4,
+    title: "Dynamic",
+    text: "Websites don't have to be static - I make pages come to life",
+  },
+];
 
 export const links = [
   {

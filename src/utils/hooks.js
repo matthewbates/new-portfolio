@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import axios from "axios";
 
-import { RSS_CONVERTER, icons } from "./data";
+import { RSS_CONVERTER } from "./data";
 
 // closes <Sidebar /> when the user clicks outside
 export const useClickOutside = (ref, handler) => {

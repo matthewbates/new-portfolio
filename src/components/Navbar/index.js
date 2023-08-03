@@ -15,7 +15,7 @@ import Select from "../Select";
 export default function Navbar({ isOpen, setIsOpen }) {
   const [activeSection, setActiveSection] = useState(null);
   const textRef = useRef([]);
-  // const resumeRef = useRef(null);
+  
   useHandleResize(setIsOpen);
   const resumeRef = React.createRef();
 
