@@ -33,6 +33,7 @@ const ResumeSelect = React.forwardRef((props) => {
         value={resume}
         placeholder="Resume"
         autoFocus={false}
+        isSearchable={false}
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,
