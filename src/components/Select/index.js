@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 
+import Select from "react-select";
+
+import { SelectContainer } from "./SelectElements";
+
 import CONSTANTS from "../../utils/constants";
 import { downloadResume } from "../../utils/helpers";
-import Select from "react-select";
 
 const TARGET = "_blank";
 
 const ResumeSelect = React.forwardRef((props) => {
   const { className } = props;
   const [resume, setResume] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleChange = (selectedOption) => {
     selectedOption.value === "digital"
@@ -21,20 +25,22 @@ const ResumeSelect = React.forwardRef((props) => {
   };
 
   return (
-    <div style={{ marginLeft: "1em" }}>
+    <SelectContainer>
       <Select
         className={className}
         onChange={handleChange}
         options={CONSTANTS.resumeOptions}
         value={resume}
         placeholder="Resume"
+        autoFocus={false}
         styles={{
-          control: (baseStyles) => ({
+          control: (baseStyles, state) => ({
             ...baseStyles,
             fontFamily: "Raleway",
             border: `4px solid ${CONSTANTS.colors.spaceGreen}`,
             cursor: "pointer",
             width: "130px",
+            state: state.isFocused,
           }),
           option: (baseStyles) => ({
             ...baseStyles,
@@ -43,7 +49,7 @@ const ResumeSelect = React.forwardRef((props) => {
           }),
         }}
       />
-    </div>
+    </SelectContainer>
   );
 });
 
