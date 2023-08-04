@@ -25,6 +25,16 @@ const CONSTANTS = {
     padding: "1em",
     fontSize: "2em",
   },
+  resumeOptions: [
+    {
+      value: "digital",
+      label: "Digital",
+    },
+    {
+      value: "hardcopy",
+      label: "Hardcopy",
+    },
+  ],
 };
 
 export default CONSTANTS;

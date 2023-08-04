@@ -10,6 +10,7 @@ export const IconContainer = styled.div`
   color: ${CONSTANTS.colors.offWhite};
   width: 100%;
   gap: 0.5em;
+  user-select: none;
 `;
 
 export const TitleWrapper = styled.div`

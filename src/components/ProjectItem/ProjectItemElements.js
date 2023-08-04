@@ -31,9 +31,14 @@ export const ProjectWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 0;
+
+  &:hover {
+    border: 1px solid red;
+  }
 `;
 
 export const Img = styled.img`
+  display: flex;
   height: 240px;
   width: 500px;
   max-width: 100%;

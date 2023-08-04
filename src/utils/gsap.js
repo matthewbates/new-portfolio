@@ -13,12 +13,12 @@ export const animateNavbar = (logoRef, textRefs, isDesktop) => {
 
   if (isDesktop) {
     tl.from(textRefs.current, {
-      y: -100,
+      y: -200,
       opacity: 0,
     });
   } else {
     tl.from(".burger", {
-      y: -100,
+      y: -200,
       opacity: 0,
     });
   }
