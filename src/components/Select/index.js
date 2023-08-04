@@ -42,11 +42,13 @@ const ResumeSelect = React.forwardRef((props) => {
             cursor: "pointer",
             width: "130px",
             state: state.isFocused,
+            userSelect: "none",
           }),
           option: (baseStyles) => ({
             ...baseStyles,
             fontFamily: "Raleway",
             cursor: "pointer",
+            userSelect: "none",
           }),
         }}
       />
