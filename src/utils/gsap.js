@@ -32,7 +32,6 @@ export const animateIcons = (iconRef) => {
     scrollTrigger: {
       trigger: iconRef.current,
       start: "top 60%",
-      markers: true,
     },
   });
 };
