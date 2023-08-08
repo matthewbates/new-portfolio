@@ -1,8 +1,5 @@
 import { useRef, useEffect } from "react";
 
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
 import {
   AboutContainer,
   H2,
@@ -16,31 +13,22 @@ import CareerText from "../../components/CareerText";
 
 import { aboutText, skills } from "../../utils/data";
 import ToolTip from "../../components/Tooltip";
-import Title from "../../components/Title";
 
-import { animateTitle } from "../../utils/gsap";
+import { animateTitle, animateIcons, animateText } from "../../utils/gsap";
 import Skills from "../../components/Freelance";
 
 export default function About() {
   const iconRef = useRef([]);
   const titleRef = useRef(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from(iconRef.current, {
-      scrollTrigger: {
-        trigger: iconRef.current,
-        start: "top center",
-        toggleActions: "play none none none",
-      },
-      opacity: 0,
-      y: -20,
-      stagger: 0.15,
-    });
-  }, []);
+  const textRef = useRef("");
 
   useEffect(() => {
     animateTitle(titleRef, ".about-div");
+    animateIcons(iconRef);
+    aboutText.forEach((_, index) => {
+      textRef.current = `.animate-text-${index}`;
+      animateText(textRef);
+    });
   }, []);
 
   return (
@@ -49,22 +37,16 @@ export default function About() {
         <H2 ref={titleRef}>
           About <div className="about-div"></div>
         </H2>
-        {aboutText.map((item, index) =>
-          item.id === 1 ? (
-            item.text
-          ) : item.id === 2 ? (
+        {aboutText.map((item, index) => (
+          <div className={`animate-text-${index}`} key={index}>
             <CareerText key={index} item={item} />
-          ) : (
-            item.text
-          )
-        )}
+          </div>
+        ))}
         <AboutSkills>
           {skills.map(({ id, name, img, alt }) => (
             <div key={id}>
               <ToolTip title={name}>
                 <Img
-                  onClick={() => name}
-                  className="skills-icon"
                   ref={(el) => (iconRef.current[id] = el)}
                   src={img}
                   alt={alt}

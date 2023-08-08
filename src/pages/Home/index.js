@@ -29,7 +29,7 @@ export default function Home({ isOpen }) {
       opacity: 0,
       y: -20,
       delay: 1.25,
-      stagger: 0.25,
+      stagger: 0.15,
     });
     tl.from(".button", {
       opacity: 0,

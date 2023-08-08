@@ -14,11 +14,6 @@ export const IconContainer = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-  /* display: flex;
-  justify-content: center;
-  font-size: 1.5em;
-  font-family: "Raleway";
-  text-decoration: underline; */
   color: ${CONSTANTS.colors.offWhite};
   text-decoration: none;
   background: linear-gradient(
@@ -44,6 +39,6 @@ export const TextWrapper = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  max-width: 300px;
+  max-width: 250px;
   font-family: "Open Sans";
 `;

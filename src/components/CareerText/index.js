@@ -9,13 +9,13 @@ export default function CareerText({ item }) {
     urlOne,
     textTwo,
     hyperlinkTextTwo,
-    urlTwo,
     textThree,
     textFour,
   } = item;
 
   return (
-    <p style={{ position: "relative" }}>
+    <>
+      {item.id === 1 && item.text}
       {textOne}
       <A href={urlOne} target={TARGET} rel={REL}>
         {hyperlinkTextOne}
@@ -23,10 +23,8 @@ export default function CareerText({ item }) {
       {textTwo}
       {textThree}
       <A>{hyperlinkTextTwo}</A>
-      {/* <A href={urlTwo} target={TARGET} rel={REL}>
-        {hyperlinkTextTwo}
-      </A> */}
       {textFour}
-    </p>
+      {item.id === 3 && item.text}
+    </>
   );
 }

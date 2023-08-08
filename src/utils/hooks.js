@@ -21,6 +21,14 @@ export const useClickOutside = (ref, handler) => {
   }, [ref, handler]);
 };
 
+export const useBlur = (ref) => {
+  const listener = (e) => {
+    if (ref.current & !ref.current.contains(e.target)) {
+      window.blur();
+    }
+  };
+};
+
 // handles the resizing of <HomeIcon /> depending on window.innerWidth
 // export const useIconStyles = () => {
 //   const [iconStyles, setIconStyles] = useState([]);

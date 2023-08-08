@@ -15,7 +15,7 @@ export const toggleSidebar = (isOpen, setIsOpen) => {
 
 // downloads resume
 export const downloadResume = () => {
-  FileSaver.saveAs(resume, "Resume");
+  FileSaver.saveAs(resume, "Matthew Bates - Resume");
 };
 
 // closes <Sidebar /> if the window exceeds 768px
