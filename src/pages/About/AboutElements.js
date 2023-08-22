@@ -42,9 +42,17 @@ export const AboutText = styled.div`
   transition: 0.3s ease-in-out;
   user-select: none;
 
-  @media screen and (min-width: 768px) {
-    max-width: 60%;
+  /* @media screen and (min-width: 768px) {
+    max-width: 50%;
     font-size: 1.4em;
+  } */
+  @media screen and (min-width: 768px) {
+    width: 75%;
+    font-size: 1.5em;
+  }
+
+  @media screen and (min-width: 1100px) {
+    width: 60%;
   }
 `;
 

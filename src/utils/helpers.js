@@ -69,3 +69,7 @@ export const formatBlogTitle = (title) => {
   decodedTitle.innerHTML = title;
   return decodedTitle.value;
 };
+
+// sets the duration for <Scroll /> component
+export const generateSpeed = (min, max) =>
+  Math.floor(Math.random() * (max - min)) + min;

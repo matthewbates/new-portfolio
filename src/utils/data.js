@@ -2,7 +2,7 @@ import SQL from "../assets/icons/skills/sql.png";
 import GREENSOCK from "../assets/icons/skills/greensock.svg";
 import JAVASCRIPT from "../assets/icons/skills/javascript.svg";
 import RUBY from "../assets/icons/skills/ruby.png";
-import RAILS from "../assets/icons/skills/rails.jpeg";
+import RAILS from "../assets/icons/skills/rails.svg";
 import GIT from "../assets/icons/skills/git.svg";
 import REACT from "../assets/icons/skills/react.svg";
 import NODE from "../assets/icons/skills/node_js.svg";
@@ -12,6 +12,9 @@ import CSS from "../assets/icons/skills/css.png";
 import BOOTSTRAP from "../assets/icons/skills/bootstrap.png";
 import MONGODB from "../assets/icons/skills/mongo_db.svg";
 import PYTHON from "../assets/icons/skills/python.svg";
+import EXPRESS from "../assets/icons/skills/express.svg";
+import MONGOOSE from "../assets/icons/skills/mongoose.png";
+import MATERIALUI from "../assets/icons/skills/material_ui.png";
 
 import CODEWARS from "../assets/icons/links/codewars.png";
 import GITHUB from "../assets/icons/links/github.png";
@@ -44,6 +47,8 @@ const RSSURL = `https://medium.com/feed/@${USERNAME}`;
 export const RSS_CONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSSURL}`;
 
 export const ITEMS_PER_PAGE = 4;
+
+export const DURATION = 15000;
 
 export const freelance = [
   {
@@ -106,6 +111,7 @@ export const skills = [
     img: JAVASCRIPT,
     label: "JavaScript",
     alt: "javascript-icon",
+    group: "Programming Languages",
   },
   {
     id: 2,
@@ -113,6 +119,7 @@ export const skills = [
     img: SQL,
     label: "SQL",
     alt: "sql-icon",
+    group: "Programming Languages",
   },
   {
     id: 3,
@@ -120,78 +127,109 @@ export const skills = [
     img: RUBY,
     label: "Ruby",
     alt: "ruby-icon",
+    group: "Programming Languages",
   },
   {
     id: 4,
+    name: "Rails",
+    img: RAILS,
+    label: "Rails",
+    alt: "rails-icon",
+    group: "Programming Languages",
+  },
+  {
+    id: 5,
     name: "Python",
     img: PYTHON,
     alt: "python-icon",
+    group: "Programming Languages",
   },
-  // {
-  //   id: 4,
-  //   name: "Rails",
-  //   img: RAILS,
-  //   label: "Rails",
-  //   alt: "rails-icon",
-  // },
   {
-    id: 5,
+    id: 6,
     name: "Git",
     img: GIT,
     label: "Git",
     alt: "git-icon",
+    group: "Technical Tools",
   },
   {
-    id: 6,
+    id: 7,
     name: "React",
     img: REACT,
     label: "React",
     alt: "react-icon",
+    group: "Technical Tools",
   },
   {
-    id: 7,
+    id: 8,
     name: "Node.js",
     img: NODE,
     label: "Node.js",
     alt: "nodejs-icon",
+    group: "Technical Tools",
   },
   {
-    id: 8,
+    id: 9,
+    name: "Express.js",
+    img: EXPRESS,
+    label: "Express,js",
+    alt: "expressjs-icon",
+    group: "Technical Tools",
+  },
+  {
+    id: 10,
     name: "Jest",
     img: JEST,
     label: "Jest",
     alt: "jest-icon",
+    group: "Technical Tools",
   },
   {
-    id: 9,
+    id: 11,
+    name: "Mongoose",
+    img: MONGOOSE,
+    label: "Mongoose",
+    alt: "mongoose-icon",
+    group: "Technical Tools",
+  },
+  {
+    id: 12,
     name: "MongoDB",
     img: MONGODB,
     label: "MongoDB",
     alt: "mongodb-icon",
+    group: "Technical Tools",
   },
   {
-    id: 10,
+    id: 13,
     name: "HTML",
     img: HTML,
     label: "HTML",
     alt: "html-icon",
   },
   {
-    id: 11,
+    id: 14,
     name: "CSS",
     img: CSS,
     label: "CSS",
     alt: "css-icon",
   },
   {
-    id: 12,
+    id: 15,
     name: "Bootstrap",
     img: BOOTSTRAP,
     label: "Bootstrap",
     alt: "bootstrap-icon",
   },
   {
-    id: 13,
+    id: 16,
+    name: "Material UI",
+    img: MATERIALUI,
+    label: "Material UI",
+    alt: "materialui-icon",
+  },
+  {
+    id: 17,
     name: "Greensock",
     img: GREENSOCK,
     label: "Greensock",

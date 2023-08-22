@@ -13,10 +13,10 @@ import CareerText from "../../components/CareerText";
 
 import { aboutText, skills } from "../../utils/data";
 import ToolTip from "../../components/Tooltip";
-
+import Freelance from "../../components/Freelance";
 import { animateTitle, animateIcons, animateText } from "../../utils/gsap";
-import Skills from "../../components/Freelance";
-import InfiniteScroll from "../../components/InfiniteScroll";
+
+import Scroll from "../../components/Scroll";
 
 export default function About() {
   const iconRef = useRef([]);
@@ -43,7 +43,7 @@ export default function About() {
             <CareerText key={index} item={item} />
           </div>
         ))}
-        <AboutSkills>
+        {/* <AboutSkills>
           {skills.map(({ id, name, img, alt }) => (
             <div key={id}>
               <ToolTip title={name}>
@@ -55,10 +55,10 @@ export default function About() {
               </ToolTip>
             </div>
           ))}
-        </AboutSkills>
+        </AboutSkills> */}
       </AboutText>
-      <InfiniteScroll />
-      {/* <h1
+      <Scroll />
+      <h1
         style={{
           display: "flex",
           justifyContent: "center",
@@ -70,8 +70,8 @@ export default function About() {
         Projects I build are...
       </h1>
       <FreelanceWrapper>
-        <Skills />
-      </FreelanceWrapper> */}
+        <Freelance />
+      </FreelanceWrapper>
     </AboutContainer>
   );
 }
