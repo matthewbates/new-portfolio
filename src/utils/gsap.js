@@ -71,14 +71,12 @@ export const animateText = (textRef) => {
 };
 
 export const animateFreelance = (logoRef, title, text) => {
-  gsap.from(logoRef.current, {
-    ease: "power1.in",
-  });
   gsap.from(title, {
     opacity: 0,
     y: 25,
     ease: "bounce",
     duration: 0.75,
+
     scrollTrigger: {
       trigger: title,
       start: "top 90%",

@@ -22,7 +22,7 @@ function App() {
       <Projects />
       <Blog />
       <Contact />
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
       <Footer />
     </div>
   );

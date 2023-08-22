@@ -12,7 +12,6 @@ import {
 import CareerText from "../../components/CareerText";
 
 import { aboutText, skills } from "../../utils/data";
-import ToolTip from "../../components/Tooltip";
 import Freelance from "../../components/Freelance";
 import { animateTitle, animateIcons, animateText } from "../../utils/gsap";
 

@@ -7,7 +7,6 @@ export const FooterIconContainer = styled.div`
     mix-blend-mode: color-burn;
     transition: 0.3s ease-in-out;
     &:hover {
-      /* transform: scale(1.1); */
       transform: translateY(-4px);
     }
   }

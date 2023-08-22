@@ -48,7 +48,7 @@ export const RSS_CONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSS
 
 export const ITEMS_PER_PAGE = 4;
 
-export const DURATION = 15000;
+export const DURATION = 20000;
 
 export const freelance = [
   {
@@ -56,7 +56,7 @@ export const freelance = [
     path: mdiSpeedometer,
     size: 4,
     title: "Fast",
-    text: "Fast load times and lag-free interaction, my highest priority.",
+    text: "Fast, lag-free load times interaction, my highest priority.",
   },
   {
     id: 2,

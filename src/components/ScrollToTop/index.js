@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
+
 import { ScrollToTopContainer } from "./ScrollToTopElements";
 
 export default function ScrollToTop() {
@@ -8,7 +10,9 @@ export default function ScrollToTop() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      currentScrollPos > 250 ? setVisible(true) : setVisible(false);
+      currentScrollPos > 500 && window.innerWidth > 768
+        ? setVisible(true)
+        : setVisible(false);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,7 +30,7 @@ export default function ScrollToTop() {
       }
       visible={visible}
     >
-      back to top
+      <FaRegArrowAltCircleUp style={{ fontSize: "3em" }} />
     </ScrollToTopContainer>
   );
 }

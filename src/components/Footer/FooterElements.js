@@ -12,10 +12,6 @@ export const FooterContainer = styled.div`
   gap: 0.5em;
   height: 150px;
   background: lightgray;
-
-  div {
-    user-select: none;
-  }
 `;
 
 export const FooterItems = styled.div`
