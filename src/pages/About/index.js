@@ -16,6 +16,7 @@ import ToolTip from "../../components/Tooltip";
 
 import { animateTitle, animateIcons, animateText } from "../../utils/gsap";
 import Skills from "../../components/Freelance";
+import InfiniteScroll from "../../components/InfiniteScroll";
 
 export default function About() {
   const iconRef = useRef([]);
@@ -56,7 +57,8 @@ export default function About() {
           ))}
         </AboutSkills>
       </AboutText>
-      <h1
+      <InfiniteScroll />
+      {/* <h1
         style={{
           display: "flex",
           justifyContent: "center",
@@ -69,7 +71,7 @@ export default function About() {
       </h1>
       <FreelanceWrapper>
         <Skills />
-      </FreelanceWrapper>
+      </FreelanceWrapper> */}
     </AboutContainer>
   );
 }

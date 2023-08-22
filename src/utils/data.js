@@ -1,12 +1,23 @@
-import SQL from "../assets/sql.png";
-import GREENSOCK from "../assets/greensock.svg";
-import MONGODB from "../assets/mongodb.svg";
+import SQL from "../assets/icons/skills/sql.png";
+import GREENSOCK from "../assets/icons/skills/greensock.svg";
+import JAVASCRIPT from "../assets/icons/skills/javascript.svg";
+import RUBY from "../assets/icons/skills/ruby.png";
+import RAILS from "../assets/icons/skills/rails.jpeg";
+import GIT from "../assets/icons/skills/git.svg";
+import REACT from "../assets/icons/skills/react.svg";
+import NODE from "../assets/icons/skills/node_js.svg";
+import JEST from "../assets/icons/skills/jest.svg";
+import HTML from "../assets/icons/skills/html.svg";
+import CSS from "../assets/icons/skills/css.png";
+import BOOTSTRAP from "../assets/icons/skills/bootstrap.png";
+import MONGODB from "../assets/icons/skills/mongo_db.svg";
+import PYTHON from "../assets/icons/skills/python.svg";
 
-import CODEWARS from "../assets/codewars.png";
-import GITHUB from "../assets/github.png";
-import LINKEDIN from "../assets/linkedin.png";
-import MEDIUM from "../assets/medium.png";
-import CODEPEN from "../assets/codepen.svg";
+import CODEWARS from "../assets/icons/links/codewars.png";
+import GITHUB from "../assets/icons/links/github.png";
+import LINKEDIN from "../assets/icons/links/linkedin.png";
+import MEDIUM from "../assets/icons/links/medium.png";
+import CODEPEN from "../assets/icons/links/codepen.svg";
 
 import PERSEPHONE_GRAES from "../assets/projects/persephoneGraes.png";
 import MARS_INDUSTRIES from "../assets/projects/marsIndustries.png";
@@ -22,6 +33,7 @@ import {
   mdiLightbulbOn10,
   mdiResponsive,
   mdiRocketLaunchOutline,
+  mdiLanguagePython,
 } from "@mdi/js";
 
 export const TARGET = "_blank";
@@ -91,7 +103,7 @@ export const skills = [
   {
     id: 1,
     name: "Javascript",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+    img: JAVASCRIPT,
     label: "JavaScript",
     alt: "javascript-icon",
   },
@@ -105,43 +117,48 @@ export const skills = [
   {
     id: 3,
     name: "Ruby",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg",
+    img: RUBY,
     label: "Ruby",
     alt: "ruby-icon",
   },
   {
     id: 4,
-    name: "Rails",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg",
-    label: "Rails",
-    alt: "rails-icon",
+    name: "Python",
+    img: PYTHON,
+    alt: "python-icon",
   },
-
+  // {
+  //   id: 4,
+  //   name: "Rails",
+  //   img: RAILS,
+  //   label: "Rails",
+  //   alt: "rails-icon",
+  // },
   {
     id: 5,
     name: "Git",
-    img: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
+    img: GIT,
     label: "Git",
     alt: "git-icon",
   },
   {
     id: 6,
     name: "React",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+    img: REACT,
     label: "React",
     alt: "react-icon",
   },
   {
     id: 7,
     name: "Node.js",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
+    img: NODE,
     label: "Node.js",
     alt: "nodejs-icon",
   },
   {
     id: 8,
     name: "Jest",
-    img: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg",
+    img: JEST,
     label: "Jest",
     alt: "jest-icon",
   },
@@ -155,21 +172,21 @@ export const skills = [
   {
     id: 10,
     name: "HTML",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
+    img: HTML,
     label: "HTML",
     alt: "html-icon",
   },
   {
     id: 11,
     name: "CSS",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
+    img: CSS,
     label: "CSS",
     alt: "css-icon",
   },
   {
     id: 12,
     name: "Bootstrap",
-    img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
+    img: BOOTSTRAP,
     label: "Bootstrap",
     alt: "bootstrap-icon",
   },
@@ -267,10 +284,6 @@ export const aboutText = [
     id: 3,
     text: "Some of the technologies that I utilize include:",
   },
-  // {
-  //   id: 4,
-  //   text: "When I'm not sitting in front of a computer",
-  // },
 ];
 
 export const contactData = [

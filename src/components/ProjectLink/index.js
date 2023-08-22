@@ -2,8 +2,8 @@ import { LinkWrapper } from "./ProjectLinkElements";
 
 import ToolTip from "../Tooltip";
 
-import Github from "../../assets/icons/github";
-import Site from "../../assets/icons/siteLink";
+import Github from "../../assets/icons/links/github";
+import Site from "../../assets/icons/links/siteLink";
 
 import { TARGET, REL } from "../../utils/data";
 
