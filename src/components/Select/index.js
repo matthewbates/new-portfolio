@@ -9,7 +9,7 @@ import { downloadResume } from "../../utils/helpers";
 
 const TARGET = "_blank";
 
-const ResumeSelect = React.forwardRef((props) => {
+const ResumeSelect = React.forwardRef((props, ref) => {
   const { className } = props;
   const [resume, setResume] = useState("");
   const [isFocused, setIsFocused] = useState(false);
@@ -38,7 +38,6 @@ const ResumeSelect = React.forwardRef((props) => {
           control: (baseStyles, state) => ({
             ...baseStyles,
             fontFamily: "Raleway",
-            border: `4px solid ${CONSTANTS.colors.spaceGreen}`,
             cursor: "pointer",
             width: "130px",
             state: state.isFocused,

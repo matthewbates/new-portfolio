@@ -36,7 +36,6 @@ import {
   mdiLightbulbOn10,
   mdiResponsive,
   mdiRocketLaunchOutline,
-  mdiLanguagePython,
 } from "@mdi/js";
 
 export const TARGET = "_blank";

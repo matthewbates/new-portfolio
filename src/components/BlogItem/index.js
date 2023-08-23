@@ -10,7 +10,11 @@ import {
 } from "./BlogItemElements";
 
 import { TARGET, REL } from "../../utils/data";
-import { formatDate, formatBlogTitle } from "../../utils/helpers";
+import {
+  formatDate,
+  formatBlogTitle,
+  toggleHovered,
+} from "../../utils/helpers";
 
 export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -22,8 +26,8 @@ export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
         .map(({ thumbnail, title, pubDate, link }, index) => (
           <BlogItems
             key={index}
-            onMouseEnter={() => setIsHovered(index)}
-            onMouseLeave={() => setIsHovered(null)}
+            onMouseEnter={() => toggleHovered(isHovered, setIsHovered)}
+            onMouseLeave={() => toggleHovered(isHovered, setIsHovered)}
           >
             <a href={link} target={TARGET} rel={REL}>
               <Img src={thumbnail} />

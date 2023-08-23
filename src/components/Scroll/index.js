@@ -16,12 +16,11 @@ export default function Scroll() {
       groups[skill.group] = [];
     }
     groups[skill.group].push(skill);
-    console.log(groups[skill.group]);
     return groups;
   }, {});
 
   return (
-    <ScrollContainer skillsCount={skills.length}>
+    <ScrollContainer $skillsCount={skills.length}>
       <ScrollItems>
         {Object.keys(groupedSkills).map((group, index) => (
           <InfiniteLoopSlider
@@ -29,7 +28,7 @@ export default function Scroll() {
             duration={generateSpeed(DURATION - 5000, DURATION + 5000)}
             reverse={index % 2}
           >
-            {groupedSkills[group].map(({ id,  img, alt }) => (
+            {groupedSkills[group].map(({ id, img, alt }) => (
               <ScrollItemsWrapper key={id}>
                 <img src={img} alt={alt} />
               </ScrollItemsWrapper>

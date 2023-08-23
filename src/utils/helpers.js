@@ -18,6 +18,11 @@ export const downloadResume = () => {
   FileSaver.saveAs(resume, "Matthew Bates - Resume");
 };
 
+// toggles the hovered state in <BlogItem />
+export const toggleHovered = (isHovered, setIsHovered) => {
+  setIsHovered(!isHovered);
+};
+
 // closes <Sidebar /> if the window exceeds 768px
 export const useHandleResize = (setIsOpen) => {
   const handleResize = (e) => {

@@ -70,26 +70,10 @@ export const animateText = (textRef) => {
   return tl;
 };
 
-export const animateFreelance = (logoRef, title, text) => {
-  gsap.from(title, {
+export const animateFreelance = (logoRef) => {
+  gsap.from(logoRef.current, {
     opacity: 0,
-    y: 25,
+    stagger: 0.25,
     ease: "bounce",
-    duration: 0.75,
-
-    scrollTrigger: {
-      trigger: title,
-      start: "top 90%",
-    },
-  });
-  gsap.from(text, {
-    opacity: 0,
-    y: 50,
-    ease: "bounce",
-    duration: 0.75,
-    scrollTrigger: {
-      start: "top 90%",
-      trigger: text,
-    },
   });
 };

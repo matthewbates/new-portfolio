@@ -9,7 +9,7 @@ export default function PaginationItem({
   return (
     <PaginationItemContainer
       index={index}
-      activeindex={activeindex}
+      $activeindex={activeindex}
       onClick={() => {
         handlePageChange(index + 1);
         toggle(index);

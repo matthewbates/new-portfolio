@@ -29,7 +29,7 @@ export const ScrollItems = styled.div`
   margin-bottom: 2em;
 
   @media screen and (min-width: 768px) {
-    width: 75%;
+    width: 70%;
   }
 
   @media screen and (min-width: 1100px) {
@@ -37,7 +37,7 @@ export const ScrollItems = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    width: 45%;
+    width: 40%;
   }
 `;
 

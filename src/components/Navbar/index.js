@@ -5,12 +5,11 @@ import { NavbarContainer, BurgerWrapper, LinksWrapper } from "./NavbarElements";
 import Burger from "../Burger";
 import Links from "../Links";
 import Sidebar from "../Sidebar";
+import Select from "../Select";
 
 import { links } from "../../utils/data";
 import { animateNavbar } from "../../utils/gsap";
-import { useHandleResize, scrollToTop } from "../../utils/helpers";
-import Resume from "../Resume";
-import Select from "../Select";
+import { useHandleResize } from "../../utils/helpers";
 
 export default function Navbar({ isOpen, setIsOpen }) {
   const [activeSection, setActiveSection] = useState(null);
