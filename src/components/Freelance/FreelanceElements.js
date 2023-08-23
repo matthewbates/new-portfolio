@@ -8,7 +8,6 @@ export const IconContainer = styled.div`
   align-items: center;
   margin-bottom: 2em;
   color: ${CONSTANTS.colors.offWhite};
-  width: 100%;
   gap: 0.5em;
   user-select: none;
 `;

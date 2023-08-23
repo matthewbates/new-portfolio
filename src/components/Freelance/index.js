@@ -18,10 +18,9 @@ export default function Freelance() {
       if (index % 2 !== 0) {
         gsap.from(iconRef.current, {
           opacity: 0,
-          x: 50,
-          ease: "power1.out",
+          y: 50,
+          // ease: "power1.out",
           scrollTrigger: {
-            duration: 5,
             trigger: iconRef.current,
             start: "top 80%",
           },
@@ -29,10 +28,9 @@ export default function Freelance() {
       } else {
         gsap.from(iconRef.current, {
           opacity: 0,
-          x: -50,
+          y: -50,
           ease: "power1.out",
           scrollTrigger: {
-            duration: 5,
             trigger: iconRef.current,
             start: "top 80%",
           },

@@ -35,10 +35,6 @@ export const ScrollItems = styled.div`
   @media screen and (min-width: 1100px) {
     width: 50%;
   }
-
-  /* @media screen and (min-width: 1200px) {
-    width: 45%;
-  } */
 `;
 
 export const ScrollItemsWrapper = styled.div`
@@ -61,8 +57,8 @@ export const ScrollItemsWrapper = styled.div`
     transition: 0.5s ease;
 
     @media screen and (min-width: 768px) {
-      height: 105px;
-      width: 105px;
+      height: 100px;
+      width: 100px;
     }
   }
 `;
