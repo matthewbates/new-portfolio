@@ -19,7 +19,7 @@ export default function Freelance() {
         gsap.from(iconRef.current, {
           opacity: 0,
           y: 50,
-          // ease: "power1.out",
+          ease: "power1.out",
           scrollTrigger: {
             trigger: iconRef.current,
             start: "top 80%",
