@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -10,22 +10,33 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 
-function App() {
+export default function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 5500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <div className="App">
-      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Home isOpen={isOpen} />
-      <About />
-      <Projects />
-      <Blog />
-      <Contact />
-      <ScrollToTop />
-      <Footer />
-    </div>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className="App">
+          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+          <Home isOpen={isOpen} />
+          <About />
+          <Projects />
+          <Blog />
+          <Contact />
+          <ScrollToTop />
+          <Footer />
+        </div>
+      )}
+    </>
   );
 }
-
-export default App;
