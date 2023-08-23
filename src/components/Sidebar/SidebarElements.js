@@ -17,11 +17,11 @@ export const SidebarContainer = styled.div`
   width: 100%;
   /* background: ${CONSTANTS.styles.sidebar}; */
   background: ${CONSTANTS.colors.offBlack};
-  height: ${({ isOpen }) => (isOpen ? "25vh" : 0)};
+  height: ${({ $isOpen }) => ($isOpen ? "25vh" : 0)};
   transition: 0.3s ease-out;
 
   @media (min-width: 450px) and (max-width: 768px) {
-    height: ${({ isOpen }) => (isOpen ? "20vh" : 0)};
+    height: ${({ $isOpen }) => ($isOpen ? "20vh" : 0)};
   }
 `;
 
@@ -34,7 +34,7 @@ export const SidebarItems = styled.div`
   left: 50%;
   transform: translate(-50%, -k50%);
   gap: 1.5em; */
-  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
   height: 100%;
   flex-direction: column;
   justify-content: center;

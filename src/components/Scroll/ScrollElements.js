@@ -35,6 +35,10 @@ export const ScrollItems = styled.div`
   @media screen and (min-width: 1100px) {
     width: 50%;
   }
+
+  @media screen and (min-width: 1500px) {
+    width: 40%;
+  }
 `;
 
 export const ScrollItemsWrapper = styled.div`

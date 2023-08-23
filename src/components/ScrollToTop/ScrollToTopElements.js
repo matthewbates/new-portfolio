@@ -8,7 +8,7 @@ export const ScrollToTopContainer = styled.div`
   right: 1em;
   padding: 1em;
   color: ${CONSTANTS.colors.spaceGreen};
-  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
   z-index: 999;
   font-family: ${CONSTANTS.styles.arial};
   text-transform: uppercase;

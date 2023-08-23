@@ -6,7 +6,6 @@ import {
   AboutText,
   AboutSkills,
   Img,
-  FreelanceWrapper,
 } from "./AboutElements";
 
 import CareerText from "../../components/CareerText";
@@ -68,9 +67,7 @@ export default function About() {
       >
         Projects I build are...
       </h1>
-      <FreelanceWrapper>
-        <Freelance />
-      </FreelanceWrapper>
+      <Freelance />
     </AboutContainer>
   );
 }

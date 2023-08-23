@@ -2,6 +2,24 @@ import styled from "styled-components";
 
 import CONSTANTS from "../../utils/constants";
 
+export const FreelanceContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) and (max-width: 1099px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: 1100px) {
+    display: flex;
+    padding: 4em;
+    flex-direction: row;
+    gap: 4em;
+  }
+`;
+
 export const IconContainer = styled.div`
   display: flex;
   flex-direction: column;

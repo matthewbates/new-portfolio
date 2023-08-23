@@ -32,7 +32,7 @@ export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
             <a href={link} target={TARGET} rel={REL}>
               <Img src={thumbnail} />
             </a>
-            <Title hovered={isHovered === index ? "true" : "false"}>
+            <Title $hovered={isHovered === index ? "true" : "false"}>
               {formatBlogTitle(title)}
             </Title>
             <PubDate>{formatDate(pubDate)}</PubDate>

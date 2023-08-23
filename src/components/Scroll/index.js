@@ -21,7 +21,7 @@ export default function Scroll() {
   }, {});
 
   return (
-    <ScrollContainer skillsCount={skills.length}>
+    <ScrollContainer $skillsCount={skills.length}>
       <ScrollItems>
         {Object.keys(groupedSkills).map((group, index) => (
           <InfiniteLoopSlider

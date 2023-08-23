@@ -8,8 +8,8 @@ export default function PaginationItem({
 }) {
   return (
     <PaginationItemContainer
-      index={index}
-      activeindex={activeindex}
+      $index={index}
+      $activeindex={activeindex}
       onClick={() => {
         handlePageChange(index + 1);
         toggle(index);

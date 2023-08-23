@@ -29,7 +29,7 @@ export default function ProjectLink({
     },
   });
   return (
-    <LinkWrapper github={github} link={link}>
+    <LinkWrapper $github={github} $link={link}>
       <ThemeProvider theme={theme}>
         <Tooltip title={tooltipGithub}>
           {github === "false" ? (

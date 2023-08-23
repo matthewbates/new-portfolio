@@ -42,7 +42,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
   }, []);
 
   return (
-    <NavbarContainer isOpen={isOpen}>
+    <NavbarContainer $isOpen={isOpen}>
       <Select ref={resumeRef} className={"resume"} />
       <BurgerWrapper className="burger">
         <Burger isOpen={isOpen} setIsOpen={setIsOpen} />

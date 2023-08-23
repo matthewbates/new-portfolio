@@ -4,10 +4,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Icon from "@mdi/react";
 
-import { IconContainer, TitleWrapper, TextWrapper } from "./FreelanceElements";
+import {
+  FreelanceContainer,
+  IconContainer,
+  TitleWrapper,
+  TextWrapper,
+} from "./FreelanceElements";
 
 import { freelance } from "../../utils/data";
-import { animateFreelance } from "../../utils/gsap";
 
 export default function Freelance() {
   const iconRef = useRef(null);
@@ -15,32 +19,47 @@ export default function Freelance() {
   useEffect(() => {
     freelance.forEach((_, index) => {
       iconRef.current = `.animate-icon-${index}`;
-      if (index % 2 !== 0) {
+      index === 0 &&
         gsap.from(iconRef.current, {
           opacity: 0,
           y: 50,
-          ease: "power1.out",
           scrollTrigger: {
             trigger: iconRef.current,
             start: "top 80%",
           },
         });
-      } else {
+      index === 1 &&
         gsap.from(iconRef.current, {
           opacity: 0,
           y: -50,
-          ease: "power1.out",
           scrollTrigger: {
             trigger: iconRef.current,
             start: "top 80%",
           },
         });
-      }
+      index === 2 &&
+        gsap.from(iconRef.current, {
+          opacity: 0,
+          y: 50,
+          scrollTrigger: {
+            trigger: iconRef.current,
+            start: "top 80%",
+          },
+        });
+      index === 3 &&
+        gsap.from(iconRef.current, {
+          opacity: 0,
+          y: -50,
+          scrollTrigger: {
+            trigger: iconRef.current,
+            start: "top 80%",
+          },
+        });
     });
   }, []);
 
   return (
-    <>
+    <FreelanceContainer>
       {freelance.map(({ id, path, size, title, text }, index) => (
         <IconContainer key={id} className={`animate-icon-${index}`}>
           <Icon path={path} size={size} style={{ color: "#5CDB95" }} />
@@ -48,6 +67,6 @@ export default function Freelance() {
           <TextWrapper>{text}</TextWrapper>
         </IconContainer>
       ))}
-    </>
+    </FreelanceContainer>
   );
 }

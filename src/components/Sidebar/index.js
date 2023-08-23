@@ -44,8 +44,8 @@ export default function Sidebar({ isOpen, setIsOpen, activeStyle }) {
   // }, []);
 
   return (
-    <SidebarContainer isOpen={isOpen} ref={sidebarRef}>
-      <SidebarItems ref={linkRef} isOpen={isOpen}>
+    <SidebarContainer $isOpen={isOpen} ref={sidebarRef}>
+      <SidebarItems ref={linkRef} $isOpen={isOpen}>
         {links.map(({ id, name }, index) => (
           <Links
             key={id}

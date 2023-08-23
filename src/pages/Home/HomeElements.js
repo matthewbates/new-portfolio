@@ -84,5 +84,5 @@ export const ArrowIcon = styled.span`
   display: flex;
   font-size: 1em;
   transition: transform 0.3s ease-in-out;
-  ${({ isHovered }) => (isHovered ? "transform: rotate(90deg)" : "0deg")}
+  ${({ $isHovered }) => ($isHovered ? "transform: rotate(90deg)" : "0deg")}
 `;

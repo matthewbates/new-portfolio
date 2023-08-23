@@ -42,10 +42,6 @@ export const AboutText = styled.div`
   transition: 0.5s ease;
   user-select: none;
 
-  /* @media screen and (min-width: 768px) {
-    max-width: 50%;
-    font-size: 1.4em;
-  } */
   @media screen and (min-width: 768px) {
     width: 75%;
     font-size: 1.5em;
@@ -79,14 +75,4 @@ export const Img = styled.img`
   padding: 0.5em;
   border-radius: 8px;
   cursor: pointer;
-`;
-
-export const FreelanceWrapper = styled.div`
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-    margin: auto;
-    max-width: 65%;
-  }
 `;

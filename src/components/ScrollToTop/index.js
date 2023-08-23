@@ -28,7 +28,7 @@ export default function ScrollToTop() {
           behavior: "smooth",
         })
       }
-      visible={visible}
+      $visible={visible}
     >
       <FaRegArrowAltCircleUp style={{ fontSize: "3em" }} />
     </ScrollToTopContainer>

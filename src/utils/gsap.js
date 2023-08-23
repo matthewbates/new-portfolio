@@ -69,11 +69,3 @@ export const animateText = (textRef) => {
   });
   return tl;
 };
-
-export const animateFreelance = (logoRef) => {
-  gsap.from(logoRef.current, {
-    opacity: 0,
-    stagger: 0.25,
-    ease: "bounce",
-  });
-};

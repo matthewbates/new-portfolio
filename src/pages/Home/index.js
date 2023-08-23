@@ -38,7 +38,7 @@ export default function Home({ isOpen }) {
   }, []);
 
   return (
-    <HomeContainer id="Home" isOpen={isOpen}>
+    <HomeContainer id="Home" $isOpen={isOpen}>
       <HomeItems>
         <HomeText>
           <TextWrapper>
@@ -60,7 +60,7 @@ export default function Home({ isOpen }) {
           offset={-80}
         >
           View my work
-          <ArrowIcon isHovered={isHovered}>{<FaArrowRight />}</ArrowIcon>
+          <ArrowIcon $isHovered={isHovered}>{<FaArrowRight />}</ArrowIcon>
         </WorkBtn>
       </HomeItems>
     </HomeContainer>

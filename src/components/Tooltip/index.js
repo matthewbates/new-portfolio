@@ -31,9 +31,6 @@ export default function ToolTip({ children, title, placement }) {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <Tooltip title={title} placement="bottom">
-        {children}
-      </Tooltip> */}
       <Tooltip
         title={title}
         placement="top"
