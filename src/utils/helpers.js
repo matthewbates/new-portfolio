@@ -5,7 +5,7 @@ import resume from "../assets/resume.pdf";
 
 // closes <Sidebar /> when a <Link /> is clicked
 export const closeDrawer = (setIsOpen) => {
-  setTimeout(() => setIsOpen(false), 500);
+  setTimeout(() => setIsOpen(false), 700);
 };
 
 // opens/closes <Sidebar /> when <Burger /> is clicked

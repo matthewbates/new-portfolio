@@ -10,7 +10,7 @@ export default function Burger({ isOpen, setIsOpen }) {
       <Hamburger
         toggled={isOpen}
         toggle={() => toggleSidebar(isOpen, setIsOpen)}
-        size={28}
+        size={24}
       />
     </BurgerContainer>
   );

@@ -34,12 +34,12 @@ export const AboutText = styled.div`
   margin: auto;
   flex-direction: column;
   font-family: "Space Mono";
-  gap: 1em;
+  gap: 1.25em;
   font-size: 1.2em;
   width: 100%;
   max-width: 90%;
   color: ${CONSTANTS.colors.offWhite};
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease;
   user-select: none;
 
   /* @media screen and (min-width: 768px) {
@@ -82,14 +82,6 @@ export const Img = styled.img`
 `;
 
 export const FreelanceWrapper = styled.div`
-  /* display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  place-items: center;
-
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  } */
-
   @media screen and (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

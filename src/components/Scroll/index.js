@@ -9,6 +9,7 @@ import InfiniteLoopSlider from "../InfiniteLoopSlider";
 
 import { skills, DURATION } from "../../utils/data";
 import { generateSpeed } from "../../utils/helpers";
+import ToolTip from "../Tooltip";
 
 export default function Scroll() {
   const groupedSkills = skills.reduce((groups, skill) => {
@@ -28,10 +29,12 @@ export default function Scroll() {
             duration={generateSpeed(DURATION - 5000, DURATION + 5000)}
             reverse={index % 2}
           >
-            {groupedSkills[group].map(({ id, img, alt }) => (
-              <ScrollItemsWrapper key={id}>
-                <img src={img} alt={alt} />
-              </ScrollItemsWrapper>
+            {groupedSkills[group].map(({ id, name, img, alt }) => (
+              <ToolTip title={name}>
+                <ScrollItemsWrapper key={id}>
+                  <img src={img} alt={alt} />
+                </ScrollItemsWrapper>
+              </ToolTip>
             ))}
           </InfiniteLoopSlider>
         ))}

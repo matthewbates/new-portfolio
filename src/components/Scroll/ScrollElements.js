@@ -36,9 +36,9 @@ export const ScrollItems = styled.div`
     width: 50%;
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 40%;
-  }
+  /* @media screen and (min-width: 1200px) {
+    width: 45%;
+  } */
 `;
 
 export const ScrollItemsWrapper = styled.div`
@@ -51,16 +51,18 @@ export const ScrollItemsWrapper = styled.div`
   border-radius: 0.4rem;
   padding: 1em;
   margin-right: 1rem;
+  transition: 3.3s ease;
 
   img {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     font-size: 1.2rem;
     color: #64748b;
+    transition: 0.5s ease;
 
     @media screen and (min-width: 768px) {
-      height: 100px;
-      width: 100px;
+      height: 105px;
+      width: 105px;
     }
   }
 `;
