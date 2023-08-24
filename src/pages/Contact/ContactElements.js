@@ -82,12 +82,12 @@ export const ContactItems = styled.div`
     padding: 10px 0;
     font-size: 1em;
     color: ${CONSTANTS.colors.offWhite};
-    margin-bottom: ${($showError) => ($showError ? "0.5em" : "2em")};
+    margin-bottom: ${(showError) => (showError ? "0.5em" : "2em")};
     border: none;
     -webkit-border-radius: 0px;
     border-bottom: 1px solid
-      ${({ $showError }) =>
-        $showError
+      ${({ showError }) =>
+        showError
           ? `${CONSTANTS.colors.errorRed}`
           : `${CONSTANTS.colors.offWhite}`};
     outline: none;
@@ -106,8 +106,8 @@ export const ContactItems = styled.div`
     padding: 8px;
     font-family: ${CONSTANTS.styles.arial};
     border: 1px solid
-      ${({ $showError }) =>
-        $showError
+      ${({ showError }) =>
+        showError
           ? `${CONSTANTS.colors.errorRed}`
           : `${CONSTANTS.colors.offWhite}`};
     ${CONSTANTS.colors.offWhite};
@@ -124,7 +124,7 @@ export const ContactItems = styled.div`
   span {
     color: ${CONSTANTS.colors.errorRed};
     display: block;
-    margin-bottom: ${({ $showError }) => ($showError ? "2em" : "4em")};
+    margin-bottom: ${({ showError }) => (showError ? "2em" : "4em")};
     font-size: 12px;
   }
 
