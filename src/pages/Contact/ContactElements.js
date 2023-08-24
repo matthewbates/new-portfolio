@@ -82,7 +82,7 @@ export const ContactItems = styled.div`
     padding: 10px 0;
     font-size: 1em;
     color: ${CONSTANTS.colors.offWhite};
-    margin-bottom: ${(showError) => (showError ? "0.5em" : "2em")};
+    margin-bottom: ${(props) => (props.showError ? "0.5em" : "2em")};
     border: none;
     -webkit-border-radius: 0px;
     border-bottom: 1px solid
