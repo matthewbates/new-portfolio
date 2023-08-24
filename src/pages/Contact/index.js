@@ -66,10 +66,10 @@ export default function Contact() {
           Contact <div></div>
         </H2>
         {contactData.map(({ id, name, type, label, rows }) => (
-          <ContactItems key={id} showError={Boolean(errors[name])}>
+          <ContactItems key={id} $showError={Boolean(errors[name])}>
             {id === 3 ? (
               <textarea
-                showError={Boolean(errors[name])}
+                $showError={Boolean(errors[name])}
                 rows={rows}
                 name={name}
               />

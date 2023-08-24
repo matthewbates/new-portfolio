@@ -1,6 +1,5 @@
 import { LinkWrapper } from "./ProjectLinkElements";
 
-import ToolTip from "../Tooltip";
 import { Tooltip } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 

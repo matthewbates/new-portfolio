@@ -14,27 +14,27 @@ export const LinkWrapper = styled.div`
   a {
     &:first-child {
       width: 5em;
-      color: ${({ github }) =>
-        github === "false" ? "gray" : `${CONSTANTS.colors.offWhite}`};
-      cursor: ${({ github }) => github !== "false" && "pointer"};
+      color: ${({ $github }) =>
+        $github === "false" ? "gray" : `${CONSTANTS.colors.offWhite}`};
+      cursor: ${({ $github }) => $github !== "false" && "pointer"};
 
       &:hover {
         -webkit-transition: 0.3s ease-in-out;
-        color: ${({ github }) =>
-          github !== "false" && `${CONSTANTS.colors.spaceGreen}`};
+        color: ${({ $github }) =>
+          $github !== "false" && `${CONSTANTS.colors.spaceGreen}`};
       }
     }
 
     &:last-child {
       width: 5em;
-      color: ${({ link }) =>
-        link === "false" ? "gray" : `${CONSTANTS.colors.offWhite}`};
-      cursor: ${({ link }) => link !== "false" && "pointer"};
+      color: ${({ $link }) =>
+        $link === "false" ? "gray" : `${CONSTANTS.colors.offWhite}`};
+      cursor: ${({ $link }) => $link !== "false" && "pointer"};
 
       &:hover {
         -webkit-transition: 0.3s ease-in-out;
-        color: ${({ link }) =>
-          link === "false" ? "gray" : `${CONSTANTS.colors.spaceGreen}`};
+        color: ${({ $link }) =>
+          $link === "false" ? "gray" : `${CONSTANTS.colors.spaceGreen}`};
       }
   }
 `;
