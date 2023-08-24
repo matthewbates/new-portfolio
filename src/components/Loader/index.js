@@ -47,7 +47,7 @@ export default function Loader() {
           <span>Loading...</span>
           <span ref={countRef}>100%</span>
         </div>
-        <div ref={percentageRef}>One moment, please</div>
+        {/* <div ref={percentageRef}>One moment, please</div> */}
       </LoaderItems>
     </LoaderContainer>
   );
