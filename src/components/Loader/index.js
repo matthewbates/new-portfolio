@@ -28,7 +28,7 @@ export default function Loader() {
       duration: 2,
     });
     gsap.to(textRef.current, {
-      text: "🤙🏼",
+      text: "Let's go!",
       delay: 3.5,
       duration: 0.0025,
     });
