@@ -22,16 +22,16 @@ export default function Loader() {
       duration: 2.5,
       snap: { textContent: 1 },
     });
-    gsap.from(percentageRef.current, {
-      y: 200,
-      opacity: 0,
-      duration: 2,
-    });
-    gsap.to(textRef.current, {
-      text: "Let's go!",
-      delay: 3.5,
-      duration: 0.0025,
-    });
+    // gsap.from(percentageRef.current, {
+    //   y: 200,
+    //   opacity: 0,
+    //   duration: 2,
+    // });
+    // gsap.to(textRef.current, {
+    //   text: "Let's go!",
+    //   delay: 3.5,
+    //   duration: 0.0025,
+    // });
     gsap.to(percentageRef.current, {
       duration: 1,
       text: "Thanks for waiting",
@@ -47,7 +47,6 @@ export default function Loader() {
           <span>Loading...</span>
           <span ref={countRef}>100%</span>
         </div>
-        {/* <div ref={percentageRef}>One moment, please</div> */}
       </LoaderItems>
     </LoaderContainer>
   );

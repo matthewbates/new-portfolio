@@ -1,16 +1,10 @@
 import { useRef, useEffect } from "react";
 
-import {
-  AboutContainer,
-  H2,
-  AboutText,
-  AboutSkills,
-  Img,
-} from "./AboutElements";
+import { AboutContainer, H2, AboutText } from "./AboutElements";
 
 import CareerText from "../../components/CareerText";
 
-import { aboutText, skills } from "../../utils/data";
+import { aboutText } from "../../utils/data";
 import Freelance from "../../components/Freelance";
 import { animateTitle, animateIcons, animateText } from "../../utils/gsap";
 
@@ -41,19 +35,6 @@ export default function About() {
             <CareerText key={index} item={item} />
           </div>
         ))}
-        {/* <AboutSkills>
-          {skills.map(({ id, name, img, alt }) => (
-            <div key={id}>
-              <ToolTip title={name}>
-                <Img
-                  ref={(el) => (iconRef.current[id] = el)}
-                  src={img}
-                  alt={alt}
-                />
-              </ToolTip>
-            </div>
-          ))}
-        </AboutSkills> */}
       </AboutText>
       <Scroll />
       <h1
