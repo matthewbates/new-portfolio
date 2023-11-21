@@ -6,6 +6,7 @@ import Burger from "../Burger";
 import Links from "../Links";
 import Sidebar from "../Sidebar";
 import Select from "../Select";
+import HeroRef from "../Hero";
 
 import { links } from "../../utils/data";
 import { animateNavbar } from "../../utils/gsap";
@@ -17,24 +18,25 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
   useHandleResize(setIsOpen);
   const resumeRef = React.createRef();
+  // const heroRef = React.createRef();
+  const heroRef = useRef(null);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const pageYOffset = window.pageYOffset;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const pageYOffset = window.pageYOffset;
+  //     textRef.current.forEach((section) => {
+  //       const sectionOffsetTop = section.offsetTop;
+  //       const sectionHeight = section.offsetHeight;
 
-      textRef.current.forEach((section) => {
-        const sectionOffsetTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (
-          pageYOffset >= sectionOffsetTop &&
-          pageYOffset < sectionOffsetTop + sectionHeight
-        ) {
-        }
-      });
-    };
-    setActiveSection(activeSection);
-  }, []);
+  //       if (
+  //         pageYOffset >= sectionOffsetTop &&
+  //         pageYOffset < sectionOffsetTop + sectionHeight
+  //       ) {
+  //       }
+  //     });
+  //   };
+  //   setActiveSection(activeSection);
+  // }, []);
 
   useEffect(() => {
     const isDesktop = window.innerWidth > 768;
@@ -43,7 +45,8 @@ export default function Navbar({ isOpen, setIsOpen }) {
 
   return (
     <NavbarContainer $isOpen={isOpen}>
-      <Select ref={resumeRef} className={"resume"} />
+      <HeroRef ref={heroRef} className="resume" />
+      {/* <Select ref={resumeRef} className={"resume"} /> */}
       <BurgerWrapper className="burger">
         <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
       </BurgerWrapper>

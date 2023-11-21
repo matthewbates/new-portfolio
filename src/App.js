@@ -23,9 +23,9 @@ export default function App() {
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <Loader />
-      ) : (
+      ) : ( */}
         <div className="App">
           <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
           <Home isOpen={isOpen} />
@@ -36,7 +36,7 @@ export default function App() {
           <ScrollToTop />
           <Footer />
         </div>
-      )}
+      {/* )} */}
     </>
   );
 }

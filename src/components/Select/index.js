@@ -12,7 +12,6 @@ const TARGET = "_blank";
 const ResumeSelect = React.forwardRef((props, ref) => {
   const { className } = props;
   const [resume, setResume] = useState("");
-  const [isFocused, setIsFocused] = useState(false);
 
   const handleChange = (selectedOption) => {
     selectedOption.value === "digital"
