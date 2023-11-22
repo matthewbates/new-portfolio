@@ -38,7 +38,7 @@ export default function App() {
         <Home isOpen={isOpen} theme={theme} />
         <About theme={theme} />
         <Projects />
-        <Blog />
+        <Blog theme={theme} />
         <Contact theme={theme} />
         <ScrollToTop />
         <Footer />

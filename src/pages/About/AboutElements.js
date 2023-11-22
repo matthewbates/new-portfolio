@@ -9,10 +9,10 @@ export const AboutContainer = styled.div`
 
 export const H2 = styled.h2`
   display: flex;
+  color: #ffffff;
   justify-content: center;
   flex-direction: column;
   margin: auto;
-  color: ${CONSTANTS.colors.offWhite};
   text-transform: uppercase;
   font-family: "Open Sans";
   letter-spacing: 0.1em;
@@ -37,8 +37,12 @@ export const AboutText = styled.div`
   font-size: 1.2em;
   width: 100%;
   max-width: 90%;
-  color: ${CONSTANTS.colors.offWhite};
-  transition: 0.5s ease;
+  /* color: ${CONSTANTS.colors.offWhite}; */
+  color: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.offWhite}`
+      : `${CONSTANTS.colors.gray_1}`};
+
   user-select: none;
 
   @media screen and (min-width: 768px) {

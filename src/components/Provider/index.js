@@ -15,8 +15,7 @@ export default function ThemeProvider({ children }) {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const color =
-    theme === "light" ? "#ffffff" : `${CONSTANTS.colors.colorGray200}`;
+  const color = theme === "light" && "#ffffff";
   const backgroundColor =
     theme === "light"
       ? `${CONSTANTS.colors.royalBlue}`

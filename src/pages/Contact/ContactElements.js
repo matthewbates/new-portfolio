@@ -16,11 +16,10 @@ export const Form = styled.form`
   width: 85%;
   max-width: 450px;
   padding: 3em;
-  /* background: rgba(0, 0, 0, 0.5); */
   background: ${({ theme }) =>
     theme === "light" ? "rbga(0, 0,0, 0.5)" : `${CONSTANTS.colors.gray_2}`};
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px 8px;
   border-radius: 10px;
   font-family: "Arial";
   margin-top: 10%;
@@ -38,11 +37,17 @@ export const Form = styled.form`
     padding: 1em;
     width: 40%;
     border: none;
-    background: ${CONSTANTS.colors.spaceGreen};
+    background: ${({ theme }) =>
+      theme === "light"
+        ? `${CONSTANTS.colors.spaceGreen}`
+        : `${CONSTANTS.colors.gray_1}`};
     color: #ffffff;
     cursor: pointer;
     font-weight: bold;
-    outline: 2px solid ${CONSTANTS.colors.spaceGreen};
+    outline: ${({ theme }) =>
+      theme === "light"
+        ? `2px solid ${CONSTANTS.colors.spaceGreen}`
+        : `2px solid ${CONSTANTS.colors.gray_1}`};
     -webkit-transition: 0.1s linear;
     text-transform: uppercase;
 
@@ -76,7 +81,6 @@ export const H2 = styled.h2`
 
 export const ContactItems = styled.div`
   position: relative;
-
   input {
     width: 100%;
     padding: 10px 0;
@@ -132,7 +136,10 @@ export const ContactItems = styled.div`
     position: absolute;
     top: -10px;
     left: 0;
-    color: ${CONSTANTS.colors.spaceGreen};
+    color: ${({ theme }) =>
+      theme === "light"
+        ? `${CONSTANTS.colors.spaceGreen}`
+        : `${CONSTANTS.colors.gray_1}`};
     font-size: 12px;
   }
 `;

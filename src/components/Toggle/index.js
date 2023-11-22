@@ -27,7 +27,7 @@ export default function Toggle({ theme, toggle }) {
       <ThemeProvider theme={customTheme}>
         <Tooltip
           placement="left"
-          title={theme === "light" ? "Dark Mode" : "Dark Mode"}
+          title={theme === "light" ? "Light Mode" : "Dark Mode"}
         >
           <IconButton
             onClick={toggle}

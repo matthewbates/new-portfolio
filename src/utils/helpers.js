@@ -7,6 +7,9 @@ import resume from "../assets/resume.pdf";
 export const closeDrawer = (setIsOpen) => {
   setTimeout(() => setIsOpen(false), 700);
 };
+// export const closeDrawer = (isOpen, setIsOpen) => {
+//   setIsOpen(!isOpen);
+// };
 
 // opens/closes <Sidebar /> when <Burger /> is clicked
 export const toggleSidebar = (isOpen, setIsOpen) => {

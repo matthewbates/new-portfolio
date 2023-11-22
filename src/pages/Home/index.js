@@ -50,6 +50,7 @@ export default function Home({ isOpen, theme }) {
           </TextWrapper>
         </HomeText>
         <WorkBtn
+          theme={theme}
           className="button"
           onMouseOver={toggleHover}
           onMouseLeave={toggleHover}

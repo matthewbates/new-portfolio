@@ -9,7 +9,7 @@ import { ITEMS_PER_PAGE } from "../../utils/data";
 import { useFetchBlogs } from "../../utils/hooks";
 import { animateTitle } from "../../utils/gsap";
 
-export default function Blog() {
+export default function Blog({ theme }) {
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const titleRef = useRef(null);
@@ -35,6 +35,7 @@ export default function Blog() {
         itemsPerPage={ITEMS_PER_PAGE}
       />
       <BlogItem
+        theme={theme}
         blogs={blogs}
         currentPage={currentPage}
         itemsPerPage={ITEMS_PER_PAGE}

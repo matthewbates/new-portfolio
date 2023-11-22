@@ -72,6 +72,9 @@ export const PubDate = styled.div`
 export const Line = styled.div`
   width: 25%;
   height: 3px;
-  background: ${CONSTANTS.colors.spaceGreen};
+  background: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.spaceGreen}`
+      : `${CONSTANTS.colors.gray_1}`};
   margin: 10px 0;
 `;

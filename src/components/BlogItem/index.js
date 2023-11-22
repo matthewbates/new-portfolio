@@ -16,7 +16,7 @@ import {
   toggleHovered,
 } from "../../utils/helpers";
 
-export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
+export default function BlogItem({ blogs, currentPage, itemsPerPage, theme }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -36,7 +36,7 @@ export default function BlogItem({ blogs, currentPage, itemsPerPage }) {
               {formatBlogTitle(title)}
             </Title>
             <PubDate>{formatDate(pubDate)}</PubDate>
-            <Line />
+            <Line theme={theme} />
           </BlogItems>
         ))}
     </BlogContainer>

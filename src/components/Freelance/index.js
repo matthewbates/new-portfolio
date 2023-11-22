@@ -12,8 +12,9 @@ import {
 } from "./FreelanceElements";
 
 import { freelance } from "../../utils/data";
+import CONSTANTS from "../../utils/constants";
 
-export default function Freelance() {
+export default function Freelance({ theme }) {
   const iconRef = useRef(null);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function Freelance() {
       index === 1 &&
         gsap.from(iconRef.current, {
           opacity: 0,
-          y: -50,
+          y: 50,
           scrollTrigger: {
             trigger: iconRef.current,
             start: "top 80%",
@@ -49,7 +50,7 @@ export default function Freelance() {
       index === 3 &&
         gsap.from(iconRef.current, {
           opacity: 0,
-          y: -50,
+          y: 50,
           scrollTrigger: {
             trigger: iconRef.current,
             start: "top 80%",
@@ -62,7 +63,16 @@ export default function Freelance() {
     <FreelanceContainer>
       {freelance.map(({ id, path, size, title, text }, index) => (
         <IconContainer key={id} className={`animate-icon-${index}`}>
-          <Icon path={path} size={size} style={{ color: "#5CDB95" }} />
+          <Icon
+            path={path}
+            size={size}
+            style={{
+              color:
+                theme === "light"
+                  ? `${CONSTANTS.colors.spaceGreen}`
+                  : `${CONSTANTS.colors.offWhite}`,
+            }}
+          />
           <TitleWrapper>{title}</TitleWrapper>
           <TextWrapper>{text}</TextWrapper>
         </IconContainer>

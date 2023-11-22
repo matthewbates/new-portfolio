@@ -60,13 +60,17 @@ export default function Contact({ theme }) {
   }
 
   return (
-    <ContractContainer id="Contact">
+    <ContractContainer id="Contact" theme={theme}>
       <Form onSubmit={handleSubmit} theme={theme}>
         <H2>
           Contact <div></div>
         </H2>
         {contactData.map(({ id, name, type, label, rows }) => (
-          <ContactItems key={id} showError={Boolean(errors[name])}>
+          <ContactItems
+            theme={theme}
+            key={id}
+            showError={Boolean(errors[name])}
+          >
             {id === 3 ? (
               <textarea
                 showError={Boolean(errors[name])}

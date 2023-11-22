@@ -6,6 +6,7 @@ export const FooterIconContainer = styled.div`
   a {
     mix-blend-mode: color-burn;
     transition: 0.3s ease-in-out;
+
     &:hover {
       transform: translateY(-4px);
     }

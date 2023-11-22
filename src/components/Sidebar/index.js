@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 
+import { Button } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import gsap from "gsap";
@@ -11,7 +12,8 @@ import Links from "../Links";
 import { useResize, useClickOutside } from "../../utils/hooks";
 import { links } from "../../utils/data";
 import Toggle from "../Toggle";
-import { ModeNight } from "@mui/icons-material";
+
+import CONSTANTS from "../../utils/constants";
 
 export default function Sidebar({
   isOpen,
@@ -54,34 +56,44 @@ export default function Sidebar({
   // }, []);
 
   return (
-    <SidebarContainer $isOpen={isOpen} ref={sidebarRef} theme={theme}>
+    <SidebarContainer
+      $isOpen={isOpen}
+      ref={sidebarRef}
+      theme={theme}
+      sidebar="true"
+    >
       <SidebarItems ref={linkRef} $isOpen={isOpen}>
         {links.map(({ id, name }, index) => (
           <Links
-            key={id}
             sidebar="true"
+            key={id}
             title={name}
             id={name}
+            isOpen={isOpen}
             setIsOpen={setIsOpen}
             index={index}
             activeStyle={activeStyle}
             theme={theme}
           />
         ))}
-        <div
+        <Button
+          variant="outlined"
           onClick={toggle}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "1em",
+          sx={{
+            border: "1px solid #ffffff",
             padding: "1em",
-            cursor: "pointer",
+            color: "#ffffff",
+            gap: "0.5em",
             margin: "auto",
+            marginTop: "2em",
             marginBottom: "2em",
-            border: "2px solid white",
-            borderRadius: "6em",
-            marginTop: "1.5em",
+            "&:hover": {
+              color: theme === "light" && "#000000",
+              backgroundColor: `${
+                theme === "light" ? "#ffffff" : `${CONSTANTS.colors.gray_2}`
+              }`,
+              borderColor: "#ffffff",
+            },
           }}
         >
           {theme === "light" ? (
@@ -93,7 +105,7 @@ export default function Sidebar({
               <ModeNightIcon /> Switch to light mode
             </>
           )}
-        </div>
+        </Button>
       </SidebarItems>
     </SidebarContainer>
   );

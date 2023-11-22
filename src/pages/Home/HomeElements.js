@@ -73,7 +73,10 @@ export const WorkBtn = styled(Link)`
   font-size: 0.9em;
   cursor: pointer;
   margin: auto;
-  border: 2px solid ${CONSTANTS.colors.spaceGreen};
+  border: ${({ theme }) =>
+    theme === "light"
+      ? `2px solid ${CONSTANTS.colors.spaceGreen}`
+      : `2px solid ${CONSTANTS.colors.gray_1}`};
   color: ${CONSTANTS.colors.offWhite};
 
   @media screen and (min-width: 768px) {

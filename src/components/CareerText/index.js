@@ -2,7 +2,7 @@ import { A } from "./CareerTextElements";
 
 import { TARGET, REL } from "../../utils/data";
 
-export default function CareerText({ item }) {
+export default function CareerText({ item, theme }) {
   const {
     textOne,
     hyperlinkTextOne,
@@ -17,12 +17,12 @@ export default function CareerText({ item }) {
     <>
       {item.id === 1 && item.text}
       {textOne}
-      <A href={urlOne} target={TARGET} rel={REL}>
+      <A theme={theme} href={urlOne} target={TARGET} rel={REL}>
         {hyperlinkTextOne}
       </A>
       {textTwo}
       {textThree}
-      <A>{hyperlinkTextTwo}</A>
+      <A theme={theme}>{hyperlinkTextTwo}</A>
       {textFour}
       {item.id === 3 && item.text}
     </>

@@ -55,12 +55,13 @@ export default function Navbar({ isOpen, setIsOpen, theme, toggle }) {
       <LinksWrapper ref={textRef}>
         {links.map(({ id, name }, index) => (
           <Links
-            key={id}
             sidebar="false"
+            key={id}
             title={name}
             id={name}
             index={index}
             activeSection={activeSection}
+            isOpen={isOpen}
             setIsOpen={setIsOpen}
             theme={theme}
           />

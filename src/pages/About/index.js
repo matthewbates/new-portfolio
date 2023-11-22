@@ -26,13 +26,13 @@ export default function About({ theme }) {
 
   return (
     <AboutContainer id="About">
-      <AboutText>
+      <AboutText theme={theme}>
         <H2 ref={titleRef}>
           About <div className="about-div"></div>
         </H2>
         {aboutText.map((item, index) => (
           <div className={`animate-text-${index}`} key={index}>
-            <CareerText key={index} item={item} />
+            <CareerText key={index} item={item} theme={theme} />
           </div>
         ))}
       </AboutText>
@@ -48,7 +48,7 @@ export default function About({ theme }) {
       >
         Projects I build are...
       </h1>
-      <Freelance />
+      <Freelance theme={theme} />
     </AboutContainer>
   );
 }

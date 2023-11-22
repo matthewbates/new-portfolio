@@ -1,5 +1,6 @@
 const CONSTANTS = {
   colors: {
+    // main text (dark mode)
     offWhite: "#f1f2f2",
     offBlack: "#363636",
     royalBlue: "#05386b",
@@ -8,6 +9,7 @@ const CONSTANTS = {
     lightNavy: "#112240",
     lightestNavy: "#233554",
     errorRed: "#FF0033",
+    // subtext (dark mode)
     gray_1: "#a9adc1",
     gray_2: "#2e3039",
     gray_3: "#1f2028",
