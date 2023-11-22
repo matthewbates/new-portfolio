@@ -11,7 +11,7 @@ import { skills, DURATION } from "../../utils/data";
 import { generateSpeed } from "../../utils/helpers";
 import ToolTip from "../Tooltip";
 
-export default function Scroll() {
+export default function Scroll({ theme }) {
   const groupedSkills = skills.reduce((groups, skill) => {
     if (!groups[skill.group]) {
       groups[skill.group] = [];
@@ -38,7 +38,7 @@ export default function Scroll() {
             ))}
           </InfiniteLoopSlider>
         ))}
-        <Fade />
+        <Fade theme={theme} />
       </ScrollItems>
     </ScrollContainer>
   );

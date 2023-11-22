@@ -3,10 +3,11 @@ import { forwardRef } from "react";
 import { HeroContainer } from "./HeroElements";
 
 export const HeroRef = forwardRef((props, ref) => {
-  const { className } = props;
+  const { className, theme } = props;
 
   return (
     <HeroContainer
+      theme={theme}
       to="Home"
       spy={true}
       smooth={true}
@@ -14,7 +15,7 @@ export const HeroRef = forwardRef((props, ref) => {
       className={className}
       ref={ref}
     >
-      Matthew Bates
+      M.H.C.B.
     </HeroContainer>
   );
 });

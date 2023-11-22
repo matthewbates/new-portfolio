@@ -8,7 +8,6 @@ export const HomeContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: ${CONSTANTS.styles.height};
-  background: ${CONSTANTS.colors.royalBlue};
   border-bottom: 1px solid ${CONSTANTS.colors.offWhite};
 `;
 
@@ -17,15 +16,15 @@ export const HomeItems = styled.div`
   flex-direction: column;
   gap: 1em;
   margin-bottom: 100px;
-  transition: 0.3s ease-in-out;
 `;
 
-export const TextWrapper = styled.div`
-  transition: 0.3s ease-in-out;
-`;
+export const TextWrapper = styled.div``;
 
 export const HomeText = styled.div`
-  color: ${CONSTANTS.colors.offWhite};
+  color: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.offWhite}`
+      : `${CONSTANTS.colors.gray_1}`};
   user-select: none;
 
   div {
@@ -40,7 +39,10 @@ export const HomeText = styled.div`
       font-family: ${CONSTANTS.styles.raleway};
       font-weight: bold;
       font-size: 2em;
-      color: ${CONSTANTS.colors.spaceGreen};
+      color: ${({ theme }) =>
+        theme === "light"
+          ? `${CONSTANTS.colors.spaceGreen}`
+          : `${CONSTANTS.colors.offWhite}`};
 
       &::after {
         content: ".";
@@ -71,7 +73,6 @@ export const WorkBtn = styled(Link)`
   font-size: 0.9em;
   cursor: pointer;
   margin: auto;
-  background: ${CONSTANTS.colors.royalBlue};
   border: 2px solid ${CONSTANTS.colors.spaceGreen};
   color: ${CONSTANTS.colors.offWhite};
 

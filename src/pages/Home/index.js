@@ -14,7 +14,7 @@ import {
 
 import { homeText } from "../../utils/data";
 
-export default function Home({ isOpen }) {
+export default function Home({ isOpen, theme }) {
   const [isHovered, setIsHovered] = useState(false);
   const textRef = useRef([]);
 
@@ -38,10 +38,10 @@ export default function Home({ isOpen }) {
   }, []);
 
   return (
-    <HomeContainer id="Home" $isOpen={isOpen}>
+    <HomeContainer id="Home" $isOpen={isOpen} theme={theme}>
       <HomeItems>
-        <HomeText>
-          <TextWrapper>
+        <HomeText theme={theme}>
+          <TextWrapper theme={theme}>
             {homeText.map(({ id, text }, index) => (
               <div key={id} ref={(el) => (textRef.current[index] = el)}>
                 {text}

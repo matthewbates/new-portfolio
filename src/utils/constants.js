@@ -1,6 +1,6 @@
 const CONSTANTS = {
   colors: {
-    offWhite: "#F1F2F2",
+    offWhite: "#f1f2f2",
     offBlack: "#363636",
     royalBlue: "#05386b",
     spaceGreen: "#5CDB95",
@@ -8,6 +8,19 @@ const CONSTANTS = {
     lightNavy: "#112240",
     lightestNavy: "#233554",
     errorRed: "#FF0033",
+    gray_1: "#a9adc1",
+    gray_2: "#2e3039",
+    gray_3: "#1f2028",
+    gray_4: "#818890",
+    colorGray100: "#f7f7f7",
+    colorGray200: "#e6e9ee",
+    colorGray300: "#dde0e4",
+    colorGray400: "#818890",
+    colorGray500: "#535661",
+    colorGray600: "#4b4c53",
+    colorGray700: "#3a3d4a",
+    colorGray800: "#2e3039",
+    colorGray900: "#1f2028",
   },
   styles: {
     border: "none",

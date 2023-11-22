@@ -15,14 +15,12 @@ export const SidebarContainer = styled.div`
   position: fixed;
   top: 100px;
   width: 100%;
-  /* background: ${CONSTANTS.styles.sidebar}; */
-  background: ${CONSTANTS.colors.offBlack};
-  height: ${({ $isOpen }) => ($isOpen ? "25vh" : 0)};
+  background: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.offBlack}`
+      : `${CONSTANTS.colors.gray_3}`};
+  height: ${({ $isOpen }) => ($isOpen ? "auto" : 0)};
   transition: 0.3s ease-out;
-
-  @media (min-width: 450px) and (max-width: 768px) {
-    height: ${({ $isOpen }) => ($isOpen ? "20vh" : 0)};
-  }
 `;
 
 export const SidebarItems = styled.div`
@@ -35,11 +33,8 @@ export const SidebarItems = styled.div`
   transform: translate(-50%, -k50%);
   gap: 1.5em; */
   display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
-  height: 100%;
+  /* height: 100%; */
   flex-direction: column;
   justify-content: center;
   font-family: "Raleway";
-  font-size: 0.9em;
-  margin-left: 1em;
-  gap: 1em;
-`;
+  font-size: 0.9em;`;

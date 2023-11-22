@@ -4,7 +4,6 @@ export const ScrollContainer = styled.div`
   display: flex;
   justify-content: center;
   font-family: Raleway;
-  background: #05386b;
   color: #f8fafc;
 
   @keyframes loop {
@@ -73,13 +72,10 @@ export const ScrollItemsWrapper = styled.div`
 
 export const Fade = styled.div`
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    #05386b,
-    transparent 30%,
-    transparent 70%,
-    #05386b
-  );
+  background: ${({ theme }) =>
+    theme === "light"
+      ? "linear-gradient(90deg, #05386b, transparent 30%, transparent 70%, #05386b)"
+      : "linear-gradient(90deg, #212121, transparent 30%, transparent 70%, #212121)"};
   position: absolute;
   inset: 0;
 `;

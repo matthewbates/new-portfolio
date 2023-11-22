@@ -11,8 +11,10 @@ import HeroRef from "../Hero";
 import { links } from "../../utils/data";
 import { animateNavbar } from "../../utils/gsap";
 import { useHandleResize } from "../../utils/helpers";
+import Provider from "../Provider";
+import Toggle from "../Toggle";
 
-export default function Navbar({ isOpen, setIsOpen }) {
+export default function Navbar({ isOpen, setIsOpen, theme, toggle }) {
   const [activeSection, setActiveSection] = useState(null);
   const textRef = useRef([]);
 
@@ -44,11 +46,11 @@ export default function Navbar({ isOpen, setIsOpen }) {
   }, []);
 
   return (
-    <NavbarContainer $isOpen={isOpen}>
-      <HeroRef ref={heroRef} className="resume" />
+    <NavbarContainer $isOpen={isOpen} theme={theme}>
+      <HeroRef ref={heroRef} className="resume" theme={theme} />
       {/* <Select ref={resumeRef} className={"resume"} /> */}
       <BurgerWrapper className="burger">
-        <Burger isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Burger isOpen={isOpen} setIsOpen={setIsOpen} theme={theme} />
       </BurgerWrapper>
       <LinksWrapper ref={textRef}>
         {links.map(({ id, name }, index) => (
@@ -60,6 +62,7 @@ export default function Navbar({ isOpen, setIsOpen }) {
             index={index}
             activeSection={activeSection}
             setIsOpen={setIsOpen}
+            theme={theme}
           />
         ))}
       </LinksWrapper>
@@ -67,7 +70,10 @@ export default function Navbar({ isOpen, setIsOpen }) {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         activeSection={activeSection}
+        theme={theme}
+        toggle={toggle}
       />
+      <Toggle theme={theme} toggle={toggle} />
     </NavbarContainer>
   );
 }

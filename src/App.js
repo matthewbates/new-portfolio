@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -11,10 +11,12 @@ import Blog from "./pages/Blog";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
+import { ThemeContext } from "./components/Provider";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 3500);
@@ -26,16 +28,21 @@ export default function App() {
       {/* {isLoading ? (
         <Loader />
       ) : ( */}
-        <div className="App">
-          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-          <Home isOpen={isOpen} />
-          <About />
-          <Projects />
-          <Blog />
-          <Contact />
-          <ScrollToTop />
-          <Footer />
-        </div>
+      <div className="App">
+        <Navbar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          theme={theme}
+          toggle={toggleTheme}
+        />
+        <Home isOpen={isOpen} theme={theme} />
+        <About theme={theme} />
+        <Projects />
+        <Blog />
+        <Contact theme={theme} />
+        <ScrollToTop />
+        <Footer />
+      </div>
       {/* )} */}
     </>
   );

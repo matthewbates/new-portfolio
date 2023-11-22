@@ -4,11 +4,16 @@ import CONSTANTS from "../../utils/constants";
 export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  background: ${CONSTANTS.colors.royalBlue};
+  background: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.royalBlue}`
+      : `${CONSTANTS.colors.gray_3}`};
   height: 100px;
   align-items: center;
-  box-shadow: ${CONSTANTS.styles.navbarBoxShadow};
-  transition: 0.5s;
+  box-shadow: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.styles.navbarBoxShadow}`
+      : "0px 10px 20px -10px #818890"};
   font-size: 14px;
   top: 0;
   position: sticky;
@@ -16,10 +21,11 @@ export const NavbarContainer = styled.div`
 `;
 
 export const BurgerWrapper = styled.div`
-  display: flex;
+  /* display: flex;
   margin-left: auto;
-  margin-right: 1em;
-  
+  margin-right: 1em; */
+  margin-left: auto;
+
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -27,9 +33,11 @@ export const BurgerWrapper = styled.div`
 
 export const LinksWrapper = styled.div`
   display: flex;
-  gap: 1em;
+  gap1: 1em;
+  /* gap: 1em;
+  justify-content: center; */
 
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     margin-left: auto;
-  }
+  } */
 `;

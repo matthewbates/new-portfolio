@@ -4,7 +4,6 @@ import CONSTANTS from "../../utils/constants";
 
 export const AboutContainer = styled.div`
   height: 100%;
-  background: ${CONSTANTS.colors.royalBlue};
   border-bottom: 1px solid ${CONSTANTS.colors.offWhite};
 `;
 

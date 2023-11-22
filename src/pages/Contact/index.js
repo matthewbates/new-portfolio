@@ -7,7 +7,7 @@ import { ContractContainer, Form, H2, ContactItems } from "./ContactElements";
 
 import { contactData } from "../../utils/data";
 
-export default function Contact() {
+export default function Contact({ theme }) {
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -61,7 +61,7 @@ export default function Contact() {
 
   return (
     <ContractContainer id="Contact">
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} theme={theme}>
         <H2>
           Contact <div></div>
         </H2>

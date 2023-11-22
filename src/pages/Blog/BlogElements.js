@@ -6,7 +6,6 @@ export const BlogContainer = styled.div`
   flex-direction: column;
   height: 100%;
   padding: 0 10px;
-  background: ${CONSTANTS.colors.royalBlue};
   border-bottom: 1px solid ${CONSTANTS.colors.offWhite};
 `;
 

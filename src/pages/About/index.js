@@ -10,7 +10,7 @@ import { animateTitle, animateIcons, animateText } from "../../utils/gsap";
 
 import Scroll from "../../components/Scroll";
 
-export default function About() {
+export default function About({ theme }) {
   const iconRef = useRef([]);
   const titleRef = useRef(null);
   const textRef = useRef("");
@@ -36,7 +36,7 @@ export default function About() {
           </div>
         ))}
       </AboutText>
-      <Scroll />
+      <Scroll theme={theme} />
       <h1
         style={{
           display: "flex",

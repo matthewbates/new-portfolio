@@ -6,7 +6,6 @@ export const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: ${CONSTANTS.colors.royalBlue};
   border-bottom: 1px solid ${CONSTANTS.colors.offWhite};
 `;
 export const H2 = styled.h2`

@@ -7,7 +7,6 @@ export const ContractContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-top: 1px solid ${CONSTANTS.colors.offWhite};
-  background: ${CONSTANTS.colors.royalBlue};
   height: 100%;
 `;
 
@@ -17,14 +16,15 @@ export const Form = styled.form`
   width: 85%;
   max-width: 450px;
   padding: 3em;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: ${({ theme }) =>
+    theme === "light" ? "rbga(0, 0,0, 0.5)" : `${CONSTANTS.colors.gray_2}`};
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   font-family: "Arial";
   margin-top: 10%;
   margin-bottom: 10%;
-  transition: 0.3s ease-in-out;
 
   @media screen and (min-width: 820px) {
     max-width: 500px;
