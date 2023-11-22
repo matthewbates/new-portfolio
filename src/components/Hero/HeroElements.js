@@ -9,6 +9,7 @@ export const HeroContainer = styled(Link)`
   font-size: 1.5em;
   cursor: pointer;
   font-weight: bold;
+  color: ${CONSTANTS.colors.offWhite};
 
   &:hover {
     color: ;
