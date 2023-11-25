@@ -4,7 +4,7 @@ import { FaRegArrowAltCircleUp } from "react-icons/fa";
 
 import { ScrollToTopContainer } from "./ScrollToTopElements";
 
-export default function ScrollToTop() {
+export default function ScrollToTop({ theme }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -20,17 +20,22 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <ScrollToTopContainer
-      onClick={() =>
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "smooth",
-        })
-      }
-      $visible={visible}
-    >
-      <FaRegArrowAltCircleUp style={{ fontSize: "3em" }} />
-    </ScrollToTopContainer>
+    <>
+      {window.innerWidth > 768 && (
+        <ScrollToTopContainer
+          $visible={visible}
+          theme={theme}
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            })
+          }
+        >
+          <FaRegArrowAltCircleUp style={{ fontSize: "3em" }} />
+        </ScrollToTopContainer>
+      )}
+    </>
   );
 }

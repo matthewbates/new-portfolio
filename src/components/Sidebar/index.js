@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import { Button } from "@mui/material";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
+
 import gsap from "gsap";
 
 import { SidebarContainer, SidebarItems } from "./SidebarElements";
@@ -76,7 +77,7 @@ export default function Sidebar({
             theme={theme}
           />
         ))}
-        <Button
+        {/* <Button
           variant="outlined"
           onClick={toggle}
           sx={{
@@ -105,7 +106,7 @@ export default function Sidebar({
               <ModeNightIcon /> Switch to light mode
             </>
           )}
-        </Button>
+        </Button> */}
       </SidebarItems>
     </SidebarContainer>
   );

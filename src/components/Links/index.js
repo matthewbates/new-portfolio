@@ -1,7 +1,10 @@
+import { useState } from "react";
+
 import { NavbarLinkContainer } from "./LinkElements";
 
 import { closeDrawer } from "../../utils/helpers";
 import CONSTANTS from "../../utils/constants";
+import { Arrow } from "../Arrow";
 
 export default function Links({
   title,
@@ -11,6 +14,12 @@ export default function Links({
   setIsOpen,
   theme,
 }) {
+  const [isHovered, setIsHovered] = useState(null);
+
+  const toggleHover = () => {
+    setIsHovered(!isHovered);
+  };
+
   const activeStyle = {
     // color: `${CONSTANTS.colors.spaceGreen}`,
     color:
@@ -31,9 +40,12 @@ export default function Links({
       className={className}
       index={index}
       onClick={() => closeDrawer(setIsOpen)}
+      onMouseOver={toggleHover}
+      onMouseLeave={toggleHover}
       activeStyle={activeStyle}
     >
       {title}
+      {sidebar === "true" && <Arrow isHovered={isHovered} />}
     </NavbarLinkContainer>
   );
 }

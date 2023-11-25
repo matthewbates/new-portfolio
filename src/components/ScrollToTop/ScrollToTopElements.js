@@ -7,7 +7,10 @@ export const ScrollToTopContainer = styled.div`
   bottom: 1em;
   right: 1em;
   padding: 1em;
-  color: ${CONSTANTS.colors.spaceGreen};
+  color: ${({ theme }) =>
+    theme === "light"
+      ? `${CONSTANTS.colors.offWhite}`
+      : `${CONSTANTS.colors.gray_1}`};
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
   z-index: 999;
   font-family: ${CONSTANTS.styles.arial};

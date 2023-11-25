@@ -40,7 +40,7 @@ export default function App() {
         <Projects />
         <Blog theme={theme} />
         <Contact theme={theme} />
-        <ScrollToTop />
+        <ScrollToTop theme={theme} />
         <Footer />
       </div>
       {/* )} */}

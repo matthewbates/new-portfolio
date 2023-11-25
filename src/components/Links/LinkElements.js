@@ -5,6 +5,7 @@ import CONSTANTS from "../../utils/constants";
 
 export const NavbarLinkContainer = styled(Link)`
   display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")};
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
   transition: 0.3s ease;
