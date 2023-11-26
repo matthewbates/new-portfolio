@@ -74,7 +74,7 @@ export default function Freelance({ theme }) {
             }}
           />
           <TitleWrapper>{title}</TitleWrapper>
-          <TextWrapper>{text}</TextWrapper>
+          <TextWrapper theme={theme}>{text}</TextWrapper>
         </IconContainer>
       ))}
     </FreelanceContainer>

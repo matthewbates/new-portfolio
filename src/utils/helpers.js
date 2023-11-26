@@ -1,7 +1,10 @@
-import FileSaver from "file-saver";
 import { useEffect } from "react";
 
+import FileSaver from "file-saver";
+
 import resume from "../assets/resume.pdf";
+
+import CONSTANTS from "./constants";
 
 // closes <Sidebar /> when a <Link /> is clicked
 export const closeDrawer = (setIsOpen) => {
@@ -81,3 +84,9 @@ export const formatBlogTitle = (title) => {
 // sets the duration for <Scroll /> component
 export const generateSpeed = (min, max) =>
   Math.floor(Math.random() * (max - min)) + min;
+
+export const getThemeColor = (theme) => {
+  return theme === "light"
+    ? CONSTANTS.colors.spaceGreen
+    : CONSTANTS.colors.gray_1;
+};

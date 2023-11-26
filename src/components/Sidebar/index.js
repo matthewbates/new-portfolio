@@ -77,7 +77,7 @@ export default function Sidebar({
             theme={theme}
           />
         ))}
-        {/* <Button
+        <Button
           variant="outlined"
           onClick={toggle}
           sx={{
@@ -106,7 +106,7 @@ export default function Sidebar({
               <ModeNightIcon /> Switch to light mode
             </>
           )}
-        </Button> */}
+        </Button>
       </SidebarItems>
     </SidebarContainer>
   );

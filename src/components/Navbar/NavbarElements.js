@@ -15,9 +15,11 @@ export const NavbarContainer = styled.div`
       ? `${CONSTANTS.styles.navbarBoxShadow}`
       : "0px 10px 20px -10px #818890"};
   font-size: 14px;
-  top: 0;
+  /* top: 0; */
+  top: ${({ scrollDirection }) => (scrollDirection === "down" ? "-150px" : 0)};
   position: sticky;
   z-index: 999;
+  transition: 0.3s ease;
 `;
 
 export const BurgerWrapper = styled.div`

@@ -28,7 +28,7 @@ export default function Home({ isOpen, theme }) {
     tl.from(textRef.current, {
       opacity: 0,
       y: -20,
-      delay: 1.25,
+      delay: 0.75,
       stagger: 0.15,
     });
     tl.from(".button", {

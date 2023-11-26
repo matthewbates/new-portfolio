@@ -73,3 +73,19 @@ export const useFetchBlogs = (setBlogs) => {
     fetchBlogs();
   }, [setBlogs]);
 };
+
+export const useScrollPosition = (scrollDirection, setScrollDirection) => {
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset; // the last scroll position
+
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset; // the new scroll position
+      const direction = scrollY > lastScrollY ? "down" : "up"; // the direction of the scroll
+      if (direction !== scrollDirection) setScrollDirection(direction);
+      lastScrollY = scrollY ? scrollY : 0;
+    };
+    window.addEventListener("scroll", updateScrollDirection);
+    return () => window.removeEventListener("scroll", updateScrollDirection);
+  }, [scrollDirection]);
+  return scrollDirection;
+};

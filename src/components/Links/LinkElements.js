@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import CONSTANTS from "../../utils/constants";
 
+import { getThemeColor } from "../../utils/helpers";
+
 export const NavbarLinkContainer = styled(Link)`
   display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")};
   justify-content: space-between;
@@ -36,9 +38,6 @@ export const NavbarLinkContainer = styled(Link)`
   }
 
   &:hover {
-    color: ${({ theme }) =>
-      theme === "light"
-        ? `${CONSTANTS.colors.spaceGreen}`
-        : `${CONSTANTS.colors.gray_1}`};
+    color: ${({ theme }) => getThemeColor(theme)};
   }
 `;
