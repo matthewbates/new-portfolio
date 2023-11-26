@@ -10,7 +10,7 @@ export const NavbarLinkContainer = styled(Link)`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: 0.3s ease;
+  /* transition: 0.3s ease; */
   color: ${({ activeStyle, index }) =>
     activeStyle === index
       ? `${CONSTANTS.colors.spaceGreen}`
