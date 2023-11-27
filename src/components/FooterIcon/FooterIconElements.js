@@ -14,6 +14,6 @@ export const FooterIconContainer = styled.div`
 
   img {
     object-fit: contain;
-    height: 2.2em;
+    height: 1.75em;
   }
 `;

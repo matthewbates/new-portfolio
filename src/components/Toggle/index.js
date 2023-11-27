@@ -37,7 +37,7 @@ export default function Toggle({ theme, toggle }) {
               border:
                 theme === "light"
                   ? `2px solid${CONSTANTS.colors.offWhite}`
-                  : `2px solid${CONSTANTS.colors.colorGray400}`,
+                  : `2px solid${CONSTANTS.colors.gray_4}`,
               background:
                 theme === "light"
                   ? `${CONSTANTS.colors.royalBlue}`

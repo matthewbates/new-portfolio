@@ -30,14 +30,14 @@ export const NavbarLinkContainer = styled(Link)`
   }
 
   &:hover {
-    background: ${({ sidebar }) => sidebar === "true" && "rgba(0, 0, 0, 0.3)"};
+    background: ${({ sidebar }) => sidebar === "true" && "rgba(0, 0, 0, 0.2)"};
   }
 
   @media screen and (min-width: 768px) {
     display: flex;
   }
 
-  &:hover {
+  /* &:hover {
     color: ${({ theme }) => getThemeColor(theme)};
-  }
+  } */
 `;

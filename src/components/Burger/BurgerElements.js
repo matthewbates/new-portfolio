@@ -2,8 +2,7 @@ import styled from "styled-components";
 import CONSTANTS from "../../utils/constants";
 
 export const BurgerContainer = styled.div`
-  color: ${({ theme }) =>
-    theme === "light" ? `${CONSTANTS.colors.offWhite}` : `red`};
+  color: ${CONSTANTS.colors.offWhite};
   -webkit-transition: 0.3s ease-in-out;
   z-index: 995;
   border: ${({ theme }) =>
