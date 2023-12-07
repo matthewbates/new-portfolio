@@ -12,8 +12,9 @@ const CONSTANTS = {
     // subtext (dark mode)
     gray_1: "#a9adc1",
     gray_2: "#2e3039",
-    gray_3: "#1f2028",
+    gray_3: "#292929",
     gray_4: "#818890",
+    gray_5: "#2d333b",
   },
   styles: {
     border: "none",

@@ -2,7 +2,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { Tooltip } from "@mui/material";
 
-export default function ToolTip({ children, title }) {
+export default function ToolTip({ children, title, placement }) {
   const theme = createTheme({
     components: {
       MuiTooltip: {
@@ -19,7 +19,7 @@ export default function ToolTip({ children, title }) {
 
   return (
     <ThemeProvider theme={theme}>
-      <Tooltip title={title} placement="top">
+      <Tooltip title={title} placement={placement}>
         {children}
       </Tooltip>
     </ThemeProvider>

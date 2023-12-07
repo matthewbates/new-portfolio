@@ -19,12 +19,15 @@ export default function ThemeProvider({ children }) {
   const backgroundColor =
     theme === "light"
       ? `${CONSTANTS.colors.royalBlue}`
-      : `${CONSTANTS.colors.gray_3}`;
+      : // : `${CONSTANTS.colors.gray_3}`;
+        "#22272e";
   const borderRadius = theme === "light" ? "#000000" : "#ffffff";
+  const transition = "0.3s ease";
 
   document.body.style.color = color;
   document.body.style.backgroundColor = backgroundColor;
   document.body.style.borderRadius = borderRadius;
+  document.body.style.transition = transition;
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

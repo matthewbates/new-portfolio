@@ -30,7 +30,7 @@ export default function Scroll({ theme }) {
             reverse={index % 2}
           >
             {groupedSkills[group].map(({ id, name, img, alt }) => (
-              <ToolTip key={id} title={name}>
+              <ToolTip key={id} title={name} placement="top">
                 <ScrollItemsWrapper>
                   <img src={img} alt={alt} />
                 </ScrollItemsWrapper>

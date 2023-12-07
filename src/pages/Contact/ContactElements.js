@@ -17,7 +17,7 @@ export const Form = styled.form`
   max-width: 450px;
   padding: 3em;
   background: ${({ theme }) =>
-    theme === "light" ? "rbga(0, 0,0, 0.5)" : `${CONSTANTS.colors.gray_2}`};
+    theme === "light" ? "rbga(0, 0,0, 0.5)" : `${CONSTANTS.colors.gray_5}`};
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px 8px;
   border-radius: 10px;

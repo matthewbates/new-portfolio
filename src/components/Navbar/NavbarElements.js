@@ -7,15 +7,19 @@ export const NavbarContainer = styled.div`
   background: ${({ theme }) =>
     theme === "light"
       ? `${CONSTANTS.colors.royalBlue}`
-      : `${CONSTANTS.colors.gray_3}`};
+      : // : `${CONSTANTS.colors.gray_3}`};
+        "#22272e"};
   height: 100px;
   align-items: center;
-  box-shadow: ${({ theme }) =>
+  /* box-shadow: ${({ theme }) =>
     theme === "light"
       ? `${CONSTANTS.styles.navbarBoxShadow}`
-      : "0px 10px 20px -10px #818890"};
+      : "0px 10px 20px -10px #818890"}; */
+  border-bottom: ${({ theme }) =>
+    theme === "light"
+      ? `1px solid ${CONSTANTS.colors.offWhite}`
+      : `1px solid ${CONSTANTS.colors.gray_4}`};
   font-size: 14px;
-  /* top: 0; */
   top: ${({ scrollDirection }) => (scrollDirection === "down" ? "-150px" : 0)};
   position: sticky;
   z-index: 999;
@@ -23,9 +27,6 @@ export const NavbarContainer = styled.div`
 `;
 
 export const BurgerWrapper = styled.div`
-  /* display: flex;
-  margin-left: auto;
-  margin-right: 1em; */
   margin-left: auto;
 
   @media screen and (min-width: 768px) {
@@ -35,11 +36,5 @@ export const BurgerWrapper = styled.div`
 
 export const LinksWrapper = styled.div`
   display: flex;
-  gap1: 1em;
-  /* gap: 1em;
-  justify-content: center; */
-
-  /* @media screen and (min-width: 768px) {
-    margin-left: auto;
-  } */
+  gap: 1em;
 `;

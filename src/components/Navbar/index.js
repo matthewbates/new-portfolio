@@ -77,6 +77,7 @@ export default function Navbar({ isOpen, setIsOpen, theme, toggle }) {
           activeSection={activeSection}
           theme={theme}
           toggle={toggle}
+          scrollDirection={scrollDirection}
         />
         <Toggle theme={theme} toggle={toggle} />
       </NavbarContainer>

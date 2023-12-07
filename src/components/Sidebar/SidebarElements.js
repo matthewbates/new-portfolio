@@ -4,15 +4,19 @@ import styled from "styled-components";
 import CONSTANTS from "../../utils/constants";
 
 export const SidebarContainer = styled.div`
-  /* display: ${({ sidebar }) => (sidebar === "true" ? "flex" : "none")}; */
   position: fixed;
   top: 100px;
   width: 100%;
   background: ${({ theme }) =>
     theme === "light"
       ? `${CONSTANTS.colors.offBlack}`
-      : `${CONSTANTS.colors.gray_3}`};
-  transition: 0.3s ease-out;
+      : // : `${CONSTANTS.colors.gray_3}`};
+        "#22272e"};
+`;
+
+export const SidebarWrapper = styled.div`
+  height: ${({ linkRef }) => linkRef && `${linkRef.current.scrollHeight}`};
+  transition: 0.3s ease;
 `;
 
 export const SidebarItems = styled.div`
