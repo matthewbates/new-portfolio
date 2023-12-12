@@ -42,7 +42,7 @@ export default function Navbar({ isOpen, setIsOpen, theme, toggle }) {
     setActiveSection(activeSection);
   }, []);
 
-  useScrollPosition(scrollDirection, setScrollDireciton);
+  // useScrollPosition(scrollDirection, setScrollDireciton);
 
   return (
     <>

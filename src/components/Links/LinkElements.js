@@ -16,7 +16,8 @@ export const NavbarLinkContainer = styled(Link)`
       : `${CONSTANTS.colors.offWhite}`};
   font-family: "Open Sans";
   font-weight: bold;
-  padding: 2.25em;
+  /* padding: 2.25em; */
+  padding: ${({ sidebar }) => (sidebar === "true" ? "2em" : "1em")};
   font-size: 1.1em;
   border-bottom: ${({ sidebar, theme }) =>
     sidebar === "true" && theme

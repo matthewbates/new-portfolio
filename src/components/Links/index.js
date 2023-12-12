@@ -21,7 +21,6 @@ export default function Links({
   };
 
   const activeStyle = {
-    // color: `${CONSTANTS.colors.spaceGreen}`,
     color:
       theme === "light"
         ? `${CONSTANTS.colors.spaceGreen}`
