@@ -15,7 +15,7 @@ export const SidebarContainer = styled.div`
 `;
 
 export const SidebarWrapper = styled.div`
-  height: ${({ linkRef }) => linkRef && `${linkRef.current.scrollHeight}`};
+  height: ${({ $linkRef }) => $linkRef && `${$linkRef.current.scrollHeight}`};
   transition: 0.3s ease;
 `;
 

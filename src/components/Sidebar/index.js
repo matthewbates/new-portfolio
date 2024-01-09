@@ -26,7 +26,6 @@ export default function Sidebar({
   activeStyle,
   theme,
   toggle,
-  scrollDirection,
 }) {
   const sidebarRef = useRef(null);
   const linkRef = useRef(null);
@@ -66,10 +65,9 @@ export default function Sidebar({
       $isOpen={isOpen}
       ref={sidebarRef}
       theme={theme}
-      sidebar="true"
-      scrollDirection={scrollDirection}
+      $sidebar="true"
     >
-      <SidebarWrapper linksRef={linkRef}>
+      <SidebarWrapper $linksRef={linkRef}>
         <SidebarItems ref={linkRef} $isOpen={isOpen}>
           {links.map(({ id, name }, index) => (
             <Links

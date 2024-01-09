@@ -27,7 +27,7 @@ export const ScrollItems = styled.div`
   margin-top: 2em;
   margin-bottom: 2em;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 720px) {
     width: 70%;
   }
 
@@ -57,8 +57,8 @@ export const ScrollItemsWrapper = styled.div`
   transition: 3.3s ease;
 
   img {
-    height: 60px;
-    width: 60px;
+    height: 75px;
+    width: 75px;
     font-size: 1.2rem;
     color: #64748b;
     transition: 0.5s ease;
@@ -75,7 +75,7 @@ export const Fade = styled.div`
   background: ${({ theme }) =>
     theme === "light"
       ? "linear-gradient(90deg, #05386b, transparent 30%, transparent 70%, #05386b)"
-      : "linear-gradient(90deg, #212121, transparent 30%, transparent 70%, #212121)"};
+      : "linear-gradient(90deg, #22272e, transparent 30%, transparent 70%, #22272e)"};
   position: absolute;
   inset: 0;
 `;

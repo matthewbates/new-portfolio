@@ -11,9 +11,7 @@ export default function ScrollToTop({ theme }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      currentScrollPos > 500 && window.innerWidth > 768
-        ? setVisible(true)
-        : setVisible(false);
+      currentScrollPos > 500 ? setVisible(true) : setVisible(false);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,7 +20,7 @@ export default function ScrollToTop({ theme }) {
 
   return (
     <>
-      {window.innerWidth > 768 && (
+      {window.pageYOffset >= 500 && (
         <ToolTip title="Back to top" placement="left">
           <ScrollToTopContainer
             $visible={visible}

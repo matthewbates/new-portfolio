@@ -19,7 +19,11 @@ export const Form = styled.form`
   background: ${({ theme }) =>
     theme === "light" ? "rbga(0, 0,0, 0.5)" : `${CONSTANTS.colors.gray_5}`};
   box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px 8px;
+  border: ${({ theme }) =>
+    theme === "light"
+      ? `2px solid ${CONSTANTS.colors.spaceGreen}`
+      : `2px solid ${CONSTANTS.colors.offWhite}`};
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 30px 8px; */
   border-radius: 10px;
   font-family: "Arial";
   margin-top: 10%;

@@ -7,7 +7,6 @@ export const BlogContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
-  //! adjust this to change how many columns on larger
   max-width: 1200px;
   margin: auto;
   cursor: pointer;

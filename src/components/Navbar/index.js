@@ -24,23 +24,23 @@ export default function Navbar({ isOpen, setIsOpen, theme, toggle }) {
 
   useHandleResize(setIsOpen);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const pageYOffset = window.pageYOffset;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const pageYOffset = window.pageYOffset;
 
-      textRef.current.forEach((section) => {
-        const sectionOffsetTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
+  //     textRef.current.forEach((section) => {
+  //       const sectionOffsetTop = section.offsetTop;
+  //       const sectionHeight = section.offsetHeight;
 
-        if (
-          pageYOffset >= sectionOffsetTop &&
-          pageYOffset < sectionOffsetTop + sectionHeight
-        ) {
-        }
-      });
-    };
-    setActiveSection(activeSection);
-  }, []);
+  //       if (
+  //         pageYOffset >= sectionOffsetTop &&
+  //         pageYOffset < sectionOffsetTop + sectionHeight
+  //       ) {
+  //       }
+  //     });
+  //   };
+  //   setActiveSection(activeSection);
+  // }, []);
 
   // useScrollPosition(scrollDirection, setScrollDireciton);
 
@@ -49,7 +49,7 @@ export default function Navbar({ isOpen, setIsOpen, theme, toggle }) {
       <NavbarContainer
         $isOpen={isOpen}
         theme={theme}
-        scrollDirection={scrollDirection}
+        $scrollDirection={scrollDirection}
       >
         <HeroRef ref={heroRef} className="resume" theme={theme} />
         {/* <Select ref={resumeRef} className={"resume"} /> */}
@@ -77,7 +77,6 @@ export default function Navbar({ isOpen, setIsOpen, theme, toggle }) {
           activeSection={activeSection}
           theme={theme}
           toggle={toggle}
-          scrollDirection={scrollDirection}
         />
         <Toggle theme={theme} toggle={toggle} />
       </NavbarContainer>

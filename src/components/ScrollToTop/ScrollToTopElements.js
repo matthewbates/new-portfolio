@@ -4,8 +4,8 @@ import CONSTANTS from "../../utils/constants";
 
 export const ScrollToTopContainer = styled.div`
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: 0;
+  right: 0;
   padding: 1em;
   color: ${({ theme }) =>
     theme === "light"

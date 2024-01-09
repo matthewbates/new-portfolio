@@ -30,7 +30,7 @@ export default function BlogItem({ blogs, currentPage, itemsPerPage, theme }) {
             onMouseLeave={() => toggleHovered(isHovered, setIsHovered)}
           >
             <a href={link} target={TARGET} rel={REL}>
-              <Img src={thumbnail} />
+              <Img src={thumbnail} alt={title} />
             </a>
             <Title $hovered={isHovered === index ? "true" : "false"}>
               {formatBlogTitle(title)}
