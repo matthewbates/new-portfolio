@@ -19,7 +19,6 @@ export const ScrollToTopContainer = styled.div`
   transition: 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
     color: ${CONSTANTS.colors.offWhite};
   }
 `;
