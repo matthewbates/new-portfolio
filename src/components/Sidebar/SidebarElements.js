@@ -9,14 +9,12 @@ export const SidebarContainer = styled.div`
   background: ${({ theme }) =>
     theme === "light" ? `${CONSTANTS.colors.offBlack}` : "#22272e"};
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  height: ${({ $isOpen }) => ($isOpen ? "500px" : "0")};
-  transition: height 0.3s ease;
+  max-height: ${({ $isOpen }) => ($isOpen ? "520px" : "0")};
+  transition: 0.3s ease;
 `;
 
 export const SidebarWrapper = styled.div`
   transition: 0.3s ease;
-  height: ${({ $linkRef }) => $linkRef && `${$linkRef.current.scrollHeight}px`};
-  overflow: hidden;
 `;
 
 export const SidebarItems = styled.div`
