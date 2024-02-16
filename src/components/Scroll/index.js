@@ -13,7 +13,6 @@ import ToolTip from "../Tooltip";
 
 export default function Scroll({ theme }) {
   const groupedSkills = skills.reduce((acc, currentValue) => {
-    console.log(acc);
     if (!acc[currentValue.group]) {
       acc[currentValue.group] = [];
     }

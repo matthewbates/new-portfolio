@@ -1,24 +1,15 @@
 import { useRef, useEffect } from "react";
 
-import { Button } from "@mui/material";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import ModeNightIcon from "@mui/icons-material/ModeNight";
-
 import gsap from "gsap";
 
-import {
-  SidebarContainer,
-  SidebarWrapper,
-  SidebarItems,
-} from "./SidebarElements";
+import { SidebarContainer, SidebarItems } from "./SidebarElements";
 
 import Links from "../Links";
+import { Button } from "../MUI/Button";
 
 import { useResize, useClickOutside } from "../../utils/hooks";
 import { links } from "../../utils/data";
 import Toggle from "../Toggle";
-
-import CONSTANTS from "../../utils/constants";
 
 export default function Sidebar({
   isOpen,
@@ -67,53 +58,22 @@ export default function Sidebar({
       theme={theme}
       $sidebar="true"
     >
-      <SidebarWrapper $linksRef={linkRef}>
-        <SidebarItems ref={linkRef} $isOpen={isOpen}>
-          {links.map(({ id, name }, index) => (
-            <Links
-              sidebar="true"
-              key={id}
-              title={name}
-              id={name}
-              isOpen={isOpen}
-              setIsOpen={setIsOpen}
-              index={index}
-              activeStyle={activeStyle}
-              theme={theme}
-            />
-          ))}
-          <Button
-            variant="outlined"
-            onClick={toggle}
-            sx={{
-              border: "1px solid #ffffff",
-              padding: "1em",
-              color: "#ffffff",
-              gap: "0.5em",
-              margin: "auto",
-              marginTop: "2em",
-              marginBottom: "2em",
-              "&:hover": {
-                color: theme === "light" && "#000000",
-                backgroundColor: `${
-                  theme === "light" ? "#ffffff" : `${CONSTANTS.colors.gray_2}`
-                }`,
-                borderColor: "#ffffff",
-              },
-            }}
-          >
-            {theme === "light" ? (
-              <>
-                <LightModeIcon /> Switch to dark mode
-              </>
-            ) : (
-              <>
-                <ModeNightIcon /> Switch to light mode
-              </>
-            )}
-          </Button>
-        </SidebarItems>
-      </SidebarWrapper>
+      <SidebarItems ref={linkRef} $isOpen={isOpen}>
+        {links.map(({ id, name }, index) => (
+          <Links
+            sidebar="true"
+            key={id}
+            title={name}
+            id={name}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            index={index}
+            activeStyle={activeStyle}
+            theme={theme}
+          />
+        ))}
+        <Button theme={theme} toggle={toggle} />
+      </SidebarItems>
     </SidebarContainer>
   );
 }

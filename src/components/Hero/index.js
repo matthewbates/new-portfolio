@@ -15,7 +15,7 @@ export const HeroRef = forwardRef((props, ref) => {
       className={className}
       ref={ref}
     >
-      M.H.C.B.
+      MHCB
     </HeroContainer>
   );
 });

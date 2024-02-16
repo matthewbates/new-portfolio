@@ -3,7 +3,6 @@ import { useState } from "react";
 import {
   BlogContainer,
   BlogItems,
-  Img,
   Title,
   PubDate,
   Line,
@@ -24,20 +23,20 @@ export default function BlogItem({ blogs, currentPage, itemsPerPage, theme }) {
       {blogs
         .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
         .map(({ thumbnail, title, pubDate, link }, index) => (
-          <BlogItems
-            key={index}
-            onMouseEnter={() => toggleHovered(isHovered, setIsHovered)}
-            onMouseLeave={() => toggleHovered(isHovered, setIsHovered)}
-          >
-            <a href={link} target={TARGET} rel={REL}>
-              <Img src={thumbnail} alt={title} />
-            </a>
-            <Title $hovered={isHovered === index ? "true" : "false"}>
-              {formatBlogTitle(title)}
-            </Title>
-            <PubDate>{formatDate(pubDate)}</PubDate>
-            <Line theme={theme} />
-          </BlogItems>
+          <a href={link} target={TARGET} rel={REL}>
+            <BlogItems
+              key={index}
+              theme={theme}
+              onMouseEnter={() => toggleHovered(isHovered, setIsHovered)}
+              onMouseLeave={() => toggleHovered(isHovered, setIsHovered)}
+            >
+              <Title $hovered={isHovered === index ? "true" : "false"}>
+                {formatBlogTitle(title)}
+              </Title>
+              <PubDate>{formatDate(pubDate)}</PubDate>
+              <Line theme={theme} />
+            </BlogItems>
+          </a>
         ))}
     </BlogContainer>
   );

@@ -4,14 +4,18 @@ import CONSTANTS from "../../utils/constants";
 
 export const BlogContainer = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5em;
-  max-width: 1200px;
+  /* justify-content: center; */
+  /* gap: 1.5em; */
   margin: auto;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   pointer-events: none;
+  gap: 1em;
+  width: 100%;
+  /* max-width: 1200px; */
+  max-width: 600px;
 
   &:last-child {
     margin-bottom: 2em;
@@ -34,12 +38,11 @@ export const BlogContainer = styled.div`
 export const BlogItems = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const Img = styled.img`
-  max-width: 100%;
-  width: 400px;
-  height: 175px;
+  border: ${({ theme }) =>
+    theme === "light"
+      ? `1px solid ${CONSTANTS.colors.spaceGreen}`
+      : `1px solid ${CONSTANTS.colors.offWhite}`};
+  padding: 2em;
 `;
 
 export const Title = styled.div`

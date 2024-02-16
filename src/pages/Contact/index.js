@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import emailjs from "emailjs-com";
-import swal from "sweetalert2";
 
 import { ContractContainer, Form, H2, ContactItems } from "./ContactElements";
 

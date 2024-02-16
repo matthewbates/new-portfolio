@@ -45,9 +45,15 @@ const USERNAME = "matthewhcbates";
 const RSSURL = `https://medium.com/feed/@${USERNAME}`;
 export const RSS_CONVERTER = `https://api.rss2json.com/v1/api.json?rss_url=${RSSURL}`;
 
-export const ITEMS_PER_PAGE = 4;
+export const ITEMS_PER_PAGE = 3;
 
 export const DURATION = 20000;
+
+export const blogGifs = [
+  {
+    id: 1,
+  },
+];
 
 export const freelance = [
   {

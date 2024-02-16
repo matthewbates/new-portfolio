@@ -10,16 +10,14 @@ export const SidebarContainer = styled.div`
     theme === "light" ? `${CONSTANTS.colors.offBlack}` : "#22272e"};
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   max-height: ${({ $isOpen }) => ($isOpen ? "520px" : "0")};
-  transition: 0.5s;
-`;
-
-export const SidebarWrapper = styled.div`
-  /* transition: 0.3s ease; */
+  transition: all 0.3s linear;
 `;
 
 export const SidebarItems = styled.div`
-  display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
+  /* display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")}; */
+  display: ${({ isOpen }) => isOpen && "flex"};
   flex-direction: column;
   justify-content: center;
   font-size: 0.9em;
+  transition: 0.3s linear;
 `;

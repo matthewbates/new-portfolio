@@ -16,8 +16,7 @@ export const NavbarLinkContainer = styled(Link)`
       : `${CONSTANTS.colors.offWhite}`};
   font-family: "Open Sans";
   font-weight: bold;
-  /* padding: 2.25em; */
-  padding: ${({ sidebar }) => (sidebar === "true" ? "2em" : "1em")};
+  padding: ${({ sidebar }) => (sidebar === "true" ? "1.5em 1.25em" : "1em")};
   font-size: 1.1em;
   border-bottom: ${({ sidebar, theme }) =>
     sidebar === "true" && theme
@@ -36,8 +35,4 @@ export const NavbarLinkContainer = styled(Link)`
   @media screen and (min-width: 768px) {
     display: flex;
   }
-
-  /* &:hover {
-    color: ${({ theme }) => getThemeColor(theme)};
-  } */
 `;

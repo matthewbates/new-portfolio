@@ -7,7 +7,11 @@ export const ContractContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-top: 1px solid ${CONSTANTS.colors.offWhite};
-  height: 100%;
+  height: 90vh;
+
+  @media screen and (min-width: 820px) {
+    height: 80vh;
+  }
 `;
 
 export const Form = styled.form`

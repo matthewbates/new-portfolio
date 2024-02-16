@@ -25,25 +25,25 @@ export default function App() {
 
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loader />
-      ) : ( */}
-      <div className="App">
-        <Navbar
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          theme={theme}
-          toggle={toggleTheme}
-        />
-        <Home isOpen={isOpen} theme={theme} />
-        <About theme={theme} />
-        <Projects />
-        <Blog theme={theme} />
-        <Contact theme={theme} />
-        <ScrollToTop theme={theme} />
-        <Footer />
-      </div>
-      {/* )} */}
+      ) : (
+        <div className="App">
+          <Navbar
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            theme={theme}
+            toggle={toggleTheme}
+          />
+          <Home isOpen={isOpen} theme={theme} />
+          <About theme={theme} />
+          <Projects />
+          <Blog theme={theme} />
+          <Contact theme={theme} />
+          <ScrollToTop theme={theme} />
+          <Footer />
+        </div>
+      )}
     </>
   );
 }

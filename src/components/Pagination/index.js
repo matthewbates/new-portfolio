@@ -8,6 +8,8 @@ export default function Pagination({ blogs, handlePageChange, itemsPerPage }) {
   const [activeindex, setActiveIndex] = useState(0);
   const totalPages = Math.ceil(blogs.length / itemsPerPage);
 
+  console.log(totalPages);
+
   const togglePage = (index) => {
     setActiveIndex(index === activeindex ? null : index);
   };
