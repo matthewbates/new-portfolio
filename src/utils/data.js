@@ -309,19 +309,19 @@ export const homeText = [
 export const aboutText = [
   {
     id: 1,
-    text: "Hello! My name is Matthew and I live in Denver, CO. Although I've always held a passion for technology, it took a serious turn back in 2017 where I assisted the IT department with a previous employer develop custom SQL queries for a $2 billion, 3.5 year-long system migration.",
+    text: "Hello! My name is Matthew, and I live in Denver, CO. I have always been passionate about technology, even before software development became a central part of my job. While working at my previous company, I collaborated with the Robotics Process Automation (RPA) team to write custom SQL queries. These queries played a crucial role in a major system migration project, which spanned three and a half years.",
   },
   {
     id: 2,
     textOne: "Fast forward to today, I work at the  ",
     hyperlinkTextOne: "University of Denver",
     urlOne: "https://www.du.edu/",
-    textTwo: " as an application (iOS) and website developer.",
-    textThree: "I also do ",
+    textTwo: " as an application (iOS) and mobile-responsive widget developer.",
+    textThree: " I also do ",
     hyperlinkTextTwo: "freelance software development",
     urlTwo: "https://soft-lebkuchen-2188b1.netlify.app/",
     textFour:
-      " on the side where I design, develop, test, and deploy mobile-optimized sites.",
+      " on the side where I design, develop, test, and deploy mobile-optimized sites for clients.",
   },
   {
     id: 3,

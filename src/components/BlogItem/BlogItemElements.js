@@ -6,16 +6,17 @@ export const BlogContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* justify-content: center; */
-  /* gap: 1.5em; */
   margin: auto;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   pointer-events: none;
   gap: 1em;
   width: 100%;
-  /* max-width: 1200px; */
   max-width: 600px;
+
+  a {
+    text-decoration: none;
+  }
 
   &:last-child {
     margin-bottom: 2em;
@@ -56,16 +57,10 @@ export const Title = styled.div`
   margin-top: 0.5em;
   -webkit-transition: 0.3s ease-in-out;
   max-width: 400px;
-  text-decoration: none;
-
-  &:hover {
-    color: ${CONSTANTS.colors.spaceGreen};
-  }
 `;
 
 export const PubDate = styled.div`
   color: white;
-  text-decoration: none;
   padding: 10px 0;
   font-family: "Open Sans";
   font-size: 10px;

@@ -12,6 +12,8 @@ export default function Contact({ theme }) {
     email: "",
     message: "",
   });
+  const [inputText, setInputText] = useState("");
+  const [characterLimit] = useState(250);
 
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -33,6 +35,10 @@ export default function Contact({ theme }) {
 
     return formErrors;
   };
+
+  function handleChange(e) {
+    setInputText(e.target.value);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -75,6 +81,7 @@ export default function Contact({ theme }) {
                 showError={Boolean(errors[name])}
                 rows={rows}
                 name={name}
+                onChange={handleChange}
               />
             ) : (
               <input type={type} name={name} />
@@ -84,6 +91,9 @@ export default function Contact({ theme }) {
             <label>{label}</label>
           </ContactItems>
         ))}
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          {inputText.length} / {characterLimit}
+        </div>
         <button type="submit">Submit</button>
       </Form>
     </ContractContainer>
