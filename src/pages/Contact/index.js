@@ -32,6 +32,7 @@ export default function Contact({ theme }) {
     if (!formData.message || formData.message.length < 10) {
       formErrors.message = "Message is too short";
     }
+    if (inputText.length > characterLimit) formErrors.message = "Character limit cannot exceed 250 characters"
 
     return formErrors;
   };
@@ -91,8 +92,16 @@ export default function Contact({ theme }) {
             <label>{label}</label>
           </ContactItems>
         ))}
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          {inputText.length} / {characterLimit}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            color: inputText.length > characterLimit && "red",
+          }}
+        >
+          <p>
+            {inputText.length}/{characterLimit}
+          </p>
         </div>
         <button type="submit">Submit</button>
       </Form>
